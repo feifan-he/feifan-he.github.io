@@ -29,7 +29,7 @@
 - Cumulative GPA of 3.32 (graduated with distinction)
 - Investment Banking Pitch Book Competition Winner 2017 (MDA Training)
 
-**<div style='textalight:center;'> Significant Projects </div>**
+**<div align="center"> Significant Projects </div>**
 **Financial Management Case Study (Crown Cork & Seal Company, Inc. and Marriott Corporation)**
 - Planned and prioritized tasks, coordinated resources, delegated tasks, and tracked progress for a team of 6
 - Analyzed company’s financial statements to understand its corporate structure and business activities
@@ -46,11 +46,11 @@
 - Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)Testing
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MzEzOTYxMCwxMTUxMzkyNDExLC00MD
-c3NDgyMjcsLTIyMDMwNzk0OSwtMTU3MzM2MDA3OCwzMzAzNjQ5
-NDIsNzc1OTQ1ODU4LC04MDMzOTkyOTcsNDk3NDU2MTU2LDIwMz
-MyMDIwODUsOTEzMDcxMjEzLDE2MDY0MjU3MDYsODA5NjE2MTU0
-LDMxNDcxOTQwMyw5OTkwOTU5NTksLTIwOTA4NTU2NTksNjU0Nz
-A5MTIxLDY1NDcwOTEyMSw5NzY1MDk4MzMsLTE5MDQ1MzcyMDZd
-fQ==
+eyJoaXN0b3J5IjpbNDg1OTE3NzA3LDExNTEzOTI0MTEsLTQwNz
+c0ODIyNywtMjIwMzA3OTQ5LC0xNTczMzYwMDc4LDMzMDM2NDk0
+Miw3NzU5NDU4NTgsLTgwMzM5OTI5Nyw0OTc0NTYxNTYsMjAzMz
+IwMjA4NSw5MTMwNzEyMTMsMTYwNjQyNTcwNiw4MDk2MTYxNTQs
+MzE0NzE5NDAzLDk5OTA5NTk1OSwtMjA5MDg1NTY1OSw2NTQ3MD
+kxMjEsNjU0NzA5MTIxLDk3NjUwOTgzMywtMTkwNDUzNzIwNl19
+
 -->
