@@ -44,16 +44,19 @@ document.querySelector(".container-lg").removeChild(document.querySelector(".con
 
 img{
     max-height:500px;
+    height:auto;
+    width:auto;  
+	left:50%;
 	position: relative;
-
+	transform: translate(-50%, 0);
 
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjI3NTI0MzcsLTE1MTY2OTQzNTEsMT
-MzNTgwMzIxNywtMTQyMzc4MDEwOCwzMTM4NTg2NDQsLTg0NTYx
-MTA0MiwtMjI3NzYxOTYxLC01NTI4MTk4MzcsMTM5NDIxNzEyMS
-w0OTg5OTEzMTUsLTg1ODQ0OTgxNiwtNzIyOTA2Mjk5LC01MzA0
-ODE4MDIsMTg5ODcxNTkwLC0yMDQ2MzYwNDg1LDk4MTQ2MTM0OC
-wtMTk0NjcxNzU0NSwtMTI5NDE2NTc5NV19
+eyJoaXN0b3J5IjpbMzM1NzEzNDE3LC0xNTE2Njk0MzUxLDEzMz
+U4MDMyMTcsLTE0MjM3ODAxMDgsMzEzODU4NjQ0LC04NDU2MTEw
+NDIsLTIyNzc2MTk2MSwtNTUyODE5ODM3LDEzOTQyMTcxMjEsND
+k4OTkxMzE1LC04NTg0NDk4MTYsLTcyMjkwNjI5OSwtNTMwNDgx
+ODAyLDE4OTg3MTU5MCwtMjA0NjM2MDQ4NSw5ODE0NjEzNDgsLT
+E5NDY3MTc1NDUsLTEyOTQxNjU3OTVdfQ==
 -->
