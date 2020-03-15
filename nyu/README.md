@@ -26,11 +26,11 @@ Everyone is unique in their own ways, the environment you grow up in can have an
 //document.querySelector(".container-lg").removeChild(
 //document.querySelector(".container-lg").children[0]
 //);}}, 1000)
-
+document.onload = function () { console.log("asdfasdf")}
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
 </script>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1ODIxOTMwNCwxODk4NzE1OTAsLTIwND
-YzNjA0ODUsOTgxNDYxMzQ4LC0xOTQ2NzE3NTQ1LC0xMjk0MTY1
-Nzk1XX0=
+eyJoaXN0b3J5IjpbLTE2MTkxMDcxOTgsMTg5ODcxNTkwLC0yMD
+Q2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NSwtMTI5NDE2
+NTc5NV19
 -->
