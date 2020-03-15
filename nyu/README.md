@@ -28,11 +28,12 @@ img{
     max-height:1000px;
     height:auto;
     width:auto;
+    text-align:  center;
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMwNTM1MzQsNDk4OTkxMzE1LC04NTg0ND
-k4MTYsLTcyMjkwNjI5OSwtNTMwNDgxODAyLDE4OTg3MTU5MCwt
-MjA0NjM2MDQ4NSw5ODE0NjEzNDgsLTE5NDY3MTc1NDUsLTEyOT
-QxNjU3OTVdfQ==
+eyJoaXN0b3J5IjpbMTM5NDIxNzEyMSw0OTg5OTEzMTUsLTg1OD
+Q0OTgxNiwtNzIyOTA2Mjk5LC01MzA0ODE4MDIsMTg5ODcxNTkw
+LC0yMDQ2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NSwtMT
+I5NDE2NTc5NV19
 -->
