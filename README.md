@@ -2,10 +2,8 @@
 # FEIFAN HE <script>document.write('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')</script><sub>feifan.he@mail.utoronto.ca</sub>
 
 
-```
 | Getting Started | Features | Download |
 | =============== | ======== | ======== |
-```
 ### WORK EXPERIENCE
 
 #### TD _— Personal Banking Associate_ Toronto, Canada 
@@ -52,7 +50,7 @@ May 2016 - Jun 2016
 - Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)Testing
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1MTUwOTQ5MSwzMzAzNjQ5NDIsNzc1OT
+eyJoaXN0b3J5IjpbMTM4OTU4ODQ2MSwzMzAzNjQ5NDIsNzc1OT
 Q1ODU4LC04MDMzOTkyOTcsNDk3NDU2MTU2LDIwMzMyMDIwODUs
 OTEzMDcxMjEzLDE2MDY0MjU3MDYsODA5NjE2MTU0LDMxNDcxOT
 QwMyw5OTkwOTU5NTksLTIwOTA4NTU2NTksNjU0NzA5MTIxLDY1
