@@ -29,7 +29,7 @@ Spending 7 years by myself in Toronto has taught me a lot of things, one of whic
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
 </script>
 <style>
-*{position:relative}
+
 img{
     max-height:1000px;
 	left:50%;
@@ -39,9 +39,10 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjM3ODAxMDgsMzEzODU4NjQ0LC04ND
-U2MTEwNDIsLTIyNzc2MTk2MSwtNTUyODE5ODM3LDEzOTQyMTcx
-MjEsNDk4OTkxMzE1LC04NTg0NDk4MTYsLTcyMjkwNjI5OSwtNT
-MwNDgxODAyLDE4OTg3MTU5MCwtMjA0NjM2MDQ4NSw5ODE0NjEz
-NDgsLTE5NDY3MTc1NDUsLTEyOTQxNjU3OTVdfQ==
+eyJoaXN0b3J5IjpbMjc2MTY0MjI3LC0xNDIzNzgwMTA4LDMxMz
+g1ODY0NCwtODQ1NjExMDQyLC0yMjc3NjE5NjEsLTU1MjgxOTgz
+NywxMzk0MjE3MTIxLDQ5ODk5MTMxNSwtODU4NDQ5ODE2LC03Mj
+I5MDYyOTksLTUzMDQ4MTgwMiwxODk4NzE1OTAsLTIwNDYzNjA0
+ODUsOTgxNDYxMzQ4LC0xOTQ2NzE3NTQ1LC0xMjk0MTY1Nzk1XX
+0=
 -->
