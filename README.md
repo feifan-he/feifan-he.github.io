@@ -5,14 +5,10 @@
 
 #### TD _— Personal Banking Associate_ Toronto, Canada 
 Feb 2019 – Sep 2019
-
-<![if !supportLists]>· <![endif]>Coordinated with front-line branch staff to identify high-potential clients based on specific profile characteristics and followed up with these targets individually
-
-<![if !supportLists]>· <![endif]>Worked closely with clients to determine their short-term and long-term financial objectives through financial planning interviews and analyzing their account information; Promoted products tailored to meet their individual financial goals
-
-<![if !supportLists]>· <![endif]>Provided clients with financial services and introduced them to specialists across departments when necessary
-
-<![if !supportLists]>· <![endif]>Reduced day-to-day branch operational costs to scale more efficiently by educating clients on digital banking
+- Coordinated with front-line branch staff to identify high-potential clients based on specific profile characteristics and followed up with these targets individually
+- Worked closely with clients to determine their short-term and long-term financial objectives through financial planning interviews and analyzing their account information; Promoted products tailored to meet their individual financial goals
+- Provided clients with financial services and introduced them to specialists across departments when necessary
+- Reduced day-to-day branch operational costs to scale more efficiently by educating clients on digital banking
 
 ## CIBC _— Financial Service Representative_  Toronto, Canada
 
@@ -72,6 +68,6 @@ May 2016 - Jun 2016
 
 ## <![if !supportLists]>· <![endif]>Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMyOTU1NjM3LC0xOTA0NTM3MjA2LC0xNj
-ExODIxNjUxLDE1NjY2NzgzOTYsLTEyNjQ0NTI2MzJdfQ==
+eyJoaXN0b3J5IjpbLTcwNjI3OTEsLTE5MDQ1MzcyMDYsLTE2MT
+E4MjE2NTEsMTU2NjY3ODM5NiwtMTI2NDQ1MjYzMl19
 -->
