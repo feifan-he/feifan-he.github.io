@@ -1,5 +1,5 @@
-# FEIFAN HE 
-## feifan.he@mail.utoronto.ca
+### FEIFAN HE 
+### feifan.he@mail.utoronto.ca
 
 ----------
 
@@ -75,5 +75,6 @@ May 2016 - Jun 2016
 
 ## <![if !supportLists]>· <![endif]>Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NjY3ODM5NiwtMTI2NDQ1MjYzMl19
+eyJoaXN0b3J5IjpbLTE2MTE4MjE2NTEsMTU2NjY3ODM5NiwtMT
+I2NDQ1MjYzMl19
 -->
