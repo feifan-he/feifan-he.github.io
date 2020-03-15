@@ -20,14 +20,15 @@ Everyone is unique in their own ways, the environment you grow up in can have an
 ### Spending 7 years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
 
 <script>
+setTimeout(
+function(){
 document.onload = function () {
 document.querySelector(".container-lg").removeChild(
 document.querySelector(".container-lg").children[0]
-)
-}
+);}}, 1000)
 </script>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTkzNjc0NDMsMTg5ODcxNTkwLC0yMD
-Q2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NSwtMTI5NDE2
-NTc5NV19
+eyJoaXN0b3J5IjpbOTkxODIwMzEyLDE4OTg3MTU5MCwtMjA0Nj
+M2MDQ4NSw5ODE0NjEzNDgsLTE5NDY3MTc1NDUsLTEyOTQxNjU3
+OTVdfQ==
 -->
