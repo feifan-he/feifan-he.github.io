@@ -22,7 +22,7 @@ May 2016 - Jun 2016
 - Evaluated and collected applicants’ credit information and correctly submitted over 50 mortgage applications
 - Verified application documents and coordinated with senior financial advisors to finalize credit loan approvals
 - Validated applications to ensure they were accurately filled out and were complete with the proper documents
-
+---
 ### EDUCATION
 #### University of Toronto _— Bachelor of Commerce_
 2013 – 2017
@@ -40,13 +40,13 @@ May 2016 - Jun 2016
 **Mergers and Acquisitions (The Acquisition of Tobira Therapeutics by Allergan)**
 - Analyzed financial statements to understand the company’s financial status and structures before the acquisition
 - Leveraged Excel modeling and statistical data analysis to quantify and recognize the post-acquisition financial impact on key company metrics including profitability, debt levels, risk, and liquidity
-
+---
 #### ADDITIONAL INFORMATION
 - Professional Exams: Passed CFA Level III Exam, FRM Level I Exam, and CSC (Canadian Security Course)
 - Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI5MjE5NzEsNjU0NzA5MTIxLDY1NDcwOT
-EyMSw5NzY1MDk4MzMsLTE5MDQ1MzcyMDYsLTE2MTE4MjE2NTEs
-MTU2NjY3ODM5NiwtMTI2NDQ1MjYzMl19
+eyJoaXN0b3J5IjpbLTIwOTA4NTU2NTksNjU0NzA5MTIxLDY1ND
+cwOTEyMSw5NzY1MDk4MzMsLTE5MDQ1MzcyMDYsLTE2MTE4MjE2
+NTEsMTU2NjY3ODM5NiwtMTI2NDQ1MjYzMl19
 -->
