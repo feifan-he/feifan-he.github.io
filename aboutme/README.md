@@ -45,7 +45,7 @@ I was lucky to be raised by my grandma in my early childhood, she always taught 
 <br>
 Spending seven years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
 
-8<script>
+<script>
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
 </script>
 <style>
@@ -67,5 +67,5 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE3MDAzOTc1XX0=
+eyJoaXN0b3J5IjpbMjYyMjg0MzcxLDgxNzAwMzk3NV19
 -->
