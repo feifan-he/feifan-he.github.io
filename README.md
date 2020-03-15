@@ -25,7 +25,7 @@ May 2016 - Jun 2016
 
 ### EDUCATION
 #### University of Toronto _— Bachelor of Commerce_
-s2013 – 2017
+2013 – 2017
 - Graduated with a Specialist in Finance as well as a Major in Economics
 - Cumulative GPA of 3.32 (graduated with distinction)
 - Investment Banking Pitch Book Competition Winner 2017 (MDA Training)
@@ -55,7 +55,7 @@ s2013 – 2017
 
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDcwNjg2ODgsNjU0NzA5MTIxLDk3Nj
-UwOTgzMywtMTkwNDUzNzIwNiwtMTYxMTgyMTY1MSwxNTY2Njc4
-Mzk2LC0xMjY0NDUyNjMyXX0=
+eyJoaXN0b3J5IjpbNjU0NzA5MTIxLDY1NDcwOTEyMSw5NzY1MD
+k4MzMsLTE5MDQ1MzcyMDYsLTE2MTE4MjE2NTEsMTU2NjY3ODM5
+NiwtMTI2NDQ1MjYzMl19
 -->
