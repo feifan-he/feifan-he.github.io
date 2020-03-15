@@ -1,24 +1,24 @@
 # Introduction
-### Everyone is unique in their own ways, the environment you grow up in can have an influence, but it does not define you. I’m truly grateful to have my own identity, as it took a lot of life experience to become the person that I am today. A picture is worth a thousand words, the pictures below can show you a little bit about me, but not the whole me, thanks for reading.
+Everyone is unique in their own ways, the environment you grow up in can have an influence, but it does not define you. I’m truly grateful to have my own identity, as it took a lot of life experience to become the person that I am today. A picture is worth a thousand words, the pictures below can show you a little bit about me, but not the whole me, thanks for reading.
 <br>
 <br>
 ![](imgs/1.JPG)
-### Once a year, I would take a trip to explore a new mountain, seeing what nature looks like on the top of the mountain makes hours of hiking worthwhile.
+Once a year, I would take a trip to explore a new mountain, seeing what nature looks like on the top of the mountain makes hours of hiking worthwhile.
 ---
 ![](imgs/2.png)
-### I enjoy taking on new challenges, teaching myself programming to perform analytics on the current world trends became one of my favorite pastime activities.
+I enjoy taking on new challenges, teaching myself programming to perform analytics on the current world trends became one of my favorite pastime activities.
 ---
 ![](imgs/3.jpg)
-### I’m grateful to my parents for always being there for me, watching me achieve one of the most important milestones of my life and many more to come.
+I’m grateful to my parents for always being there for me, watching me achieve one of the most important milestones of my life and many more to come.
 ---
 ![](imgs/4.JPG)
-### Since 16, I have a goal of traveling the world, and I’m making good progress to date.
+Since 16, I have a goal of traveling the world, and I’m making good progress to date.
 ---
 ![](imgs/5.JPG)
-### I was lucky to be raised by my grandma in my early childhood, she always taught me never to underestimate what I can do, never underestimate what women can do.
+I was lucky to be raised by my grandma in my early childhood, she always taught me never to underestimate what I can do, never underestimate what women can do.
 ---
 ![](imgs/6.JPG)
-### Spending 7 years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
+Spending 7 years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
 
 <script>
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
@@ -36,9 +36,9 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEzODU4NjQ0LC04NDU2MTEwNDIsLTIyNz
-c2MTk2MSwtNTUyODE5ODM3LDEzOTQyMTcxMjEsNDk4OTkxMzE1
-LC04NTg0NDk4MTYsLTcyMjkwNjI5OSwtNTMwNDgxODAyLDE4OT
-g3MTU5MCwtMjA0NjM2MDQ4NSw5ODE0NjEzNDgsLTE5NDY3MTc1
-NDUsLTEyOTQxNjU3OTVdfQ==
+eyJoaXN0b3J5IjpbMjA0NzkxNjYxMywzMTM4NTg2NDQsLTg0NT
+YxMTA0MiwtMjI3NzYxOTYxLC01NTI4MTk4MzcsMTM5NDIxNzEy
+MSw0OTg5OTEzMTUsLTg1ODQ0OTgxNiwtNzIyOTA2Mjk5LC01Mz
+A0ODE4MDIsMTg5ODcxNTkwLC0yMDQ2MzYwNDg1LDk4MTQ2MTM0
+OCwtMTk0NjcxNzU0NSwtMTI5NDE2NTc5NV19
 -->
