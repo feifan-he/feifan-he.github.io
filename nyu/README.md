@@ -1,5 +1,5 @@
 # Introduction
-
+**Everyone is unique in their own ways, the environment you grow up in can have an influence, but it does not define you. I’m truly grateful to have my own identity, as it took a lot of life experience to become the person that I am today. A picture is worth a thousand words, the pictures below can show you a little bit about myself, but not the whole me, thanks for reading.**
 
 ![](imgs/1.JPG)
 ### Once a year, I would take a trip to explore a new mountain, seeing what nature looks like on the top of the mountain makes hours of hiking worthwhile.
@@ -22,6 +22,7 @@
 <script>
 </script>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5ODcxNTkwLC0yMDQ2MzYwNDg1LDk4MT
-Q2MTM0OCwtMTk0NjcxNzU0NSwtMTI5NDE2NTc5NV19
+eyJoaXN0b3J5IjpbLTY4NDE3OTM5MCwxODk4NzE1OTAsLTIwND
+YzNjA0ODUsOTgxNDYxMzQ4LC0xOTQ2NzE3NTQ1LC0xMjk0MTY1
+Nzk1XX0=
 -->
