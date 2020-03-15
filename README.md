@@ -10,7 +10,7 @@
 
 ## I was lucky to be raised by my grandma in my early childhood, she alway taught me never to underestimate what I can do, never underestimate what women can do.
 
-
+## Spending 7 years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjgzNTQxNCw3MzczMjA5MDJdfQ==
+eyJoaXN0b3J5IjpbLTEyOTQxNjU3OTUsNzM3MzIwOTAyXX0=
 -->
