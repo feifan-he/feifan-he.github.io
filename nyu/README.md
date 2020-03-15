@@ -50,12 +50,20 @@ img{
 	transform: translate(-50%, 0);
 
 }
+@media all {
+	.page-break { display: none; }
+}
+
+@media print {
+	.page-break { display: block; page-break-before: always; }
+}
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE5Nzk3NzEzLDMzNTcxMzQxNywtMTUxNj
-Y5NDM1MSwxMzM1ODAzMjE3LC0xNDIzNzgwMTA4LDMxMzg1ODY0
-NCwtODQ1NjExMDQyLC0yMjc3NjE5NjEsLTU1MjgxOTgzNywxMz
-k0MjE3MTIxLDQ5ODk5MTMxNSwtODU4NDQ5ODE2LC03MjI5MDYy
-OTksLTUzMDQ4MTgwMiwxODk4NzE1OTAsLTIwNDYzNjA0ODUsOT
-gxNDYxMzQ4LC0xOTQ2NzE3NTQ1LC0xMjk0MTY1Nzk1XX0=
+eyJoaXN0b3J5IjpbLTEwNTUyNTY4NzEsMzE5Nzk3NzEzLDMzNT
+cxMzQxNywtMTUxNjY5NDM1MSwxMzM1ODAzMjE3LC0xNDIzNzgw
+MTA4LDMxMzg1ODY0NCwtODQ1NjExMDQyLC0yMjc3NjE5NjEsLT
+U1MjgxOTgzNywxMzk0MjE3MTIxLDQ5ODk5MTMxNSwtODU4NDQ5
+ODE2LC03MjI5MDYyOTksLTUzMDQ4MTgwMiwxODk4NzE1OTAsLT
+IwNDYzNjA0ODUsOTgxNDYxMzQ4LC0xOTQ2NzE3NTQ1LC0xMjk0
+MTY1Nzk1XX0=
 -->
