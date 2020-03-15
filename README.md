@@ -5,7 +5,7 @@
 
 ### WORK EXPERIENCE
 
-#### TD _— Personal Banking Associate_ Toronto, Canada  <sub>Feb 2019 – Sep 2019</sub>
+#### TD _— Personal Banking Associate_ Toronto, Canada  <sub>(Feb 2019 – Sep 2019)</sub>
 - Coordinated with front-line branch staff to identify high-potential clients based on specific profile characteristics and followed up with these targets individually
 - Worked closely with clients to determine their short-term and long-term financial objectives through financial planning interviews and analyzing their account information; Promoted products tailored to meet their individual financial goals
 - Provided clients with financial services and introduced them to specialists across departments when necessary
@@ -48,7 +48,7 @@ May 2016 - Jun 2016
 - Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)Testing
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyMjgyMzg2MiwtMjIwMzA3OTQ5LC0xNT
+eyJoaXN0b3J5IjpbLTQwNzc0ODIyNywtMjIwMzA3OTQ5LC0xNT
 czMzYwMDc4LDMzMDM2NDk0Miw3NzU5NDU4NTgsLTgwMzM5OTI5
 Nyw0OTc0NTYxNTYsMjAzMzIwMjA4NSw5MTMwNzEyMTMsMTYwNj
 QyNTcwNiw4MDk2MTYxNTQsMzE0NzE5NDAzLDk5OTA5NTk1OSwt
