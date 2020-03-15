@@ -10,11 +10,10 @@ Feb 2019 – Sep 2019
 - Provided clients with financial services and introduced them to specialists across departments when necessary
 - Reduced day-to-day branch operational costs to scale more efficiently by educating clients on digital banking
 
-## CIBC _— Financial Service Representative_  Toronto, Canada
-
+#### CIBC _— Financial Service Representative_  Toronto, Canada
 Oct 2017 – Jan 2019
 
-<![if !supportLists]>· <![endif]>Engaged clients in conversations to provide financial service assistance and advice on daily banking, cash management, investments, and loans; Implemented sales strategy to achieve and exceed quarterly sales targets
+- Engaged clients in conversations to provide financial service assistance and advice on daily banking, cash management, investments, and loans; Implemented sales strategy to achieve and exceed quarterly sales targets
 
 <![if !supportLists]>· <![endif]>Identified issues resulting in customer escalations and developed effective solutions for each situation
 
@@ -68,6 +67,6 @@ May 2016 - Jun 2016
 
 ## <![if !supportLists]>· <![endif]>Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwNjI3OTEsLTE5MDQ1MzcyMDYsLTE2MT
-E4MjE2NTEsMTU2NjY3ODM5NiwtMTI2NDQ1MjYzMl19
+eyJoaXN0b3J5IjpbMjY0NjY2MDk5LC0xOTA0NTM3MjA2LC0xNj
+ExODIxNjUxLDE1NjY2NzgzOTYsLTEyNjQ0NTI2MzJdfQ==
 -->
