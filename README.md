@@ -1,32 +1,30 @@
 
+
 # FEIFAN HE <script>document.write('&nbsp;'.repeat(50))</script><sub>feifan.he@mail.utoronto.ca</sub>
 
 
 
 ### WORK EXPERIENCE
 
-#### TD _— Personal Banking Associate_ Toronto, Canada  <sub>(Feb 2019 – Sep 2019)</sub>
+#### TD _— Personal Banking Associate_ Toronto, Canada <sub>(Feb 2019 – Sep 2019)</sub>
 - Coordinated with front-line branch staff to identify high-potential clients based on specific profile characteristics and followed up with these targets individually
 - Worked closely with clients to determine their short-term and long-term financial objectives through financial planning interviews and analyzing their account information; Promoted products tailored to meet their individual financial goals
 - Provided clients with financial services and introduced them to specialists across departments when necessary
 - Reduced day-to-day branch operational costs to scale more efficiently by educating clients on digital banking
 
-#### CIBC _— Financial Service Representative_  Toronto, Canada
-Oct 2017 – Jan 2019
+#### CIBC _— Financial Service Representative_  Toronto, Canada <sub>(Oct 2017 – Jan 2019)</sub>
 - Engaged clients in conversations to provide financial service assistance and advice on daily banking, cash management, investments, and loans; Implemented sales strategy to achieve and exceed quarterly sales targets
 - Identified issues resulting in customer escalations and developed effective solutions for each situation
 - Coordinated with different departments to follow up and resolve second-level escalations in a timely manner to avoid negative customer experience
 
-#### China Construction Bank _— Account Manager Intern_ Hangzhou, China
-May 2016 - Jun 2016
+#### China Construction Bank _— Account Manager Intern_ Hangzhou, China <sub>(May 2016 - Jun 2016)</sub>
 - Evaluated and collected applicants’ credit information and correctly submitted over 50 mortgage applications
 - Verified application documents and coordinated with senior financial advisors to finalize credit loan approvals
 - Validated applications to ensure they were accurately filled out and were complete with the proper documents
 
 ---
 ### EDUCATION
-#### University of Toronto _— Bachelor of Commerce_
-2013 – 2017
+#### University of Toronto _— Bachelor of Commerce_ <sub>(2013 – 2017)</sub>
 - Graduated with a Specialist in Finance as well as a Major in Economics
 - Cumulative GPA of 3.32 (graduated with distinction)
 - Investment Banking Pitch Book Competition Winner 2017 (MDA Training)
@@ -48,11 +46,11 @@ May 2016 - Jun 2016
 - Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)Testing
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwNzc0ODIyNywtMjIwMzA3OTQ5LC0xNT
-czMzYwMDc4LDMzMDM2NDk0Miw3NzU5NDU4NTgsLTgwMzM5OTI5
-Nyw0OTc0NTYxNTYsMjAzMzIwMjA4NSw5MTMwNzEyMTMsMTYwNj
-QyNTcwNiw4MDk2MTYxNTQsMzE0NzE5NDAzLDk5OTA5NTk1OSwt
-MjA5MDg1NTY1OSw2NTQ3MDkxMjEsNjU0NzA5MTIxLDk3NjUwOT
-gzMywtMTkwNDUzNzIwNiwtMTYxMTgyMTY1MSwxNTY2Njc4Mzk2
+eyJoaXN0b3J5IjpbMTE1MTM5MjQxMSwtNDA3NzQ4MjI3LC0yMj
+AzMDc5NDksLTE1NzMzNjAwNzgsMzMwMzY0OTQyLDc3NTk0NTg1
+OCwtODAzMzk5Mjk3LDQ5NzQ1NjE1NiwyMDMzMjAyMDg1LDkxMz
+A3MTIxMywxNjA2NDI1NzA2LDgwOTYxNjE1NCwzMTQ3MTk0MDMs
+OTk5MDk1OTU5LC0yMDkwODU1NjU5LDY1NDcwOTEyMSw2NTQ3MD
+kxMjEsOTc2NTA5ODMzLC0xOTA0NTM3MjA2LC0xNjExODIxNjUx
 XX0=
 -->
