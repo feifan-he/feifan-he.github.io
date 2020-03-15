@@ -28,7 +28,7 @@ May 2016 - Jun 2016
 - Graduated with a Specialist in Finance as well as a Major in Economics
 - Cumulative GPA of 3.32 (graduated with distinction)
 - Investment Banking Pitch Book Competition Winner 2017 (MDA Training)
-**Significant Projects**
+*Significant Projects
 
 **Financial Management Case Study (Crown Cork & Seal Company, Inc. and Marriott Corporation)**
 
@@ -54,6 +54,6 @@ May 2016 - Jun 2016
 
 ## <![if !supportLists]>· <![endif]>Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTc0OTY3NSwtMTkwNDUzNzIwNiwtMT
-YxMTgyMTY1MSwxNTY2Njc4Mzk2LC0xMjY0NDUyNjMyXX0=
+eyJoaXN0b3J5IjpbLTM0MzkwMzA5LC0xOTA0NTM3MjA2LC0xNj
+ExODIxNjUxLDE1NjY2NzgzOTYsLTEyNjQ0NTI2MzJdfQ==
 -->
