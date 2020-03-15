@@ -21,12 +21,13 @@ Everyone is unique in their own ways, the environment you grow up in can have an
 
 <script>
 document.onload = function () {
-document.querySelector(".example");
-container-lg
+document.querySelector(".container-lg").removeChild(
+document.querySelector(".container-lg").children[0]
+)
 }
 </script>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjkyMTE4NzQsMTg5ODcxNTkwLC0yMD
+eyJoaXN0b3J5IjpbLTEzMTkzNjc0NDMsMTg5ODcxNTkwLC0yMD
 Q2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NSwtMTI5NDE2
 NTc5NV19
 -->
