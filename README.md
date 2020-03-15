@@ -12,35 +12,22 @@ Feb 2019 – Sep 2019
 
 #### CIBC _— Financial Service Representative_  Toronto, Canada
 Oct 2017 – Jan 2019
-
 - Engaged clients in conversations to provide financial service assistance and advice on daily banking, cash management, investments, and loans; Implemented sales strategy to achieve and exceed quarterly sales targets
+- Identified issues resulting in customer escalations and developed effective solutions for each situation
+- Coordinated with different departments to follow up and resolve second-level escalations in a timely manner to avoid negative customer experience
 
-<![if !supportLists]>· <![endif]>Identified issues resulting in customer escalations and developed effective solutions for each situation
-
-<![if !supportLists]>· <![endif]>Coordinated with different departments to follow up and resolve second-level escalations in a timely manner to avoid negative customer experience
-
-## China Construction Bank _— Account Manager Intern_ Hangzhou, China
-
+#### China Construction Bank _— Account Manager Intern_ Hangzhou, China
 May 2016 - Jun 2016
+- Evaluated and collected applicants’ credit information and correctly submitted over 50 mortgage applications
+- Verified application documents and coordinated with senior financial advisors to finalize credit loan approvals
+- Validated applications to ensure they were accurately filled out and were complete with the proper documents
 
-<![if !supportLists]>· <![endif]>Evaluated and collected applicants’ credit information and correctly submitted over 50 mortgage applications
-
-<![if !supportLists]>· <![endif]>Verified application documents and coordinated with senior financial advisors to finalize credit loan approvals
-
-<![if !supportLists]>· <![endif]>Validated applications to ensure they were accurately filled out and were complete with the proper documents
-
-# EDUCATION
-
-## University of Toronto _— Bachelor of Commerce_
-
+### EDUCATION
+#### University of Toronto _— Bachelor of Commerce_
 2013 – 2017
-
-<![if !supportLists]>· <![endif]>Graduated with a Specialist in Finance as well as a Major in Economics
-
-<![if !supportLists]>· <![endif]>Cumulative GPA of 3.32 (graduated with distinction)
-
-<![if !supportLists]>· <![endif]>Investment Banking Pitch Book Competition Winner 2017 (MDA Training)
-
+- Graduated with a Specialist in Finance as well as a Major in Economics
+- Cumulative GPA of 3.32 (graduated with distinction)
+- Investment Banking Pitch Book Competition Winner 2017 (MDA Training)
 **Significant Projects**
 
 **Financial Management Case Study (Crown Cork & Seal Company, Inc. and Marriott Corporation)**
@@ -67,6 +54,6 @@ May 2016 - Jun 2016
 
 ## <![if !supportLists]>· <![endif]>Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjY0NjY2MDk5LC0xOTA0NTM3MjA2LC0xNj
-ExODIxNjUxLDE1NjY2NzgzOTYsLTEyNjQ0NTI2MzJdfQ==
+eyJoaXN0b3J5IjpbLTEwMTc0OTY3NSwtMTkwNDUzNzIwNiwtMT
+YxMTgyMTY1MSwxNTY2Njc4Mzk2LC0xMjY0NDUyNjMyXX0=
 -->
