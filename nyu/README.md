@@ -22,8 +22,17 @@ Everyone is unique in their own ways, the environment you grow up in can have an
 <script>
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
 </script>
+<style>
+```
+img {
+    page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-inside: avoid; /* or 'auto' */
+}
+```
+</style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyMjkwNjI5OSwtNTMwNDgxODAyLDE4OT
-g3MTU5MCwtMjA0NjM2MDQ4NSw5ODE0NjEzNDgsLTE5NDY3MTc1
-NDUsLTEyOTQxNjU3OTVdfQ==
+eyJoaXN0b3J5IjpbLTg1ODQ0OTgxNiwtNzIyOTA2Mjk5LC01Mz
+A0ODE4MDIsMTg5ODcxNTkwLC0yMDQ2MzYwNDg1LDk4MTQ2MTM0
+OCwtMTk0NjcxNzU0NSwtMTI5NDE2NTc5NV19
 -->
