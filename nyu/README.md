@@ -29,15 +29,15 @@ img{
     height:auto;
     width:auto;  
 	left:50%;
-	position:relative;
+	position: relative;
 	transform: translate(-50%, 0);
 
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyMjQ4OTkxLC0yMjc3NjE5NjEsLTU1Mj
-gxOTgzNywxMzk0MjE3MTIxLDQ5ODk5MTMxNSwtODU4NDQ5ODE2
-LC03MjI5MDYyOTksLTUzMDQ4MTgwMiwxODk4NzE1OTAsLTIwND
-YzNjA0ODUsOTgxNDYxMzQ4LC0xOTQ2NzE3NTQ1LC0xMjk0MTY1
-Nzk1XX0=
+eyJoaXN0b3J5IjpbMTY1ODMxMzMzOSwtMjI3NzYxOTYxLC01NT
+I4MTk4MzcsMTM5NDIxNzEyMSw0OTg5OTEzMTUsLTg1ODQ0OTgx
+NiwtNzIyOTA2Mjk5LC01MzA0ODE4MDIsMTg5ODcxNTkwLC0yMD
+Q2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NSwtMTI5NDE2
+NTc5NV19
 -->
