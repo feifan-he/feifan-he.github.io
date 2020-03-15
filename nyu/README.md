@@ -27,13 +27,14 @@ document.querySelector(".container-lg").removeChild(document.querySelector(".con
 img{
     max-height:1000px;
     height:auto;
-    width:auto;
-    text-align:  center;
+    width:auto;  
+	margin-left:  auto;  
+	margin-right:  auto;
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5NDIxNzEyMSw0OTg5OTEzMTUsLTg1OD
-Q0OTgxNiwtNzIyOTA2Mjk5LC01MzA0ODE4MDIsMTg5ODcxNTkw
-LC0yMDQ2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NSwtMT
-I5NDE2NTc5NV19
+eyJoaXN0b3J5IjpbLTU1MjgxOTgzNywxMzk0MjE3MTIxLDQ5OD
+k5MTMxNSwtODU4NDQ5ODE2LC03MjI5MDYyOTksLTUzMDQ4MTgw
+MiwxODk4NzE1OTAsLTIwNDYzNjA0ODUsOTgxNDYxMzQ4LC0xOT
+Q2NzE3NTQ1LC0xMjk0MTY1Nzk1XX0=
 -->
