@@ -1,5 +1,5 @@
 
-# <span style='float:right'>FEIFAN HE</span><sub>feifan.he@mail.utoronto.ca</sub>
+## FEIFAN HE &nbsp;<sub>feifan.he@mail.utoronto.ca</sub>
 
 ### WORK EXPERIENCE
 
@@ -47,9 +47,10 @@ May 2016 - Jun 2016
 - Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)Testing
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwMzM5OTI5Nyw0OTc0NTYxNTYsMjAzMz
-IwMjA4NSw5MTMwNzEyMTMsMTYwNjQyNTcwNiw4MDk2MTYxNTQs
-MzE0NzE5NDAzLDk5OTA5NTk1OSwtMjA5MDg1NTY1OSw2NTQ3MD
-kxMjEsNjU0NzA5MTIxLDk3NjUwOTgzMywtMTkwNDUzNzIwNiwt
-MTYxMTgyMTY1MSwxNTY2Njc4Mzk2LC0xMjY0NDUyNjMyXX0=
+eyJoaXN0b3J5IjpbLTEwNDEyMzQ4MDMsLTgwMzM5OTI5Nyw0OT
+c0NTYxNTYsMjAzMzIwMjA4NSw5MTMwNzEyMTMsMTYwNjQyNTcw
+Niw4MDk2MTYxNTQsMzE0NzE5NDAzLDk5OTA5NTk1OSwtMjA5MD
+g1NTY1OSw2NTQ3MDkxMjEsNjU0NzA5MTIxLDk3NjUwOTgzMywt
+MTkwNDUzNzIwNiwtMTYxMTgyMTY1MSwxNTY2Njc4Mzk2LC0xMj
+Y0NDUyNjMyXX0=
 -->
