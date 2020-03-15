@@ -1,11 +1,9 @@
 # FEIFAN HE ~feifan.he@mail.utoronto.ca~
 
-----------
+---
+### WORK EXPERIENCE
 
-# WORK EXPERIENCE
-
-## TD _— Personal Banking Associate_ Toronto, Canada
-
+#### TD _— Personal Banking Associate_ Toronto, Canada 
 Feb 2019 – Sep 2019
 
 <![if !supportLists]>· <![endif]>Coordinated with front-line branch staff to identify high-potential clients based on specific profile characteristics and followed up with these targets individually
@@ -74,6 +72,6 @@ May 2016 - Jun 2016
 
 ## <![if !supportLists]>· <![endif]>Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDQ1MzcyMDYsLTE5MDQ1MzcyMDYsLT
-E2MTE4MjE2NTEsMTU2NjY3ODM5NiwtMTI2NDQ1MjYzMl19
+eyJoaXN0b3J5IjpbNDMyOTU1NjM3LC0xOTA0NTM3MjA2LC0xNj
+ExODIxNjUxLDE1NjY2NzgzOTYsLTEyNjQ0NTI2MzJdfQ==
 -->
