@@ -24,7 +24,7 @@ Spending 7 years by myself in Toronto has taught me a lot of things, one of whic
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
 </script>
 <style>
-
+*{position:relative}
 img{
     max-height:1000px;
     height:auto;
@@ -36,7 +36,7 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0NzkxNjYxMywzMTM4NTg2NDQsLTg0NT
+eyJoaXN0b3J5IjpbLTE3MDU3MzQ1MiwzMTM4NTg2NDQsLTg0NT
 YxMTA0MiwtMjI3NzYxOTYxLC01NTI4MTk4MzcsMTM5NDIxNzEy
 MSw0OTg5OTEzMTUsLTg1ODQ0OTgxNiwtNzIyOTA2Mjk5LC01Mz
 A0ODE4MDIsMTg5ODcxNTkwLC0yMDQ2MzYwNDg1LDk4MTQ2MTM0
