@@ -1,7 +1,7 @@
 # Introduction
 
 ## Once a year, I would take a trip to explore a new mountain, seeing what nature looks like on the top of the mountain makes hours of hiking worthwhile.
-![Once a year, I would take a trip to explore a new mountain, seeing what nature looks like on the top of the mountain makes hours of hiking worthwhile.](imgs/1.jpg)
+![Once a year, I would take a trip to explore a new mountain, seeing what nature looks like on the top of the mountain makes hours of hiking worthwhile.](imgs/1.JPG)
 
 ## I enjoy taking on new challenges, teaching myself programming to perform analytics on the current world trends became one of my favorite pastime activities.
 
@@ -13,5 +13,6 @@
 
 ## Spending 7 years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3MzMwMTYyMywtMTI5NDE2NTc5NV19
+eyJoaXN0b3J5IjpbLTE5NDY3MTc1NDUsLTEyOTQxNjU3OTVdfQ
+==
 -->
