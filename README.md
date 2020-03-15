@@ -1,3 +1,4 @@
+
 # FEIFAN HE ~feifan.he@mail.utoronto.ca~
 
 ---
@@ -32,28 +33,29 @@ May 2016 - Jun 2016
 #### Significant Projects
 **Financial Management Case Study (Crown Cork & Seal Company, Inc. and Marriott Corporation)**
 
-<![if !supportLists]>· <![endif]>Planned and prioritized tasks, coordinated resources, delegated tasks, and tracked progress for a team of 6
+- Planned and prioritized tasks, coordinated resources, delegated tasks, and tracked progress for a team of 6
 
-<![if !supportLists]>· <![endif]>Analyzed company’s financial statements to understand its corporate structure and business activities
+- Analyzed company’s financial statements to understand its corporate structure and business activities
 
-<![if !supportLists]>· <![endif]>Created 5-year financial projections utilizing multiple financial analysis techniques such as CAPM, DCF, and BSM
+- Created 5-year financial projections utilizing multiple financial analysis techniques such as CAPM, DCF, and BSM
 
-<![if !supportLists]>· <![endif]>Presented on the corporate strategy impacts of the company’s liquidity, profitability, business risk, and cost structure
+- Presented on the corporate strategy impacts of the company’s liquidity, profitability, business risk, and cost structure
 
 **Mergers and Acquisitions (The Acquisition of Tobira Therapeutics by Allergan)**
 
-<![if !supportLists]>· <![endif]>Analyzed financial statements to understand the company’s financial status and structures before the acquisition
+- Analyzed financial statements to understand the company’s financial status and structures before the acquisition
 
-<![if !supportLists]>· <![endif]>Leveraged Excel modeling and statistical data analysis to quantify and recognize the post-acquisition financial impact on key company metrics including profitability, debt levels, risk, and liquidity
+- Leveraged Excel modeling and statistical data analysis to quantify and recognize the post-acquisition financial impact on key company metrics including profitability, debt levels, risk, and liquidity
 
 ## ADDITIONAL INFORMATION
 
-## <![if !supportLists]>· <![endif]>Professional Exams: Passed CFA Level III Exam, FRM Level I Exam, and CSC (Canadian Security Course)
+- Professional Exams: Passed CFA Level III Exam, FRM Level I Exam, and CSC (Canadian Security Course)
 
-## <![if !supportLists]>· <![endif]>Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
+- Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 
-## <![if !supportLists]>· <![endif]>Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
+- Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc2NTA5ODMzLC0xOTA0NTM3MjA2LC0xNj
-ExODIxNjUxLDE1NjY2NzgzOTYsLTEyNjQ0NTI2MzJdfQ==
+eyJoaXN0b3J5IjpbNjU0NzA5MTIxLDk3NjUwOTgzMywtMTkwND
+UzNzIwNiwtMTYxMTgyMTY1MSwxNTY2Njc4Mzk2LC0xMjY0NDUy
+NjMyXX0=
 -->
