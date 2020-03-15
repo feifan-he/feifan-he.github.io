@@ -45,14 +45,14 @@
 ---
 ### ADDITIONAL INFORMATION
 - Professional Exams: Passed CFA Level III Exam, FRM Level I Exam, and CSC (Canadian Security Course)
-- Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
+- Strong Technology Interest: Recently used Python to analyze Coronavirus trends ([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgyMzQ3MjA1LC0xNjc2NjY0MTkzLC0yMT
-I5MTY5NTg5LDQ4NTkxNzcwNywxMTUxMzkyNDExLC00MDc3NDgy
-MjcsLTIyMDMwNzk0OSwtMTU3MzM2MDA3OCwzMzAzNjQ5NDIsNz
-c1OTQ1ODU4LC04MDMzOTkyOTcsNDk3NDU2MTU2LDIwMzMyMDIw
-ODUsOTEzMDcxMjEzLDE2MDY0MjU3MDYsODA5NjE2MTU0LDMxND
-cxOTQwMyw5OTkwOTU5NTksLTIwOTA4NTU2NTksNjU0NzA5MTIx
+eyJoaXN0b3J5IjpbOTM3NDMwMDc5LDQ4MjM0NzIwNSwtMTY3Nj
+Y2NDE5MywtMjEyOTE2OTU4OSw0ODU5MTc3MDcsMTE1MTM5MjQx
+MSwtNDA3NzQ4MjI3LC0yMjAzMDc5NDksLTE1NzMzNjAwNzgsMz
+MwMzY0OTQyLDc3NTk0NTg1OCwtODAzMzk5Mjk3LDQ5NzQ1NjE1
+NiwyMDMzMjAyMDg1LDkxMzA3MTIxMywxNjA2NDI1NzA2LDgwOT
+YxNjE1NCwzMTQ3MTk0MDMsOTk5MDk1OTU5LC0yMDkwODU1NjU5
 XX0=
 -->
