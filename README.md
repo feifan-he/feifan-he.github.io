@@ -30,13 +30,13 @@
 - Investment Banking Pitch Book Competition Winner 2017 (MDA Training)
 
 ### Significant Projects
-#### Financial Management Case Study (Crown Cork & Seal Company, Inc. and Marriott Corporation)
+#### Financial Management Case Study <sub>(Crown Cork & Seal Company, Inc. and Marriott Corporation)</sub>
 - Planned and prioritized tasks, coordinated resources, delegated tasks, and tracked progress for a team of 6
 - Analyzed company’s financial statements to understand its corporate structure and business activities
 - Created 5-year financial projections utilizing multiple financial analysis techniques such as CAPM, DCF, and BSM
 - Presented on the corporate strategy impacts of the company’s liquidity, profitability, business risk, and cost structure
 
-#### Mergers and Acquisitions (The Acquisition of Tobira Therapeutics by Allergan)
+#### Mergers and Acquisitions <sub>(The Acquisition of Tobira Therapeutics by Allergan)</sub>
 - Analyzed financial statements to understand the company’s financial status and structures before the acquisition
 - Leveraged Excel modeling and statistical data analysis to quantify and recognize the post-acquisition financial impact on key company metrics including profitability, debt levels, risk, and liquidity
 
@@ -46,11 +46,11 @@
 - Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)Testing
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTgwNjUyMzQsLTIxMjkxNjk1ODksND
-g1OTE3NzA3LDExNTEzOTI0MTEsLTQwNzc0ODIyNywtMjIwMzA3
-OTQ5LC0xNTczMzYwMDc4LDMzMDM2NDk0Miw3NzU5NDU4NTgsLT
-gwMzM5OTI5Nyw0OTc0NTYxNTYsMjAzMzIwMjA4NSw5MTMwNzEy
-MTMsMTYwNjQyNTcwNiw4MDk2MTYxNTQsMzE0NzE5NDAzLDk5OT
-A5NTk1OSwtMjA5MDg1NTY1OSw2NTQ3MDkxMjEsNjU0NzA5MTIx
-XX0=
+eyJoaXN0b3J5IjpbLTIzOTg2NjkzNCwtMjEyOTE2OTU4OSw0OD
+U5MTc3MDcsMTE1MTM5MjQxMSwtNDA3NzQ4MjI3LC0yMjAzMDc5
+NDksLTE1NzMzNjAwNzgsMzMwMzY0OTQyLDc3NTk0NTg1OCwtOD
+AzMzk5Mjk3LDQ5NzQ1NjE1NiwyMDMzMjAyMDg1LDkxMzA3MTIx
+MywxNjA2NDI1NzA2LDgwOTYxNjE1NCwzMTQ3MTk0MDMsOTk5MD
+k1OTU5LC0yMDkwODU1NjU5LDY1NDcwOTEyMSw2NTQ3MDkxMjFd
+fQ==
 -->
