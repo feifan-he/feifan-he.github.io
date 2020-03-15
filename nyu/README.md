@@ -3,26 +3,38 @@ Everyone is unique in their own ways, the environment you grow up in can have an
 <br>
 <br>
 ![](imgs/1.JPG)
+<br>
+<br>
 Once a year, I would take a trip to explore a new mountain, seeing what nature looks like on the top of the mountain makes hours of hiking worthwhile.
 
 ---
 ![](imgs/2.png)
+<br>
+<br>
 I enjoy taking on new challenges, teaching myself programming to perform analytics on the current world trends became one of my favorite pastime activities.
 
 ---
 ![](imgs/3.jpg)
+<br>
+<br>
 I’m grateful to my parents for always being there for me, watching me achieve one of the most important milestones of my life and many more to come.
 
 ---
 ![](imgs/4.JPG)
+<br>
+<br>
 Since 16, I have a goal of traveling the world, and I’m making good progress to date.
 
 ---
 ![](imgs/5.JPG)
+<br>
+<br>
 I was lucky to be raised by my grandma in my early childhood, she always taught me never to underestimate what I can do, never underestimate what women can do.
 
 ---
 ![](imgs/6.JPG)
+<br>
+<br>
 Spending 7 years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
 
 <script>
@@ -38,10 +50,10 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzNTgwMzIxNywtMTQyMzc4MDEwOCwzMT
-M4NTg2NDQsLTg0NTYxMTA0MiwtMjI3NzYxOTYxLC01NTI4MTk4
-MzcsMTM5NDIxNzEyMSw0OTg5OTEzMTUsLTg1ODQ0OTgxNiwtNz
-IyOTA2Mjk5LC01MzA0ODE4MDIsMTg5ODcxNTkwLC0yMDQ2MzYw
-NDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NSwtMTI5NDE2NTc5NV
-19
+eyJoaXN0b3J5IjpbLTE1MTY2OTQzNTEsMTMzNTgwMzIxNywtMT
+QyMzc4MDEwOCwzMTM4NTg2NDQsLTg0NTYxMTA0MiwtMjI3NzYx
+OTYxLC01NTI4MTk4MzcsMTM5NDIxNzEyMSw0OTg5OTEzMTUsLT
+g1ODQ0OTgxNiwtNzIyOTA2Mjk5LC01MzA0ODE4MDIsMTg5ODcx
+NTkwLC0yMDQ2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NS
+wtMTI5NDE2NTc5NV19
 -->
