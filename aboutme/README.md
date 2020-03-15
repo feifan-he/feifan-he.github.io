@@ -47,7 +47,7 @@ Spending seven years by myself in Toronto has taught me a lot of things, one of 
 
 <script>
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
-document.querySelector(".container-lg").children[0].innerText = ""
+document.title="https://feifanhe.com/aboutme"
 </script>
 <style>
 
@@ -68,6 +68,6 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjIxNTE1NzQsMjYyMjg0MzcxLDgxNz
-AwMzk3NV19
+eyJoaXN0b3J5IjpbODQ4NjQ4NDczLC0yMTIyMTUxNTc0LDI2Mj
+I4NDM3MSw4MTcwMDM5NzVdfQ==
 -->
