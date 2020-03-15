@@ -28,13 +28,14 @@ img{
     max-height:1000px;
     height:auto;
     width:auto;  
-	margin-left:  auto;  
-	margin-right:  auto;
+	left:50%;
+	transform: translate(-50%, 0);
+
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1MjgxOTgzNywxMzk0MjE3MTIxLDQ5OD
-k5MTMxNSwtODU4NDQ5ODE2LC03MjI5MDYyOTksLTUzMDQ4MTgw
-MiwxODk4NzE1OTAsLTIwNDYzNjA0ODUsOTgxNDYxMzQ4LC0xOT
-Q2NzE3NTQ1LC0xMjk0MTY1Nzk1XX0=
+eyJoaXN0b3J5IjpbLTIyNzc2MTk2MSwtNTUyODE5ODM3LDEzOT
+QyMTcxMjEsNDk4OTkxMzE1LC04NTg0NDk4MTYsLTcyMjkwNjI5
+OSwtNTMwNDgxODAyLDE4OTg3MTU5MCwtMjA0NjM2MDQ4NSw5OD
+E0NjEzNDgsLTE5NDY3MTc1NDUsLTEyOTQxNjU3OTVdfQ==
 -->
