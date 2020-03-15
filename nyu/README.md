@@ -27,8 +27,6 @@ document.querySelector(".container-lg").removeChild(document.querySelector(".con
 *{position:relative}
 img{
     max-height:1000px;
-    height:auto;
-    width:auto;  
 	left:50%;
 	position: relative;
 
@@ -36,9 +34,9 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3NzA1MzIxLDMxMzg1ODY0NCwtODQ1Nj
-ExMDQyLC0yMjc3NjE5NjEsLTU1MjgxOTgzNywxMzk0MjE3MTIx
-LDQ5ODk5MTMxNSwtODU4NDQ5ODE2LC03MjI5MDYyOTksLTUzMD
-Q4MTgwMiwxODk4NzE1OTAsLTIwNDYzNjA0ODUsOTgxNDYxMzQ4
-LC0xOTQ2NzE3NTQ1LC0xMjk0MTY1Nzk1XX0=
+eyJoaXN0b3J5IjpbLTc4NDU5NDk0NiwzMTM4NTg2NDQsLTg0NT
+YxMTA0MiwtMjI3NzYxOTYxLC01NTI4MTk4MzcsMTM5NDIxNzEy
+MSw0OTg5OTEzMTUsLTg1ODQ0OTgxNiwtNzIyOTA2Mjk5LC01Mz
+A0ODE4MDIsMTg5ODcxNTkwLC0yMDQ2MzYwNDg1LDk4MTQ2MTM0
+OCwtMTk0NjcxNzU0NSwtMTI5NDE2NTc5NV19
 -->
