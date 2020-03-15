@@ -18,7 +18,10 @@
 ---
 ![](imgs/6.JPG)
 ### Spending 7 years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
+
+<script>
+</script>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDYzNjA0ODUsOTgxNDYxMzQ4LC0xOT
-Q2NzE3NTQ1LC0xMjk0MTY1Nzk1XX0=
+eyJoaXN0b3J5IjpbMTg5ODcxNTkwLC0yMDQ2MzYwNDg1LDk4MT
+Q2MTM0OCwtMTk0NjcxNzU0NSwtMTI5NDE2NTc5NV19
 -->
