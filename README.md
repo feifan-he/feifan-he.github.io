@@ -1,7 +1,6 @@
 
 # FEIFAN HE ~feifan.he@mail.utoronto.ca~
 
----
 ### WORK EXPERIENCE
 
 #### TD _— Personal Banking Associate_ Toronto, Canada 
@@ -43,13 +42,13 @@ May 2016 - Jun 2016
 - Leveraged Excel modeling and statistical data analysis to quantify and recognize the post-acquisition financial impact on key company metrics including profitability, debt levels, risk, and liquidity
 
 ---
-#### ADDITIONAL INFORMATION
+### ADDITIONAL INFORMATION
 - Professional Exams: Passed CFA Level III Exam, FRM Level I Exam, and CSC (Canadian Security Course)
 - Strong Technology Interest: Recently used Python to analyze Coronavirus trends([github.com/FEIFAN-HE](https://github.com/FEIFAN-HE))
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDA4NzQ1MDMsLTIwOTA4NTU2NTksNj
-U0NzA5MTIxLDY1NDcwOTEyMSw5NzY1MDk4MzMsLTE5MDQ1Mzcy
-MDYsLTE2MTE4MjE2NTEsMTU2NjY3ODM5NiwtMTI2NDQ1MjYzMl
-19
+eyJoaXN0b3J5IjpbOTk5MDk1OTU5LC0yMDkwODU1NjU5LDY1ND
+cwOTEyMSw2NTQ3MDkxMjEsOTc2NTA5ODMzLC0xOTA0NTM3MjA2
+LC0xNjExODIxNjUxLDE1NjY2NzgzOTYsLTEyNjQ0NTI2MzJdfQ
+==
 -->
