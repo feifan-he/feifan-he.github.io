@@ -1,4 +1,4 @@
-# Introduction
+# About Me
 Everyone is unique in their own ways, the environment you grow up in can have an influence, but it does not define you. I’m truly grateful to have my own identity, as it took a lot of life experience to become the person that I am today. A picture is worth a thousand words, the pictures below can show you a little bit about me, but not the whole me, thanks for reading.
 <br>
 <br>
@@ -64,11 +64,11 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODkzODM5LC0xMjQ3Mjk1OTgyLDMxOT
-c5NzcxMywzMzU3MTM0MTcsLTE1MTY2OTQzNTEsMTMzNTgwMzIx
-NywtMTQyMzc4MDEwOCwzMTM4NTg2NDQsLTg0NTYxMTA0MiwtMj
-I3NzYxOTYxLC01NTI4MTk4MzcsMTM5NDIxNzEyMSw0OTg5OTEz
-MTUsLTg1ODQ0OTgxNiwtNzIyOTA2Mjk5LC01MzA0ODE4MDIsMT
-g5ODcxNTkwLC0yMDQ2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0Njcx
-NzU0NV19
+eyJoaXN0b3J5IjpbLTQzOTQ1NjgzMiwtMTI0NzI5NTk4MiwzMT
+k3OTc3MTMsMzM1NzEzNDE3LC0xNTE2Njk0MzUxLDEzMzU4MDMy
+MTcsLTE0MjM3ODAxMDgsMzEzODU4NjQ0LC04NDU2MTEwNDIsLT
+IyNzc2MTk2MSwtNTUyODE5ODM3LDEzOTQyMTcxMjEsNDk4OTkx
+MzE1LC04NTg0NDk4MTYsLTcyMjkwNjI5OSwtNTMwNDgxODAyLD
+E4OTg3MTU5MCwtMjA0NjM2MDQ4NSw5ODE0NjEzNDgsLTE5NDY3
+MTc1NDVdfQ==
 -->
