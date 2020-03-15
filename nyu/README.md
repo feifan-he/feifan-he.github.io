@@ -1,5 +1,7 @@
 # About Me
 Everyone is unique in their own ways, the environment you grow up in can have an influence, but it does not define you. I’m truly grateful to have my own identity, as it took a lot of life experience to become the person that I am today. A picture is worth a thousand words, the pictures below can show you a little bit about me, but not the whole me, thanks for reading.
+
+---
 <br>
 <br>
 ![](imgs/1.JPG)
@@ -64,7 +66,7 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzOTQ1NjgzMiwtMTI0NzI5NTk4MiwzMT
+eyJoaXN0b3J5IjpbLTQyNzY4ODQ1OSwtMTI0NzI5NTk4MiwzMT
 k3OTc3MTMsMzM1NzEzNDE3LC0xNTE2Njk0MzUxLDEzMzU4MDMy
 MTcsLTE0MjM3ODAxMDgsMzEzODU4NjQ0LC04NDU2MTEwNDIsLT
 IyNzc2MTk2MSwtNTUyODE5ODM3LDEzOTQyMTcxMjEsNDk4OTkx
