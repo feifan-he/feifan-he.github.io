@@ -25,15 +25,14 @@ document.querySelector(".container-lg").removeChild(document.querySelector(".con
 <style>
 
 img{
-    max-height:500px;
-    max-width:500px;
+    max-height:700px;
     height:auto;
     width:auto;
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk4OTkxMzE1LC04NTg0NDk4MTYsLTcyMj
-kwNjI5OSwtNTMwNDgxODAyLDE4OTg3MTU5MCwtMjA0NjM2MDQ4
-NSw5ODE0NjEzNDgsLTE5NDY3MTc1NDUsLTEyOTQxNjU3OTVdfQ
-==
+eyJoaXN0b3J5IjpbLTE0NTUzOTMwNTQsNDk4OTkxMzE1LC04NT
+g0NDk4MTYsLTcyMjkwNjI5OSwtNTMwNDgxODAyLDE4OTg3MTU5
+MCwtMjA0NjM2MDQ4NSw5ODE0NjEzNDgsLTE5NDY3MTc1NDUsLT
+EyOTQxNjU3OTVdfQ==
 -->
