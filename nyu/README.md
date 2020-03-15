@@ -20,9 +20,10 @@ Everyone is unique in their own ways, the environment you grow up in can have an
 ### Spending 7 years by myself in Toronto has taught me a lot of things, one of which is becoming independent.
 
 <script>
+
 </script>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzYyNDM1NjEsMTg5ODcxNTkwLC0yMD
+eyJoaXN0b3J5IjpbLTE1ODU0NTI0MzksMTg5ODcxNTkwLC0yMD
 Q2MzYwNDg1LDk4MTQ2MTM0OCwtMTk0NjcxNzU0NSwtMTI5NDE2
 NTc5NV19
 -->
