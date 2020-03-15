@@ -45,7 +45,6 @@ document.querySelector(".container-lg").removeChild(document.querySelector(".con
 img{
     max-height:500px;
     height:auto;
-    width:auto;  
 	left:50%;
 	position: relative;
 	transform: translate(-50%, 0);
@@ -53,10 +52,10 @@ img{
 }
 </style>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM1NzEzNDE3LC0xNTE2Njk0MzUxLDEzMz
-U4MDMyMTcsLTE0MjM3ODAxMDgsMzEzODU4NjQ0LC04NDU2MTEw
-NDIsLTIyNzc2MTk2MSwtNTUyODE5ODM3LDEzOTQyMTcxMjEsND
-k4OTkxMzE1LC04NTg0NDk4MTYsLTcyMjkwNjI5OSwtNTMwNDgx
-ODAyLDE4OTg3MTU5MCwtMjA0NjM2MDQ4NSw5ODE0NjEzNDgsLT
-E5NDY3MTc1NDUsLTEyOTQxNjU3OTVdfQ==
+eyJoaXN0b3J5IjpbMzE5Nzk3NzEzLDMzNTcxMzQxNywtMTUxNj
+Y5NDM1MSwxMzM1ODAzMjE3LC0xNDIzNzgwMTA4LDMxMzg1ODY0
+NCwtODQ1NjExMDQyLC0yMjc3NjE5NjEsLTU1MjgxOTgzNywxMz
+k0MjE3MTIxLDQ5ODk5MTMxNSwtODU4NDQ5ODE2LC03MjI5MDYy
+OTksLTUzMDQ4MTgwMiwxODk4NzE1OTAsLTIwNDYzNjA0ODUsOT
+gxNDYxMzQ4LC0xOTQ2NzE3NTQ1LC0xMjk0MTY1Nzk1XX0=
 -->
