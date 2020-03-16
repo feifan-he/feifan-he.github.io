@@ -49,14 +49,14 @@
 - Avid Hiker (Mount Rainer, Olympia and Banff National Parks); Travel Enthusiast (France, UK, Japan, Cuba, etc.)
 <script>
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
-document.title="Resume"
+document.title="Home"
 </script>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTQyMjI3OSw5Mzc0MzAwNzksNDgyMz
-Q3MjA1LC0xNjc2NjY0MTkzLC0yMTI5MTY5NTg5LDQ4NTkxNzcw
-NywxMTUxMzkyNDExLC00MDc3NDgyMjcsLTIyMDMwNzk0OSwtMT
-U3MzM2MDA3OCwzMzAzNjQ5NDIsNzc1OTQ1ODU4LC04MDMzOTky
-OTcsNDk3NDU2MTU2LDIwMzMyMDIwODUsOTEzMDcxMjEzLDE2MD
-Y0MjU3MDYsODA5NjE2MTU0LDMxNDcxOTQwMyw5OTkwOTU5NTld
-fQ==
+eyJoaXN0b3J5IjpbOTEyODE3MTIsLTEzNTQyMjI3OSw5Mzc0Mz
+AwNzksNDgyMzQ3MjA1LC0xNjc2NjY0MTkzLC0yMTI5MTY5NTg5
+LDQ4NTkxNzcwNywxMTUxMzkyNDExLC00MDc3NDgyMjcsLTIyMD
+MwNzk0OSwtMTU3MzM2MDA3OCwzMzAzNjQ5NDIsNzc1OTQ1ODU4
+LC04MDMzOTkyOTcsNDk3NDU2MTU2LDIwMzMyMDIwODUsOTEzMD
+cxMjEzLDE2MDY0MjU3MDYsODA5NjE2MTU0LDMxNDcxOTQwM119
+
 -->
