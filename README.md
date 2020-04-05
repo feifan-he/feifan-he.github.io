@@ -51,12 +51,3 @@
 document.querySelector(".container-lg").removeChild(document.querySelector(".container-lg").children[0])
 document.title="Home"
 </script>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbOTEyODE3MTIsLTEzNTQyMjI3OSw5Mzc0Mz
-AwNzksNDgyMzQ3MjA1LC0xNjc2NjY0MTkzLC0yMTI5MTY5NTg5
-LDQ4NTkxNzcwNywxMTUxMzkyNDExLC00MDc3NDgyMjcsLTIyMD
-MwNzk0OSwtMTU3MzM2MDA3OCwzMzAzNjQ5NDIsNzc1OTQ1ODU4
-LC04MDMzOTkyOTcsNDk3NDU2MTU2LDIwMzMyMDIwODUsOTEzMD
-cxMjEzLDE2MDY0MjU3MDYsODA5NjE2MTU0LDMxNDcxOTQwM119
-
--->
