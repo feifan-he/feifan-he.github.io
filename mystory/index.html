@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My Story</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
     <!-- Latest compiled and minified CSS -->
@@ -40,12 +42,12 @@
         <li data-target="#myCarousel" data-slide-to="10"></li>
         <li data-target="#myCarousel" data-slide-to="11"></li>
         <li data-target="#myCarousel" data-slide-to="12"></li>
-        <li data-target="#myCarousel" data-slide-to="13"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
+            <h1 class=" front-page">Click on the right side of the carousel to start reading >>></h1>
             <img src="./imgs/1.JPG" alt="">
         </div>
         <div class="item">
@@ -120,14 +122,24 @@
 
 <div class="text-center">
     <br>
-    <audio controls id="audio" autoplay>
-        <source src="./music/Bloome%20-%20Daydream.wav">
+    <audio controls id="audio" autoplay loop>
+        <source src="./music/Bloome%20-%20Daydream%20(online-audio-converter.com).mp3">
     </audio>
-    <script>
-            document.getElementById('audio').play();
-    </script>
 </div>
 
+<div class="container">
+    <br>
+    <div class="col-sm-2 text-center">
+        <img class="rounded-circle" src="./imgs/icons8-resume-100.png">
+        <br>
+        <div><a type="button" class="btn btn-info" href="/">Resume</a></div>
+    </div>
+    <div class="col-sm-2 text-center">
+        <img class="rounded-circle" src="./imgs/Github-03.png">
+        <br>
+        <div><a type="button" class="btn btn-info" href="https://github.com/FEIFAN-HE/CoronaVirusDataAnalysis">CoronaVirus Project</a></div>
+    </div>
+</div>
 
 </body>
 </html>

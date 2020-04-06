@@ -17,6 +17,7 @@
     background-color: #dbdbdb;
 }
 
+.carousel .front-page,
 .carousel .word1,
 .carousel .word2,
 .carousel .word3,
@@ -33,6 +34,11 @@
 }
 
 
+.carousel .front-page {
+    top: 600px;
+    left: 50px;
+    width: 600px;
+}
 .carousel .word1 {
     top: 350px;
     left : calc(100% - 500px)
@@ -85,3 +91,8 @@
     top: 350px;
     left : calc(100% - 500px)
 }
+
+/*.container img {*/
+    /*width: 100%;*/
+    /*height: auto;*/
+/*}*/
