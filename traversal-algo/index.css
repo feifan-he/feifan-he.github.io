@@ -1,0 +1,106 @@
+
+
+.container {
+    width: 900px;
+    margin: auto;
+}
+
+.node {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    line-height: 30px;
+    border: 2px solid grey;
+    background-color: lightblue;
+    text-align: center;
+    vertical-align: top;
+    color: rgba(62, 87, 87, 0.66);
+    position: absolute;
+}
+
+.container{
+    text-align: center;
+}
+
+.bst.tree {
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.bst.tree {
+    position: relative;
+}
+.edge{
+    position: absolute;
+    left:0;
+    z-index:-1
+}
+.line-color {
+    stroke: grey;
+    stroke-width: 2;
+}
+
+.visited.line-color {
+    stroke: orange;
+}
+
+
+.node.visiting {
+    background-color: yellowgreen;
+    color: white;
+}
+
+.node.visited {
+    background-color: rgb(75, 152, 152);
+    color: white;
+}
+
+.ordering {
+    display: inline-block;
+    font-size: larger;
+    padding-left: 7px;
+}
+
+.ordering:not(:last-child) {
+    padding-right: 7px;
+    border-right: 1px solid grey;
+}
+
+.ordering.visited {
+    color: darkorange;
+}
+
+.graph {
+    position: relative;
+    margin: 80px auto auto;
+}
+
+.graph .ordering-wrapper {
+    margin-top: -50px;
+    position: absolute;
+}
+
+.gridNode {
+    border-radius: 0;
+    width: 30px;
+    height: 30px;
+    font-size: small;
+}
+.grid {
+    margin: auto auto 50px;
+    position: relative;
+}
+
+.obstacle {
+    background-color: rgba(178, 189, 189);
+    color: white;
+}
+
+.graph .play-order {
+    margin-top: -50px;
+    position: absolute;
+}
+
+.grid .line {
+    stroke-width: 15;
+}

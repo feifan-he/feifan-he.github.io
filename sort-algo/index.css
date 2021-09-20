@@ -1,0 +1,38 @@
+
+.sort-algo {
+    background-color: rgba(144, 168, 168, 0.5);
+    position: relative;
+    /*margin-bottom: 50px;*/
+    margin: auto;
+}
+
+.item {
+    background-color: grey;
+    position: absolute;
+    bottom: 40px;
+    border-top: 10px solid #a95353;
+    animation-duration: 1s;
+}
+
+.item.highlight {
+    background-color: greenyellow !important;
+}
+.swap {
+    background-color: orangered !important;
+}
+
+.gist-file {
+    width: 700px;
+    margin: auto;
+}
+.container {
+    text-align: center;
+    width: 900px;
+    margin: auto;
+}
+
+hr {
+    background-color: rgba(128, 128, 128, 0.4); height: 1px; border: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
