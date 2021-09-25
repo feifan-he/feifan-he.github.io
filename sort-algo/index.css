@@ -1,24 +1,23 @@
 
 .sort-algo {
-    background-color: rgba(144, 168, 168, 0.5);
+    background-color: rgba(76,114,155, .1);
     position: relative;
-    /*margin-bottom: 50px;*/
     margin: auto;
 }
 
 .item {
-    background-color: grey;
+    background-color: rgb(141, 138, 169);
     position: absolute;
     bottom: 40px;
-    border-top: 10px solid #a95353;
+    border-top: 10px solid rgb(162, 180, 220);
     animation-duration: 1s;
 }
 
 .item.highlight {
-    background-color: greenyellow !important;
+    background-color: rgb(277,187,213) !important;
 }
 .swap {
-    background-color: orangered !important;
+    background-color: #e36d82 !important;
 }
 
 .gist-file {

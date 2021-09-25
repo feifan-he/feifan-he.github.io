@@ -11,7 +11,8 @@
     border-radius: 30px;
     line-height: 30px;
     border: 2px solid grey;
-    background-color: lightblue;
+    background-color: rgb(162, 180, 220);
+    color: white !important;
     text-align: center;
     vertical-align: top;
     color: rgba(62, 87, 87, 0.66);
@@ -44,14 +45,8 @@
     stroke: orange;
 }
 
-
-.node.visiting {
-    background-color: yellowgreen;
-    color: white;
-}
-
 .node.visited {
-    background-color: rgb(75, 152, 152);
+    background-color: rgb(141, 138, 169);
     color: white;
 }
 
@@ -59,6 +54,7 @@
     display: inline-block;
     font-size: larger;
     padding-left: 7px;
+    color: rgb(162, 180, 220);
 }
 
 .ordering:not(:last-child) {
@@ -67,7 +63,7 @@
 }
 
 .ordering.visited {
-    color: darkorange;
+    color: rgb(141, 138, 169);
 }
 
 .graph {
