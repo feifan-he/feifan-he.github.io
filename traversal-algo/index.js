@@ -313,7 +313,6 @@ $(document).ready(function () {
                 let cnt = 0
                 while (!connected(nodes) && cnt < 300) {
 
-                    console.log('loop')
                     cnt++
                     var rand = () => Math.floor(nodes.length * Math.random())
                     let a = rand()

@@ -1,4 +1,10 @@
-
+hr {
+    background-color: rgba(128, 128, 128, 0.4);
+    height: 1px;
+    border: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 .container {
     width: 900px;
