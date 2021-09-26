@@ -1,6 +1,5 @@
 
-# Algorithmic Trading
-
+<br><font size="10">_**Algorithmic Trading**_</font>
 
 ## System Requirements and Design
 - Security - avoid storing password directly on the virtual machine, or sending password through Telegram app
