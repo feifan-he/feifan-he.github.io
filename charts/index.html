@@ -96,6 +96,12 @@
         $('.select-ticker:odd').each(function(_, el) {
             tickers.push($(el).attr('ticker'))
         })
+
+        if (tickers.length == 0) {
+            $('[ticker]:odd').each(function(_, el) {
+                tickers.push($(el).attr('ticker'))
+            })
+        }
         copyToClipboard(tickers.join(','))
     }
 
@@ -108,7 +114,7 @@
         row.addClass('row ticker-charts')
         for (let img in ticker_to_urls[ticker]) {
             container = $(`<div>`).addClass('col-lg-6 ticker-chart')
-            container.append(`<img draggable="false" class="chart-wrapper" ticker="${ticker}" onclick="tog('${ticker}')" src="https://finviz.com/${ticker_to_urls[ticker][img]}">`)
+            container.append(`<img draggable="false" class="chart-wrapper" ticker="${ticker.toUpperCase()}" onclick="tog('${ticker}')" src="https://finviz.com/${ticker_to_urls[ticker][img]}">`)
             row.append(container)
         }
         charts.append('<hr>')
