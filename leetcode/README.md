@@ -1,6 +1,8 @@
+
 # LeetCode Solutions
 
 ```python
+
 # ============================================================================
 
 # 1. Two Sum
@@ -4462,6 +4464,5083 @@ class Solution(object):
                     res += 1
                     convert('1', None, i, j)
         return res
+
+
+# ============================================================================
+
+# 201. Bitwise AND of Numbers Range
+# Difficulty: Medium
+# link: https://leetcode.com/problems/bitwise-and-of-numbers-range/
+# Companies:
+# Categories: Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def rangeBitwiseAnd(self, m, n):
+        """
+        :type m: int
+        :type n: int
+        :rtype: int
+        """
+        res = ~0
+        while ((m & res) != (n & res)):
+            res = res << 1
+        return res & m
+
+
+# ============================================================================
+
+# 202. Happy Number
+# Difficulty: Easy
+# link: https://leetcode.com/problems/happy-number/
+# Companies: Google,Evernote,Apple,JPMorgan,Bloomberg,Microsoft
+# Categories: Hash Table,Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        visited = set()
+        while n != 1:
+            if n in visited: return False
+            visited.add(n)
+            x, n = n, 0
+            while x:
+                n += (x % 10) ** 2
+                x /= 10
+
+        return True
+
+
+# ============================================================================
+
+# 203. Remove Linked List Elements
+# Difficulty: Easy
+# link: https://leetcode.com/problems/remove-linked-list-elements/
+# Companies: Pure Storage,Apple,Bloomberg
+# Categories: Linked List
+
+# ----------------------------------------------------------------------------
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def removeElements(self, head, val):
+        """
+        :type head: ListNode
+        :type val: int
+        :rtype: ListNode
+        """
+        res = res_cur = ListNode('dummy')
+        cur = head
+        while cur:
+            if cur.val == val:
+                cur = cur.next
+            else:
+                res_cur.next = cur
+                cur = cur.next
+                res_cur = res_cur.next
+                res_cur.next = None
+        return res.next
+
+
+# ============================================================================
+
+# 204. Count Primes
+# Difficulty: Easy
+# link: https://leetcode.com/problems/count-primes/
+# Companies: Amazon,Capital One
+# Categories: Hash Table,Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def countPrimes(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n <= 2: return 0
+        primes = [True] * (n)
+        primes[0] = primes[1] = False
+        for i in xrange(2, n):
+            if primes[i]:
+                for j in xrange(i, n, i):
+                    if j != i: primes[j] = False
+        return primes.count(True)
+
+
+# ============================================================================
+
+# 205. Isomorphic Strings
+# Difficulty: Easy
+# link: https://leetcode.com/problems/isomorphic-strings/
+# Companies: Amazon,Google,LinkedIn
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        # ord(s_char) -> ord(t_char), (ord(t_char) << 10) -> ord(s_char)
+        s_t = {}
+        for i in xrange(len(s)):
+            s_t[ord(s[i])] = ord(t[i])
+            s_t[ord(t[i]) << 10] = ord(s[i])
+        return next((False for i in xrange(len(s))
+                    if not(s_t[ord(s[i])] == ord(t[i]) and s_t[ord(t[i]) << 10] == ord(s[i]))), True)
+
+
+# ============================================================================
+
+# 206. Reverse Linked List
+# Difficulty: Easy
+# link: https://leetcode.com/problems/reverse-linked-list/
+# Companies: Google,Adobe,Apple,Mathworks,Yahoo,Walmart Labs,eBay,Amazon,Facebook,Yandex,Oracle,Cisco,Microsoft
+# Categories: Linked List
+
+# ----------------------------------------------------------------------------
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        cur = head
+        prev = None
+        while cur:
+            next_node = cur.next
+            cur.next = prev
+            prev, cur = cur, next_node
+        return prev
+
+
+# ============================================================================
+
+# 207. Course Schedule
+# Difficulty: Medium
+# link: https://leetcode.com/problems/course-schedule/
+# Companies: Uber,Amazon,Facebook,Apple
+# Categories: Depth-first Search,Breadth-first Search,Graph,Topological Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def canFinish(self, numCourses, prerequisites):
+        """
+        :type numCourses: int
+        :type prerequisites: List[List[int]]
+        :rtype: bool
+        """
+        graph = [[] for _ in range(numCourses)]
+        flow = [0] * numCourses
+        bfs = set(range(numCourses))
+        for course, preq in prerequisites:
+            graph[preq].append(course)
+            flow[course] += 1
+            if course in bfs:
+                bfs.remove(course)
+        flow = map(lambda x: x if x else 1, flow)
+        bfs = list(bfs)
+        bfs2 = []
+        while bfs:
+            while bfs:
+                next_node = bfs.pop()
+                flow[next_node] -= 1
+                if flow[next_node] == 0:
+                    bfs2.extend(graph[next_node])
+            bfs, bfs2 = bfs2, []
+        return not any(flow)
+
+
+# ============================================================================
+
+# 208. Implement Trie (Prefix Tree)
+# Difficulty: Medium
+# link: https://leetcode.com/problems/implement-trie-prefix-tree/
+# Companies: Google,eBay,Amazon,Walmart Labs,Facebook,Microsoft
+# Categories: Design,Trie
+
+# ----------------------------------------------------------------------------
+
+class Trie(object):
+
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        self.trie_tree = {}
+
+    def insert(self, word):
+        """
+        Inserts a word into the trie.
+        :type word: str
+        :rtype: void
+        """
+        cur = self.trie_tree
+        for char in word: cur = cur.setdefault(char, {})
+        cur[True] = True
+
+    def search(self, word):
+        """
+        Returns if the word is in the trie.
+        :type word: str
+        :rtype: bool
+        """
+        cur = self.trie_tree
+        for char in word:
+            if char not in cur: return False
+            cur = cur[char]
+        return True in cur
+
+
+    def startsWith(self, prefix):
+        """
+        Returns if there is any word in the trie that starts with the given prefix.
+        :type prefix: str
+        :rtype: bool
+        """
+        cur = self.trie_tree
+        for char in prefix:
+            if char not in cur: return False
+            cur = cur[char]
+        return True
+
+
+# Your Trie object will be instantiated and called as such:
+# obj = Trie()
+# obj.insert(word)
+# param_2 = obj.search(word)
+# param_3 = obj.startsWith(prefix)
+
+
+# ============================================================================
+
+# 209. Minimum Size Subarray Sum
+# Difficulty: Medium
+# link: https://leetcode.com/problems/minimum-size-subarray-sum/
+# Companies: Amazon,Google,Bloomberg,Goldman Sachs
+# Categories: Array,Two Pointers,Binary Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def minSubArrayLen(self, s, nums):
+        """
+        :type s: int
+        :type nums: List[int]
+        :rtype: int
+        """
+        min_len = total = start = 0
+        for end, num in enumerate(nums):
+            total += num
+            while total >= s:
+                min_len = min(end - start + 1, min_len or float('inf'))
+                total -= nums[start]
+                start += 1
+        return min_len
+
+
+# ============================================================================
+
+# 210. Course Schedule II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/course-schedule-ii/
+# Companies: Uber,Google,Intuit,Amazon,Facebook,DoorDash,Microsoft
+# Categories: Depth-first Search,Breadth-first Search,Graph,Topological Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findOrder(self, numCourses, prerequisites):
+        """
+        :type numCourses: int
+        :type prerequisites: List[List[int]]
+        :rtype: List[int]
+        """
+        graph = [set() for _ in xrange(numCourses)]
+        flow_in = [0 for _ in xrange(numCourses)]
+        for course, prereq in prerequisites:
+            if course not in graph[prereq]:
+                graph[prereq].add(course)
+                flow_in[course] += 1
+        bfs = [node for node, in_count in enumerate(flow_in) if in_count == 0]
+        for node in bfs: flow_in[node] = 1
+        res = []
+        while bfs:
+            adjs = []
+            for node in bfs:
+                flow_in[node] -= 1
+                if not flow_in[node]:
+                    res.append(node)
+                    for to_node in graph[node]: adjs.append(to_node)
+            bfs = adjs
+        return res if len(res) == numCourses else []
+
+
+# ============================================================================
+
+# 211. Add and Search Word - Data structure design
+# Difficulty: Medium
+# link: https://leetcode.com/problems/add-and-search-word-data-structure-design/
+# Companies: Amazon,Facebook,Microsoft
+# Categories: Backtracking,Design,Trie
+
+# ----------------------------------------------------------------------------
+
+class WordDictionary(object):
+
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        self.trie_tree = {}
+
+    def addWord(self, word):
+        """
+        Adds a word into the data structure.
+        :type word: str
+        :rtype: void
+        """
+        cur = self.trie_tree
+        for char in word:
+            cur = cur.setdefault(char, {})
+        cur[True] = word
+
+    def search(self, word):
+        """
+        Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter.
+        :type word: str
+        :rtype: bool
+        """
+        stack = [self.trie_tree]
+        for char in word:
+            if not stack: return False
+            if char == '.':
+                stack = [cur[cur_char] for cur in stack for cur_char in cur if cur_char != True]
+            else:
+                stack = [cur[char] for cur in stack if char in cur]
+        return any(cur[True] for cur in stack if True in cur)
+
+
+# Your WordDictionary object will be instantiated and called as such:
+# obj = WordDictionary()
+# obj.addWord(word)
+# param_2 = obj.search(word)
+
+
+# ============================================================================
+
+# 212. Word Search II
+# Difficulty: Hard
+# link: https://leetcode.com/problems/word-search-ii/
+# Companies: Uber,Google,Apple,Amazon,Facebook,Microsoft
+# Categories: Backtracking,Trie
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findWords(self, board, words):
+        """
+        :type board: List[List[str]]
+        :type words: List[str]
+        :rtype: List[str]
+        """
+        m, n = len(board), len(board[0])
+        tree = {}
+        for word in words:
+            cur = tree
+            for char in word:
+                cur = cur.setdefault(char, {})
+            cur[True] = True
+        seen = set()
+        word = []
+        def dfs(i, j, cur):
+            word.append(board[i][j])
+            if board[i][j] in cur:
+                if True in cur[board[i][j]]: seen.add(''.join(word))
+                tmp, board[i][j] = board[i][j], None
+
+                for x, y in [(i + dx, j + dy)
+                             for dx, dy in zip([1,0,-1,0], [0,1,0,-1])
+                             if 0 <= i + dx < m and 0 <= j + dy < n]:
+                    if board[x][y]:
+                        dfs(x, y, cur[tmp])
+                board[i][j] = tmp
+            word.pop()
+        for i in range(m):
+            for j in range(n):
+                dfs(i, j, tree)
+        return list(seen)
+
+
+# ============================================================================
+
+# 213. House Robber II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/house-robber-ii/
+# Companies: Google
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        def _rob(nums):
+            for i in range(1, len(nums)):
+                nums[i] = max([nums[i - 1], nums[i]] if i - 2 < 0 else [nums[i - 1], nums[i - 2] + nums[i]])
+            return nums[-1] if nums else 0
+        return max(_rob(nums[:-1]), _rob(nums[1:])) if len(nums) > 1 else (nums or [0]) [0]
+
+
+# ============================================================================
+
+# 215. Kth Largest Element in an Array
+# Difficulty: Medium
+# link: https://leetcode.com/problems/kth-largest-element-in-an-array/
+# Companies: Amazon,Google,Facebook,Yahoo,LinkedIn
+# Categories: Divide and Conquer,Heap
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        import heapq
+        if len(nums) < k: return
+        for i, num in enumerate(nums): nums[i] = -num
+        heapq.heapify(nums)
+        cur = None
+        for _ in range(k): cur = -heapq.heappop(nums)
+        return cur
+
+
+# ============================================================================
+
+# 216. Combination Sum III
+# Difficulty: Medium
+# link: https://leetcode.com/problems/combination-sum-iii/
+# Companies: Microsoft
+# Categories: Array,Backtracking
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def combinationSum3(self, k, n):
+        def _comb(idx, k, n, cur=[], res=[]):
+            if n == 0 and k == 0:
+                res.append(cur[:])
+                return res
+            elif idx > 9 or k == 0 or n < 0: return res
+            else:
+                cur.append(idx)
+                _comb(idx + 1, k - 1, n - idx)
+                cur.pop()
+                _comb(idx + 1, k, n)
+                return res
+        return _comb(1, k, n)
+
+
+# ============================================================================
+
+# 217. Contains Duplicate
+# Difficulty: Easy
+# link: https://leetcode.com/problems/contains-duplicate/
+# Companies: Oracle,Amazon,Microsoft
+# Categories: Array,Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        return len(nums) != len(set(nums))
+
+
+# ============================================================================
+
+# 219. Contains Duplicate II
+# Difficulty: Easy
+# link: https://leetcode.com/problems/contains-duplicate-ii/
+# Companies: Airbnb,Google,Adobe,Palantir Technologies
+# Categories: Array,Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def containsNearbyDuplicate(self, nums, k):
+        last_seen = {}
+        for i, num in enumerate(nums):
+            if i - last_seen.get(num, float('-inf')) <= k:
+                return True
+            last_seen[num] = i
+        return False
+
+
+# ============================================================================
+
+# 221. Maximal Square
+# Difficulty: Medium
+# link: https://leetcode.com/problems/maximal-square/
+# Companies: Uber,Google,Huawei,Amazon,Oracle,VMware,Citadel
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def maximalSquare(self, matrix):
+        """
+        :type matrix: List[List[str]]
+        :rtype: int
+        """
+        from itertools import chain
+        m, n = len(matrix), len(matrix[0]) if matrix else 0
+        matrix = [map(int, row) for row in matrix]
+        # check if the first row or colum contains a 1
+        max_w = any(chain((matrix[0] if matrix else []), (row[0] for row in matrix)))
+        for i in range(1, m):
+            for j in range(1, n):
+                min_wh = min(matrix[i - 1][j], matrix[i][j - 1])
+                is_inc = matrix[i - min_wh][j - min_wh] and matrix[i][j]
+                matrix[i][j] = (min_wh if matrix[i][j] else 0) + is_inc
+                max_w = max(max_w, matrix[i][j])
+        return max_w ** 2
+
+
+# ============================================================================
+
+# 222. Count Complete Tree Nodes
+# Difficulty: Medium
+# link: https://leetcode.com/problems/count-complete-tree-nodes/
+# Companies: Amazon,Google
+# Categories: Binary Search,Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def countNodes(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        def _countNodes(node):
+            left_node, left_depth = node, 0
+            while left_node: left_node, left_depth = left_node.left, left_depth + 1
+            right_node, right_depth = node, 0
+            while right_node: right_node, right_depth = right_node.right, right_depth + 1
+            if left_depth == right_depth: return 2 ** left_depth - 1
+            else: return _countNodes(node.left) + 1 + _countNodes(node.right)
+        return _countNodes(root)
+
+
+# ============================================================================
+
+# 223. Rectangle Area
+# Difficulty: Medium
+# link: https://leetcode.com/problems/rectangle-area/
+# Companies: Facebook,Apple
+# Categories: Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def computeArea(self, A, B, C, D, E, F, G, H):
+        """
+        :type A: int
+        :type B: int
+        :type C: int
+        :type D: int
+        :type E: int
+        :type F: int
+        :type G: int
+        :type H: int
+        :rtype: int
+        """
+        width, height = (min(C, G) - max(A, E)), (min(D, H) - max(B, F))
+        overlap = width * height if width > 0 and height > 0 else 0
+        area1 = (C - A) * (D - B)
+        area2 = (G - E) * (H - F)
+        return area1 + area2 - overlap
+
+
+# ============================================================================
+
+# 224. Basic Calculator
+# Difficulty: Hard
+# link: https://leetcode.com/problems/basic-calculator/
+# Companies: Uber,Roblox,Robinhood,Snapchat,Amazon,Facebook,Microsoft
+# Categories: Math,Stack
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def calculate(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        s = list(('((%s)'%s).replace(' ', ''))
+        nested_brackets, num = [], []
+        for i, c in enumerate(s):
+            if c == '(':
+                nested_brackets.append([0, '+'])
+                num = []
+            elif c == '-' and s[i-1] in '+-(':
+                prev_sign = nested_brackets[-1][1]
+                nested_brackets[-1][1] = '+' if prev_sign == '-' else '+'
+            elif c in '+-)':
+                if num:
+                    num = int(''.join(num))
+                    sign = (1 if nested_brackets[-1][1] == '+' else -1)
+                    nested_brackets[-1][0] += sign * num
+                    num = []
+                    if c == ')':
+                        num = list(str(nested_brackets[-1][0]))
+                        nested_brackets.pop()
+                    else: nested_brackets[-1][1] = c
+            elif c.isdigit(): num.append(c)
+        return int(''.join(num))
+
+
+# ============================================================================
+
+# 225. Implement Stack using Queues
+# Difficulty: Easy
+# link: https://leetcode.com/problems/implement-stack-using-queues/
+# Companies: Amazon,Microsoft
+# Categories: Stack,Design
+
+# ----------------------------------------------------------------------------
+
+class MyStack(object):
+
+    def __init__(self):
+        import Queue
+        self.pri, self.sec = Queue.PriorityQueue(), Queue.PriorityQueue()
+
+    def push(self, x):
+        self.pri.put(x)
+
+    def pop(self):
+        while True:
+            tmp = self.pri.get() if not self.pri.empty() else None
+            if not self.pri.empty(): self.sec.put(tmp)
+            else:
+                self.pri, self.sec = self.sec, self.pri
+                return tmp
+
+
+    def top(self):
+        while True:
+            tmp = self.pri.get() if not self.pri.empty() else None
+            if tmp is not None: self.sec.put(tmp)
+            if self.pri.empty():
+                self.pri, self.sec = self.sec, self.pri
+                return tmp
+
+    def empty(self):
+        return self.pri.empty()
+
+
+# Your MyStack object will be instantiated and called as such:
+# obj = MyStack()https://leetcode.com/submissions/detail/150386250/
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.empty()
+
+
+# ============================================================================
+
+# 226. Invert Binary Tree
+# Difficulty: Easy
+# link: https://leetcode.com/problems/invert-binary-tree/
+# Companies: Amazon,Google
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def invertTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
+        if not root: return
+        bfs = [root]
+        while bfs:
+            for node in bfs:
+                node.left, node.right = node.right, node.left
+            bfs = [kid for node in bfs for kid in [node.left, node.right] if kid]
+        return root
+
+
+# ============================================================================
+
+# 227. Basic Calculator II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/basic-calculator-ii/
+# Companies: Uber,Houzz,Reddit,Apple,Amazon,Facebook,Microsoft
+# Categories: String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def calculate(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        import re, operator as op
+        expr = map(lambda x: int(x) if x.isdigit() else x, re.split('(\*|/|\+|-)', s.replace(' ', '')))
+        def eval_expr(ops):
+            op_lambda = {'+': op.add, '-': op.sub, '*': op.mul, '/': op.div}
+            new_expr = []
+            for el in expr:
+                if new_expr and type(new_expr[-1]) != int and new_expr[-1] in ops:
+                    new_expr[-2] = op_lambda[new_expr[-1]](new_expr[-2], el)
+                    new_expr.pop()
+                else: new_expr.append(el)
+            return new_expr
+        expr = eval_expr('*/')
+        expr = eval_expr('+-')
+        return expr[0]
+
+
+# ============================================================================
+
+# 228. Summary Ranges
+# Difficulty: Medium
+# link: https://leetcode.com/problems/summary-ranges/
+# Companies: Amazon,Facebook,Capital One
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def summaryRanges(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[str]
+        """
+        ranges = []
+        for i in range(len(nums)):
+            if not ranges or ranges[-1][1] != nums[i] - 1:
+                ranges.append([nums[i], nums[i]])
+            else:
+                ranges[-1][1] = nums[i]
+        return [str(i) + '->' + str(j) if i != j else str(i) for i, j in ranges]
+
+
+# ============================================================================
+
+# 229. Majority Element II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/majority-element-ii/
+# Companies: Uber,Amazon,Google,Microsoft,Bloomberg
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        if not nums or len(nums) <= 1:
+            return nums[:]
+
+        candidate1, candidate2, counter1, counter2 = float('inf'), float('inf'), 0, 0
+        for num in nums:
+            if num == candidate1:
+                counter1 += 1
+            elif num == candidate2:
+                counter2 += 1
+            elif counter1 == 0:
+                candidate1, counter1 = num, 1
+            elif counter2 == 0:
+                candidate2, counter2 = num, 1
+            else:
+                counter1 -= 1
+                counter2 -= 1
+        return [ i for i in [candidate1, candidate2] if nums.count(i) > (len(nums) / 3.)]
+
+
+# ============================================================================
+
+# 230. Kth Smallest Element in a BST
+# Difficulty: Medium
+# link: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+# Companies: Uber,Facebook,Amazon,TripleByte,Microsoft
+# Categories: Binary Search,Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def kthSmallest(self, root, k):
+        """
+        :type root: TreeNode
+        :type k: int
+        :rtype: int
+        """
+        stack = []
+        def move_left(node):
+            while node:
+                stack.append(node)
+                node = node.left
+        move_left(root)
+        for i in xrange(k):
+            next_elem = stack.pop()
+            if next_elem.right:
+                move_left(next_elem.right)
+        return next_elem.val
+
+
+# ============================================================================
+
+# 231. Power of Two
+# Difficulty: Easy
+# link: https://leetcode.com/problems/power-of-two/
+# Companies: Google,Apple
+# Categories: Math,Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isPowerOfTwo(self, n):
+        return (n > 0) and (n & (n - 1)) == 0
+
+
+# ============================================================================
+
+# 232. Implement Queue using Stacks
+# Difficulty: Easy
+# link: https://leetcode.com/problems/implement-queue-using-stacks/
+# Companies: Oracle,Mathworks,Microsoft,Bloomberg
+# Categories: Stack,Design
+
+# ----------------------------------------------------------------------------
+
+class MyQueue(object):
+    def __init__(self):
+        self.incoming = []
+        self.outgoing = []
+
+    def push(self, x): self.incoming.append(x)
+
+    def _move_to_outgoing(self):
+        if not self.outgoing:
+            while self.incoming:
+                self.outgoing.append(self.incoming.pop())
+        return self.outgoing
+
+    def pop(self): return self._move_to_outgoing().pop()
+
+    def peek(self): return self._move_to_outgoing()[-1]
+
+    def empty(self): return not (self.incoming or self.outgoing)
+
+
+# ============================================================================
+
+# 234. Palindrome Linked List
+# Difficulty: Easy
+# link: https://leetcode.com/problems/palindrome-linked-list/
+# Companies: Amazon,Adobe,Microsoft,IXL,Apple
+# Categories: Linked List,Two Pointers
+
+# ----------------------------------------------------------------------------
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def isPalindrome(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        if not head or not head.next: return True
+
+        num_elem = 0
+        cur = head
+        while cur:
+            num_elem += 1
+            cur = cur.next
+        cur = head
+        prev = None
+        mid = num_elem / 2
+        for _ in range(mid):
+            next_node = cur.next
+            cur.next = prev
+            prev, cur = cur, next_node
+        if num_elem & 1: cur = cur.next
+        left, right = prev, cur
+        while left or right:
+            if left.val != right.val: return False
+            left, right = left.next, right.next
+        return True
+
+
+# ============================================================================
+
+# 235. Lowest Common Ancestor of a Binary Search Tree
+# Difficulty: Easy
+# link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+# Companies: Amazon,Facebook,LinkedIn
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+        def _lowestCommonAncestor(node):
+            if not node or node == p or node == q: return node
+            left, right = _lowestCommonAncestor(node.left), _lowestCommonAncestor(node.right)
+            return node if (left and right) else (left or right)
+        return _lowestCommonAncestor(root)
+
+
+# ============================================================================
+
+# 236. Lowest Common Ancestor of a Binary Tree
+# Difficulty: Medium
+# link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+# Companies: Google,ByteDance,Apple,LinkedIn,Amazon,Visa,Facebook,Bloomberg,Oracle,Microsoft,Zillow
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        def _searchAncestor(node):
+            if node in [p, q, None]: return node
+            else:
+                l, r = _searchAncestor(node.left), _searchAncestor(node.right)
+                return node if (l and r) else (l or r)
+        return _searchAncestor(root)
+
+
+# ============================================================================
+
+# 237. Delete Node in a Linked List
+# Difficulty: Easy
+# link: https://leetcode.com/problems/delete-node-in-a-linked-list/
+# Companies: Microsoft
+# Categories: Linked List
+
+# ----------------------------------------------------------------------------
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+        node.val = node.next.val
+        node.next = node.next.next
+
+
+# ============================================================================
+
+# 238. Product of Array Except Self
+# Difficulty: Medium
+# link: https://leetcode.com/problems/product-of-array-except-self/
+# Companies: Lyft,Evernote,Apple,Tableau,Goldman Sachs,Amazon,Asana,Facebook,Oracle,Microsoft,VMware,Google
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        dp = [1]
+        for num in reversed(nums): dp.append(num * dp[-1])
+        dp = dp[::-1]
+        mul_so_far = 1
+        res = []
+        for i in range(len(nums)):
+            res.append(mul_so_far * dp[i + 1])
+            mul_so_far *= nums[i]
+        return res
+
+
+# ============================================================================
+
+# 240. Search a 2D Matrix II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/search-a-2d-matrix-ii/
+# Companies: Salesforce,Paypal,Amazon,Facebook,SAP,Microsoft,Citadel
+# Categories: Binary Search,Divide and Conquer
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def searchMatrix(self, matrix, target):
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
+        if not matrix or not any(matrix):
+            return False
+        col_i = len(matrix[0]) - 1
+        for row in matrix:
+            while row[col_i] > target and col_i > 0:
+                col_i -= 1
+            if row[col_i] == target:
+                return True
+        return False
+
+
+# ============================================================================
+
+# 241. Different Ways to Add Parentheses
+# Difficulty: Medium
+# link: https://leetcode.com/problems/different-ways-to-add-parentheses/
+# Companies: Google,Facebook
+# Categories: Divide and Conquer
+
+# ----------------------------------------------------------------------------
+
+import re
+class Solution(object):
+    def diffWaysToCompute(self, input_vals):
+        """
+        :type input: str
+        :rtype: List[int]
+        """
+        list_sep_vals = []
+        buf = []
+        list_sep_vals = re.split('([^\d])', input_vals)
+        res = []
+        ops = { '+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.div }
+        for i in range(0, len(list_sep_vals), 2):
+            list_sep_vals[i] = int(list_sep_vals[i])
+        dp = {}
+        def _diffWaysToCompute(start, end):
+            if start == end - 1:
+                return [list_sep_vals[start]]
+            key = '%d_%d'%(start, end)
+            if key in dp:
+                return dp[key]
+            dp[key] = []
+            for i in range(start + 1, end, 2):
+                left_combo = _diffWaysToCompute(start, i)
+                right_combo = _diffWaysToCompute(i + 1, end)
+                for l in left_combo:
+                    for r in right_combo:
+                        dp[key].append(ops[list_sep_vals[i]](l, r))
+            return dp[key]
+
+
+
+        return _diffWaysToCompute(0, len(list_sep_vals))
+
+
+# ============================================================================
+
+# 242. Valid Anagram
+# Difficulty: Easy
+# link: https://leetcode.com/problems/valid-anagram/
+# Companies: Amazon,Facebook,Microsoft,Bloomberg
+# Categories: Hash Table,Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isAnagram(self, s, t):
+        from collections import Counter
+        s_cnt, t_cnt = Counter(s), Counter(t)
+        return len(s) == len(t) and all(s_cnt[char] == t_cnt[char] for char in s)
+
+
+# ============================================================================
+
+# 243. Shortest Word Distance
+# Difficulty: Easy
+# link: https://leetcode.com/problems/shortest-word-distance/
+# Companies: Paypal,LinkedIn
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def shortestDistance(self, words, word1, word2):
+        last_seen = {}
+        min_dist = float('inf')
+        for j, word in enumerate(words):
+            if word1 in last_seen and word == word2:
+                min_dist = min(min_dist, j - last_seen[word1])
+            elif word2 in last_seen and word == word1:
+                min_dist = min(min_dist, j - last_seen[word2])
+            last_seen[word] = j
+        return min_dist
+
+
+# ============================================================================
+
+# 246. Strobogrammatic Number
+# Difficulty: Easy
+# link: https://leetcode.com/problems/strobogrammatic-number/
+# Companies: Google,Facebook
+# Categories: Hash Table,Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isStrobogrammatic(self, num):
+        return set('16890') >= set(num) and \
+                num == num[::-1].replace('6','.').replace('9','6').replace('.','9')
+
+
+# ============================================================================
+
+# 250. Count Univalue Subtrees
+# Difficulty: Medium
+# link: https://leetcode.com/problems/count-univalue-subtrees/
+# Companies: Box
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def countUnivalSubtrees(self, root):
+        self.cnt = 0
+        def _cnt(node, par):
+            if not node: return True
+
+            l, r = _cnt(node.left, node), _cnt(node.right, node)
+
+            self.cnt += l and r
+            return l and r and node.val == par.val
+        _cnt(root, root)
+        return self.cnt
+
+
+# ============================================================================
+
+# 252. Meeting Rooms
+# Difficulty: Easy
+# link: https://leetcode.com/problems/meeting-rooms/
+# Companies: Amazon,Google,Bloomberg
+# Categories: Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def canAttendMeetings(self, intervals):
+        intervals.sort()
+        return all(intervals[i][1] <= intervals[i + 1][0] for i in range(len(intervals) - 1))
+
+
+# ============================================================================
+
+# 253. Meeting Rooms II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/meeting-rooms-ii/
+# Companies: Uber,Google,Apple,Yelp,Booking.com,Quora,Amazon,Lyft,Facebook,Bloomberg,Oracle,Microsoft
+# Categories: Heap,Greedy,Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def minMeetingRooms(self, intervals):
+        """
+        :type intervals: List[List[int]]
+        :rtype: int
+        """
+        events = sorted(event
+                   for interval in intervals
+                   for event in [(interval[0], 1), (interval[1], -1)])
+        overlap = 0
+        cur = 0
+        for e in events:
+            cur += e[1]
+            overlap = max(overlap, cur)
+        return overlap
+
+
+# ============================================================================
+
+# 257. Binary Tree Paths
+# Difficulty: Easy
+# link: https://leetcode.com/problems/binary-tree-paths/
+# Companies: Amazon,Facebook
+# Categories: Tree,Depth-first Search
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def binaryTreePaths(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[str]
+        """
+        if not root: return []
+        bfs = [(root, str(root.val))]
+        paths = []
+        while bfs:
+            paths.extend([path for node, path in bfs if not node.left and not node.right])
+            bfs = [(kid, "%s->%s" %(path, str(kid.val))) for node, path in bfs for kid in [node.left, node.right] if kid]
+        return paths
+
+
+# ============================================================================
+
+# 258. Add Digits
+# Difficulty: Easy
+# link: https://leetcode.com/problems/add-digits/
+# Companies: Apple
+# Categories: Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def addDigits(self, num):
+        while num >= 10:
+            n_num = 0
+            while num:
+                num, dig = divmod(num, 10)
+                n_num += dig
+            num = n_num
+        return num
+
+
+# ============================================================================
+
+# 260. Single Number III
+# Difficulty: Medium
+# link: https://leetcode.com/problems/single-number-iii/
+# Companies: Amazon
+# Categories: Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        xord = 0
+        for num in nums:
+            xord ^= num
+
+        for i in xrange(32):
+            if (1 << i) & xord:
+                num1 = 0
+                num2 = 0
+                for num in nums:
+                    if (1 << i) & num:
+                        num1 ^= num
+                    else:
+                        num2 ^= num
+                return [num1, num2]
+
+
+# ============================================================================
+
+# 261. Graph Valid Tree
+# Difficulty: Medium
+# link: https://leetcode.com/problems/graph-valid-tree/
+# Companies: Amazon,LinkedIn
+# Categories: Depth-first Search,Breadth-first Search,Union Find,Graph
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def validTree(self, n, edges):
+        uf = list(range(n))
+
+        def find_par(node):
+
+            path = [node]
+            while uf[node] != node:
+                node = uf[node]
+                path.append(node)
+
+            for i in range(len(path) - 1):
+                uf[path[i]] = path[-1]
+
+            return path[-1]
+
+        for u, v in edges:
+            u, v = find_par(u), find_par(v)
+            if u == v: return False
+            uf[u] = v
+
+        return sum(node == i for i, node in enumerate(uf)) == 1
+
+
+# ============================================================================
+
+# 265. Paint House II
+# Difficulty: Hard
+# link: https://leetcode.com/problems/paint-house-ii/
+# Companies: LinkedIn
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def minCostII(self, costs):
+        from itertools import chain
+        if not costs or not costs[0]: return 0
+        m, n = len(costs), len(costs[0])
+        if n == 1: return costs[0][0]
+        totals = [0] * n
+        for row in costs:
+            totals = [row[i] + min(totals[j] for j in range(n) if i != j)
+                      for i in range(n)]
+        return min(totals)
+
+
+# ============================================================================
+
+# 266. Palindrome Permutation
+# Difficulty: Easy
+# link: https://leetcode.com/problems/palindrome-permutation/
+# Companies: Amazon,Google,Facebook
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def canPermutePalindrome(self, s):
+        from collections import Counter
+        cnt = Counter(s)
+        return sum((c % 2 for c in cnt.values()) or 0) < 2
+
+
+# ============================================================================
+
+# 268. Missing Number
+# Difficulty: Easy
+# link: https://leetcode.com/problems/missing-number/
+# Companies: Amazon,Google,Microsoft,Apple
+# Categories: Array,Math,Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n = len(nums) + 1
+        return (n * (n - 1)) / 2 - sum(nums)
+
+
+# ============================================================================
+
+# 269. Alien Dictionary
+# Difficulty: Hard
+# link: https://leetcode.com/problems/alien-dictionary/
+# Companies: Uber,Google,Pinterest,Airbnb,Amazon,Facebook,Bloomberg,Microsoft
+# Categories: Graph,Topological Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def alienOrder(self, words):
+        from collections import defaultdict
+        G = defaultdict(set)
+        deg = {char: 0 for word in words for char in word}
+
+        for i in range(len(words) - 1):
+            wrd1, wrd2 = words[i], words[i + 1]
+            for j in range(min(len(wrd1), len(wrd2))):
+                if wrd1[j] != wrd2[j]:
+                    if wrd2[j] not in G[wrd1[j]]:
+                        G[wrd1[j]].add(wrd2[j])
+                        deg[wrd2[j]] += 1
+                    break
+
+        bfs = [n for n, cnt in deg.iteritems() if not cnt]
+        res = []
+
+        def to_visit(node):
+            deg[node] -= 1
+            return not deg[node]
+
+        while bfs:
+            res += bfs
+            bfs = [adj
+                   for node in bfs
+                   for adj in G[node]
+                   if to_visit(adj)]
+
+        return ''.join(res) if len(res) == len(deg) else ""
+
+
+# ============================================================================
+
+# 274. H-Index
+# Difficulty: Medium
+# link: https://leetcode.com/problems/h-index/
+# Companies: TripAdvisor,Adobe
+# Categories: Hash Table,Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def hIndex(self, citations):
+        counter = [0] * (len(citations) + 1)
+        for citation in citations:
+            if citation > len(citations):
+                citation = len(citations)
+            counter[citation] += 1
+        sum_from_right = 0
+        for i in range(len(citations), -1, -1):
+            sum_from_right += counter[i]
+            if sum_from_right >= i:
+                return i
+
+
+# ============================================================================
+
+# 278. First Bad Version
+# Difficulty: Easy
+# link: https://leetcode.com/problems/first-bad-version/
+# Companies: Facebook
+# Categories: Binary Search
+
+# ----------------------------------------------------------------------------
+
+# The isBadVersion API is already defined for you.
+# @param version, an integer
+# @return a bool
+# def isBadVersion(version):
+
+class Solution(object):
+    def firstBadVersion(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        low, high = 1, n
+
+        while low <= high:
+            mid = (low + high) / 2
+            if isBadVersion(mid):
+                if (mid - 1) < low or not isBadVersion(mid - 1): return mid
+                high = mid - 1
+            else:
+                low = mid + 1
+
+
+# ============================================================================
+
+# 279. Perfect Squares
+# Difficulty: Medium
+# link: https://leetcode.com/problems/perfect-squares/
+# Companies: Amazon,Google,Cisco,Apple
+# Categories: Math,Dynamic Programming,Breadth-first Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def numSquares(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        bfs = [n]
+        count = 0
+        visited = {n}
+        sq = {i: i**2 for i in range(1, int(n ** (1./2)) + 1)}
+        while bfs:
+            if not all(bfs): return count
+            bfs = [(i - sq[j])
+                      for i in bfs
+                      for j in range(1, int(i ** (1./2)) + 1)
+                      if (i - sq[j]) not in visited and (i - sq[j]) >= 0 and (visited.add(i - sq[j]) is None)]
+            count += 1
+        return 0
+
+
+# ============================================================================
+
+# 281. Zigzag Iterator
+# Difficulty: Medium
+# link: https://leetcode.com/problems/zigzag-iterator/
+# Companies: Amazon
+# Categories: Design
+
+# ----------------------------------------------------------------------------
+
+class ZigzagIterator(object):
+
+    def __init__(self, v1, v2):
+        self.v1, self.v2 = v1, v2
+        self.i = self.j = self.tog = 0
+
+    def next(self):
+        if self.i >= len(self.v1) or self.tog and self.j < len(self.v2):
+            res, self.j = self.v2[self.j], self.j + 1
+        else:
+            res, self.i = self.v1[self.i], self.i + 1
+        self.tog = not self.tog
+        return res
+
+    def hasNext(self):
+        return self.i < len(self.v1) or self.j < len(self.v2)
+
+
+# ============================================================================
+
+# 283. Move Zeroes
+# Difficulty: Easy
+# link: https://leetcode.com/problems/move-zeroes/
+# Companies: Google,Yahoo,Goldman Sachs,Amazon,Facebook,Yandex,Bloomberg,Walmart Labs,Microsoft,Zillow
+# Categories: Array,Two Pointers
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        i = 0
+        for j, num in enumerate(nums):
+            if num != 0:
+                nums[i] = num
+                i += 1
+        for j in range(i, len(nums)):
+            nums[j] = 0
+
+
+# ============================================================================
+
+# 284. Peeking Iterator
+# Difficulty: Medium
+# link: https://leetcode.com/problems/peeking-iterator/
+# Companies: Amazon
+# Categories: Design
+
+# ----------------------------------------------------------------------------
+
+# Below is the interface for Iterator, which is already defined for you.
+#
+# class Iterator(object):
+#     def __init__(self, nums):
+#         """
+#         Initializes an iterator object to the beginning of a list.
+#         :type nums: List[int]
+#         """
+#
+#     def hasNext(self):
+#         """
+#         Returns true if the iteration has more elements.
+#         :rtype: bool
+#         """
+#
+#     def next(self):
+#         """
+#         Returns the next element in the iteration.
+#         :rtype: int
+#         """
+
+class PeekingIterator(object):
+    def __init__(self, iterator):
+        """
+        Initialize your data structure here.
+        :type iterator: Iterator
+        """
+        self.iterator = iterator
+        self.cache = None
+
+    def peek(self):
+        """
+        Returns the next element in the iteration without advancing the iterator.
+        :rtype: int
+        """
+        if self.cache is None and self.iterator.hasNext():
+            self.cache = self.iterator.next()
+        return self.cache
+
+    def next(self):
+        """
+        :rtype: int
+        """
+        self.peek()
+        cache = self.cache
+        self.cache = None
+        return cache
+
+    def hasNext(self):
+        """
+        :rtype: bool
+        """
+        self.peek()
+        return not bool(self.cache is None)
+
+# Your PeekingIterator object will be instantiated and called as such:
+# iter = PeekingIterator(Iterator(nums))
+# while iter.hasNext():
+#     val = iter.peek()   # Get the next element but not advance the iterator.
+#     iter.next()         # Should return the same value as [val].
+
+
+# ============================================================================
+
+# 289. Game of Life
+# Difficulty: Medium
+# link: https://leetcode.com/problems/game-of-life/
+# Companies: Dropbox,Amazon,Google,Reddit,Goldman Sachs
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def gameOfLife(self, board):
+        if not board: return
+        x_y_diff = [-1, 0, 1]
+        m, n = len(board), len(board[0])
+        for i in xrange(m):
+            for j in xrange(n):
+                neighbors = [(i + x, j + y) for x in x_y_diff for y in x_y_diff if (x or y)]
+
+                count_life = 0
+                for x, y in neighbors:
+                    if (0 <= x < m) and (0 <= y < n) and (board[x][y] in [1, 2]):
+                        count_life += 1
+
+                if board[i][j] and (count_life < 2 or count_life > 3): board[i][j] = 2
+                elif not board[i][j] and count_life == 3: board[i][j] = 3
+
+        for i in xrange(m):
+            for j in xrange(n):
+                board[i][j] = 1 & board[i][j]
+
+
+# ============================================================================
+
+# 290. Word Pattern
+# Difficulty: Easy
+# link: https://leetcode.com/problems/word-pattern/
+# Companies: Capital One
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def wordPattern(self, pattern, str):
+        """
+        :type pattern: str
+        :type str: str
+        :rtype: bool
+        """
+        pat_to_word = {}
+        word_to_pat = {}
+        words = str.split(' ')
+        if len(words) != len(pattern): return False
+        for i, word in enumerate(words):
+            if pattern[i] in pat_to_word and pat_to_word[pattern[i]] != word or \
+                word in word_to_pat and word_to_pat[word] != pattern[i]: return False
+            pat_to_word.setdefault(pattern[i], word)
+            word_to_pat.setdefault(word, pattern[i])
+        return True
+
+
+# ============================================================================
+
+# 292. Nim Game
+# Difficulty: Easy
+# link: https://leetcode.com/problems/nim-game/
+# Companies: Adobe
+# Categories: Brainteaser,Minimax
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def canWinNim(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return  (n % 4) != 0
+
+
+# ============================================================================
+
+# 294. Flip Game II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/flip-game-ii/
+# Companies: Google
+# Categories: Backtracking,Minimax
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def canWin(self, s, memo={}):
+        if s in memo: return memo[s]
+        return memo.setdefault(s, \
+            any(s[k: k + 2] == "++" and not self.canWin(s[:k] + "--" + s[k + 2:])
+                for k in range(len(s) - 1)))
+
+
+# ============================================================================
+
+# 297. Serialize and Deserialize Binary Tree
+# Difficulty: Hard
+# link: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+# Companies: Uber,Google,Apple,Quora,LinkedIn,Amazon,Expedia,Facebook,Oracle,Microsoft
+# Categories: Tree,Design
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Codec:
+
+    def serialize(self, root):
+        def ser(node, res=[]):
+            if not node:
+                res.append('#')
+            else:
+                res.append(node.val)
+                ser(node.left)
+                ser(node.right)
+            return res
+        return str(ser(root))
+
+
+
+    def deserialize(self, data):
+        data = eval(data)
+        self.i = 0
+        def deser():
+            node = None
+            self.i += 1
+            if data[self.i - 1] != "#":
+                node = TreeNode(data[self.i - 1])
+                l,r = deser(), deser()
+                node.left, node.right = l, r
+            return node
+
+        return deser()
+
+
+
+
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.deserialize(codec.serialize(root))
+
+
+# ============================================================================
+
+# 298. Binary Tree Longest Consecutive Sequence
+# Difficulty: Medium
+# link: https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/
+# Companies: Amazon,Google
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def longestConsecutive(self, root):
+
+        def _cnt(node, par, cnt):
+            if not node: return 0
+            prev_cnt = cnt
+            cnt = cnt + 1 if (node.val == par.val + 1) else 1
+            l, r = _cnt(node.left, node, cnt), _cnt(node.right, node, cnt)
+            return max(l, r, cnt, prev_cnt)
+        return _cnt(root, root, 1)
+
+
+# ============================================================================
+
+# 299. Bulls and Cows
+# Difficulty: Easy
+# link: https://leetcode.com/problems/bulls-and-cows/
+# Companies: Amazon,Google
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def getHint(self, secret, guess):
+        """
+        :type secret: str
+        :type guess: str
+        :rtype: str
+        """
+        a = 0
+        s_counts = {}
+        g_counts = {}
+        for s_c, g_c in zip(secret, guess):
+            if s_c == g_c: a += 1
+            else:
+                s_counts[s_c] = s_counts.get(s_c, 0) + 1
+                g_counts[g_c] = g_counts.get(g_c, 0) + 1
+        b = sum(min(s_counts.get(g_c,0), g_counts[g_c]) for g_c in g_counts)
+        return "%dA%dB" %(a, b)
+
+
+# ============================================================================
+
+# 300. Longest Increasing Subsequence
+# Difficulty: Medium
+# link: https://leetcode.com/problems/longest-increasing-subsequence/
+# Companies: Amazon,Google,Microsoft
+# Categories: Binary Search,Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        end_idx = [None] * len(nums)
+        length = 0
+        for i, num in enumerate(nums):
+            j = 0
+            while j < length and nums[end_idx[j]] < num:
+                j += 1
+            end_idx[j] = i
+            length = max(j + 1, length)
+        return length
+
+
+# ============================================================================
+
+# 303. Range Sum Query - Immutable
+# Difficulty: Easy
+# link: https://leetcode.com/problems/range-sum-query-immutable/
+# Companies: Facebook,Bloomberg
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class NumArray(object):
+
+    def __init__(self, nums):
+        self.l_sum = l_sum = nums
+        for i in range(1, len(l_sum)): l_sum[i] = l_sum[i - 1] + l_sum[i]
+
+
+    def sumRange(self, i, j):
+        return self.l_sum[j] - (self.l_sum[i - 1] if i > 0 else 0)
+
+
+# Your NumArray object will be instantiated and called as such:
+# obj = NumArray(nums)
+# param_1 = obj.sumRange(i,j)
+
+
+# ============================================================================
+
+# 304. Range Sum Query 2D - Immutable
+# Difficulty: Medium
+# link: https://leetcode.com/problems/range-sum-query-2d-immutable/
+# Companies: Houzz,Amazon,Google,Facebook,VMware
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class NumMatrix(object):
+
+    def __init__(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        """
+        self.matrix = matrix
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0]) if matrix else 0):
+                matrix[i][j] = self.sub_points([[i - 1, j], [i, j - 1], [i, j]], [[i - 1, j - 1]])
+
+    def sub_points(self, coords, sub_coords):
+        def sum_points(coords):
+            return sum(self.matrix[x][y] for x, y in coords if x >=0 and y >= 0)
+        return sum_points(coords) - sum_points(sub_coords)
+
+
+    def sumRegion(self, row1, col1, row2, col2):
+        """
+        :type row1: int
+        :type col1: int
+        :type row2: int
+        :type col2: int
+        :rtype: int
+        """
+        return self.sub_points([[row2, col2], [row1 - 1, col1 - 1]],[[row1 - 1, col2], [row2, col1 - 1]])
+
+
+
+# Your NumMatrix object will be instantiated and called as such:
+# obj = NumMatrix(matrix)
+# param_1 = obj.sumRegion(row1,col1,row2,col2)
+
+
+# ============================================================================
+
+# 306. Additive Number
+# Difficulty: Medium
+# link: https://leetcode.com/problems/additive-number/
+# Companies: Epic Systems
+# Categories: Backtracking
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isAdditiveNumber(self, num):
+        def is_seq(i, j, k):
+            if k == len(num): return True
+            a, b = int(num[i:j]), int(num[j:k])
+            if len(str(a)) != j - i or len(str(b)) != k - j: return False
+            total = str(a + b)
+            return num[k:].startswith(total) and is_seq(j, k, k + len(total))
+        return any(is_seq(0, i, j)
+                   for j in range(2, len(num))
+                   for i in range(1, j))
+
+
+# ============================================================================
+
+# 307. Range Sum Query - Mutable
+# Difficulty: Medium
+# link: https://leetcode.com/problems/range-sum-query-mutable/
+# Companies: Twitter,Google
+# Categories: Binary Indexed Tree,Segment Tree
+
+# ----------------------------------------------------------------------------
+
+class NumArray(object):
+
+    def __init__(self, nums):
+        self.update = nums.__setitem__
+        self.sumRange = lambda i, j: sum(nums[i:j+1])
+
+
+# Your NumArray object will be instantiated and called as such:
+# obj = NumArray(nums)
+# obj.update(i,val)
+# param_2 = obj.sumRange(i,j)
+
+
+# ============================================================================
+
+# 310. Minimum Height Trees
+# Difficulty: Medium
+# link: https://leetcode.com/problems/minimum-height-trees/
+# Companies: Google
+# Categories: Breadth-first Search,Graph
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+
+    # BFS from leave nodes
+    def findMinHeightTrees(self, n, edges):
+        if n == 1: return [0]
+        graph = [set() for _ in range(n)]
+        for a, b in edges:
+            graph[a].add(b)
+            graph[b].add(a)
+        # leaf nodes
+        bfs = [node for node, adjs in enumerate(graph) if len(adjs) == 1]
+        while n > 2:
+            n -= len(bfs)
+            new_bfs = []
+            for node in bfs:
+                parent = graph[node].pop()
+                graph[parent].remove(node)
+                if len(graph[parent]) == 1: new_bfs.append(parent)
+            bfs = new_bfs
+        return bfs
+
+
+    # Cutting leaf nodes until there's 2 or less
+    def __findMinHeightTrees(self, n, edges):
+        graph = {i:set() for i in xrange(n)}
+        for a, b in edges:
+            graph[a].add(b)
+            graph[b].add(a)
+        # iteratively remove leaves until 1/2 nodes left
+        visited = set()
+        while n - len(visited) > 2:
+            leaves = [node for node, adjs in graph.iteritems() if len(adjs) == 1]
+            for leave in leaves:
+                for adj in graph[leave]:
+                    if leave in graph[adj]:
+                        graph[adj].remove(leave)
+                del graph[leave]
+            visited.update(set(leaves))
+        return list(set(range(n)) - visited)
+
+
+# ============================================================================
+
+# 314. Binary Tree Vertical Order Traversal
+# Difficulty: Medium
+# link: https://leetcode.com/problems/binary-tree-vertical-order-traversal/
+# Companies: Databricks,Amazon,Facebook,ByteDance
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def verticalOrder(self, root):
+        if not root: return []
+        res = {}
+        bfs = [(root, 0)]
+        while bfs:
+            for node, offset in bfs:
+                res.setdefault(offset, []).append(node.val)
+            bfs = [(child, child_offset) for node, offset in bfs for child, child_offset in [[node.left, offset - 1], [node.right, offset + 1]] if child]
+        min_offset, max_offset = abs(min(res.keys())), max(res.keys())
+        return [res[i - min_offset] for i in range(max_offset + min_offset + 1)]
+
+
+# ============================================================================
+
+# 318. Maximum Product of Word Lengths
+# Difficulty: Medium
+# link: https://leetcode.com/problems/maximum-product-of-word-lengths/
+# Companies: Google
+# Categories: Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def maxProduct(self, words):
+        """
+        :type words: List[str]
+        :rtype: int
+        """
+        bit_wise_words = []
+        for word in words:
+            int_word = 0
+            for char in word:
+                int_word |= 1 << ord(char) % 26
+            bit_wise_words.append(int_word)
+
+        max_length = 0
+        for i in range(len(words)):
+            for j in range(i, len(words)):
+                length = len(words[i]) * len(words[j])
+                if bit_wise_words[i] & bit_wise_words[j] == 0 and max_length < length:
+                    max_length = length
+        return max_length
+
+
+# ============================================================================
+
+# 319. Bulb Switcher
+# Difficulty: Medium
+# link: https://leetcode.com/problems/bulb-switcher/
+# Companies: Facebook
+# Categories: Math,Brainteaser
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def bulbSwitch(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return int(n ** (1.0/2))
+
+
+# ============================================================================
+
+# 322. Coin Change
+# Difficulty: Medium
+# link: https://leetcode.com/problems/coin-change/
+# Companies: Adobe,Apple,Affirm,Yahoo,Airbnb,Amazon,Bloomberg,Capital One,Microsoft
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def coinChange(self, coins, amount):
+        """
+        :type coins: List[int]
+        :type amount: int
+        :rtype: int
+        """
+        dp = [float('inf')] * (amount + 1)
+        dp[0] = 0
+        for i in range(1, len(dp)):
+            for coin in coins:
+                prev_idx = i - coin
+                if prev_idx >= 0:
+                    dp[i] = min(dp[prev_idx] + 1, dp[i])
+        return dp[amount] if type(dp[amount]) == int else -1
+
+
+# ============================================================================
+
+# 326. Power of Three
+# Difficulty: Easy
+# link: https://leetcode.com/problems/power-of-three/
+# Companies: Hulu,Google,Goldman Sachs
+# Categories: Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isPowerOfThree(self, n):
+        # power = 1
+        # while 3 ** (power + 1) <= (((1 << 32) - 1)):
+        #     power += 1
+        # print 3 ** power
+
+        return n > 0 and 4052555153018976267 % n == 0
+
+
+# ============================================================================
+
+# 328. Odd Even Linked List
+# Difficulty: Medium
+# link: https://leetcode.com/problems/odd-even-linked-list/
+# Companies: Google,Microsoft,Bloomberg,Capital One
+# Categories: Linked List
+
+# ----------------------------------------------------------------------------
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def oddEvenList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        even_odd_head = [ListNode("even"), ListNode("odd")]
+        even_odd = even_odd_head[:]
+        cur = head
+        toggle = 0
+        while cur:
+            even_odd[toggle].next = ListNode(cur.val)
+            even_odd[toggle] = even_odd[toggle].next
+            toggle = 1 - toggle
+            cur = cur.next
+        even_odd[0].next = even_odd_head[1].next
+        return even_odd_head[0].next
+
+
+# ============================================================================
+
+# 329. Longest Increasing Path in a Matrix
+# Difficulty: Hard
+# link: https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
+# Companies: Adobe,Amazon,Google,Facebook,Apple
+# Categories: Depth-first Search,Topological Sort,Memoization
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def longestIncreasingPath(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: int
+        """
+        xy_dir = zip([-1, 0, 1, 0], [0, -1, 0, 1])
+        m, n = len(matrix), len(matrix[0]) if matrix else 0
+        dp = [[None] * n for _ in range(m)]
+        def get_max_inc(x, y):
+            if dp[x][y] is not None: return dp[x][y]
+            adj = [(i, j) for i, j in [(x + x_d, y + y_d) for x_d, y_d in xy_dir]
+                   if 0 <= i < m and 0 <= j < n and matrix[x][y] > matrix[i][j]]
+            dp[x][y] = max([(get_max_inc(i, j) + 1) for i, j in adj] or [1])
+            return dp[x][y]
+        return max([get_max_inc(x, y) for x in range(m) for y in range(n)] or [0])
+
+
+# ============================================================================
+
+# 331. Verify Preorder Serialization of a Binary Tree
+# Difficulty: Medium
+# link: https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/
+# Companies: Google
+# Categories: Stack
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isValidSerialization(self, preorder):
+        preorder = preorder.split(',')
+        diff = 1
+        for node in preorder:
+            diff -= 1
+            if diff < 0: return False
+            if node != '#': diff += 2
+        return diff == 0
+
+
+# ============================================================================
+
+# 332. Reconstruct Itinerary
+# Difficulty: Medium
+# link: https://leetcode.com/problems/reconstruct-itinerary/
+# Companies: Uber,Google,Apple,Yelp,Goldman Sachs,Amazon,Bloomberg,Microsoft,Twilio
+# Categories: Depth-first Search,Graph
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findItinerary(self, tickets):
+        G = {}
+        for f, t in tickets:
+            G.setdefault(f, []).append(t)
+
+        for node in G: G[node].sort(reverse=True)
+
+        def visit(airport, route=[]):
+            while G.get(airport, []):
+                visit(G[airport].pop(), route)
+            route.append(airport)
+            return route
+        return reversed(visit('JFK'))
+
+
+# ============================================================================
+
+# 334. Increasing Triplet Subsequence
+# Difficulty: Medium
+# link: https://leetcode.com/problems/increasing-triplet-subsequence/
+# Companies: Google
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def increasingTriplet(self, nums):
+        first = second = float('inf')
+        for n in nums:
+            if n <= first:
+                first = n
+            elif n <= second:
+                second = n
+            else:
+                return True
+        return False
+
+
+# ============================================================================
+
+# 337. House Robber III
+# Difficulty: Medium
+# link: https://leetcode.com/problems/house-robber-iii/
+# Companies: Amazon,Google
+# Categories: Tree,Depth-first Search
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def rob(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        # Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def rob(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        def _rob(node):
+            if not node: return 0, 0
+            inc_l, not_inc_l = _rob(node.left)
+            inc_r, not_inc_r = _rob(node.right)
+            inc_node = node.val + not_inc_l + not_inc_r
+            not_inc_node = max(inc_l, not_inc_l) + max(inc_r, not_inc_r)
+            return inc_node, not_inc_node
+        return max(_rob(root))
+
+
+# ============================================================================
+
+# 338. Counting Bits
+# Difficulty: Medium
+# link: https://leetcode.com/problems/counting-bits/
+# Companies: Mathworks,Amazon,Apple
+# Categories: Dynamic Programming,Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def countBits(self, num):
+        """
+        :type num: int
+        :rtype: List[int]
+        """
+        res = [0]
+        for i in range(1, num + 1):
+            res.append(res[i >> 1] + (i & 1))
+        return res
+
+
+# ============================================================================
+
+# 340. Longest Substring with At Most K Distinct Characters
+# Difficulty: Hard
+# link: https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
+# Companies: Uber,Google,Amazon,Facebook,Bloomberg,Microsoft
+# Categories: Hash Table,String,Sliding Window
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def lengthOfLongestSubstringKDistinct(self, s, k):
+        from collections import Counter
+        cnt = Counter()
+        res = i = 0
+        for j, char in enumerate(s):
+            cnt[char] += 1
+            while len(cnt) > k:
+                cnt[s[i]] -= 1
+                if not cnt[s[i]]:
+                    del cnt[s[i]]
+                i+= 1
+            res = max(res, j - i + 1)
+        return res
+
+
+# ============================================================================
+
+# 341. Flatten Nested List Iterator
+# Difficulty: Medium
+# link: https://leetcode.com/problems/flatten-nested-list-iterator/
+# Companies: Uber,Lyft,Apple,Twitter,LinkedIn,Airbnb,Amazon,Facebook
+# Categories: Stack,Design
+
+# ----------------------------------------------------------------------------
+
+# """
+# This is the interface that allows for creating nested lists.
+# You should not implement it, or speculate about its implementation
+# """
+#class NestedInteger(object):
+#    def isInteger(self):
+#        """
+#        @return True if this NestedInteger holds a single integer, rather than a nested list.
+#        :rtype bool
+#        """
+#
+#    def getInteger(self):
+#        """
+#        @return the single integer that this NestedInteger holds, if it holds a single integer
+#        Return None if this NestedInteger holds a nested list
+#        :rtype int
+#        """
+#
+#    def getList(self):
+#        """
+#        @return the nested list that this NestedInteger holds, if it holds a nested list
+#        Return None if this NestedInteger holds a single integer
+#        :rtype List[NestedInteger]
+#        """
+
+class NestedIterator(object):
+
+    def __init__(self, nestedList):
+        self.stack, self.cache = [[nestedList, 0]], None
+
+    def next(self):
+        self.hasNext()
+        res, self.cache = self.cache, None
+        return res
+
+
+    def hasNext(self):
+        """
+        :rtype: bool
+        """
+        if self.cache is not None: return True
+        elif not self.stack: return False
+        next_lst, next_idx = self.stack[-1]
+        if next_idx < len(next_lst):
+            if next_lst[next_idx].isInteger():
+                self.cache = next_lst[next_idx].getInteger()
+                self.stack[-1][1] += 1
+                return True
+            else:
+                self.stack[-1][1] += 1
+                self.stack.append([next_lst[next_idx].getList(), 0])
+                return self.hasNext()
+        else:
+            self.stack.pop()
+            return self.hasNext()
+
+
+# Your NestedIterator object will be instantiated and called as such:
+# i, v = NestedIterator(nestedList), []
+# while i.hasNext(): v.append(i.next())
+
+
+# ============================================================================
+
+# 342. Power of Four
+# Difficulty: Easy
+# link: https://leetcode.com/problems/power-of-four/
+# Companies: Uber,Two Sigma
+# Categories: Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isPowerOfFour(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        # mask = 0
+        # while (mask << 2 | 1) < ((1 << 32) - 1):
+        #     mask = mask << 2 | 1
+        # print mask
+        return (num & (num - 1)) == 0 and bool(1431655765 & num)
+
+
+# ============================================================================
+
+# 343. Integer Break
+# Difficulty: Medium
+# link: https://leetcode.com/problems/integer-break/
+# Companies: Apple
+# Categories: Math,Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    # bottom up
+    def integerBreak(self, n):
+        dp = [0] * (n + 1)
+        dp[1] = 1
+        for i in range(2, n + 1):
+            dp[i] = max((i - j) * max(dp[j], j) for j in range(1, i))
+        return dp[n]
+
+
+# ============================================================================
+
+# 344. Reverse String
+# Difficulty: Easy
+# link: https://leetcode.com/problems/reverse-string/
+# Companies: Google,Adobe,Apple,eBay,Amazon,Facebook,Bloomberg,Microsoft
+# Categories: Two Pointers,String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def reverseString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return s[::-1]
+
+
+# ============================================================================
+
+# 345. Reverse Vowels of a String
+# Difficulty: Easy
+# link: https://leetcode.com/problems/reverse-vowels-of-a-string/
+# Companies: Amazon
+# Categories: Two Pointers,String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def reverseVowels(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        vowels = [char for char in s if char in 'aeiouAEIOU']
+        return ''.join([ (char if char not in 'aeiouAEIOU' else vowels.pop()) for char in s])
+
+
+# ============================================================================
+
+# 347. Top K Frequent Elements
+# Difficulty: Medium
+# link: https://leetcode.com/problems/top-k-frequent-elements/
+# Companies: Uber,Google,Apple,Yelp,Snapchat,Amazon,Facebook,Oracle,Microsoft
+# Categories: Hash Table,Heap
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        from collections import Counter
+        import heapq
+        freq_to_nums = [(-cnt, num) for num, cnt in  Counter(nums).iteritems()]
+        heapq.heapify(freq_to_nums)
+        return [heapq.heappop(freq_to_nums)[1] for _ in range(k)]
+
+
+# ============================================================================
+
+# 349. Intersection of Two Arrays
+# Difficulty: Easy
+# link: https://leetcode.com/problems/intersection-of-two-arrays/
+# Companies: Oracle,Lyft,Facebook,Microsoft,LinkedIn
+# Categories: Hash Table,Two Pointers,Binary Search,Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def intersection(self, nums1, nums2): return list(set(nums1) & set(nums2))
+
+
+# ============================================================================
+
+# 350. Intersection of Two Arrays II
+# Difficulty: Easy
+# link: https://leetcode.com/problems/intersection-of-two-arrays-ii/
+# Companies: Amazon,Google,Facebook,Apple,LinkedIn
+# Categories: Hash Table,Two Pointers,Binary Search,Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def intersect(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        from collections import Counter
+        counts1 = Counter(nums1)
+        res = []
+        for num in nums2:
+            if counts1.get(num, 0):
+                res.append(num)
+                counts1[num] -= 1
+        return res
+
+
+# ============================================================================
+
+# 352. Data Stream as Disjoint Intervals
+# Difficulty: Hard
+# link: https://leetcode.com/problems/data-stream-as-disjoint-intervals/
+# Companies: Amazon
+# Categories: Binary Search,Ordered Map
+
+# ----------------------------------------------------------------------------
+
+# Definition for an interval.
+# class Interval(object):
+#     def __init__(self, s=0, e=0):
+#         self.start = s
+#         self.end = e
+
+class SummaryRanges(object):
+
+    def __init__(self):
+        self.start_times = set()
+        self.start_time_to_num_of_elems = {}
+
+    def addNum(self, num):
+        consecutive = self.start_time_to_num_of_elems
+        start_times = self.start_times
+        if num not in consecutive:
+            size = 1
+            left = right = None
+            if num - 1 in consecutive:
+                size += consecutive[num - 1]
+                left = (num - 1) - (consecutive[num - 1] - 1)
+            if num + 1 in consecutive:
+                start_times.remove(num + 1)
+                size += consecutive[num + 1]
+                right = (num + 1) + (consecutive[num + 1] - 1)
+                consecutive[right] = size
+            if left is not None:
+                consecutive[left] = size
+                start_times.add(left)
+            else:
+                start_times.add(num)
+
+            consecutive[num] = size
+
+    def getIntervals(self):
+        res = []
+        for start_time in sorted(self.start_times):
+            res.append([start_time, start_time + self.start_time_to_num_of_elems[start_time] - 1])
+        return res if res else None
+
+
+# Your SummaryRanges object will be instantiated and called as such:
+# obj = SummaryRanges()
+# obj.addNum(val)
+# param_2 = obj.getIntervals()
+
+
+# ============================================================================
+
+# 354. Russian Doll Envelopes
+# Difficulty: Hard
+# link: https://leetcode.com/problems/russian-doll-envelopes/
+# Companies: Google,Microsoft
+# Categories: Binary Search,Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution {
+public int maxEnvelopes(int[][] envelopes) {
+        // sort the widths and then longest increasing subseq problem for heights
+        if (envelopes == null || envelopes.length == 0) {
+            return 0;
+        }
+        Comparator comp = Comparator.comparing((int[] arr)-> arr[0]).thenComparing((int[] arr)->arr[1], Comparator.reverseOrder());
+        Arrays.sort(envelopes, comp);
+        int result = 1;
+        int[] dp = new int[envelopes.length];
+        Arrays.fill(dp, 1);
+        for (int i = 1; i < envelopes.length; i ++) {
+            for (int j = 0; j < i ; j ++) {
+                if (envelopes[i][0] > envelopes[j][0] && envelopes[i][1] > envelopes[j][1]) {
+                    dp[i] = Math.max(dp[i], 1 + dp[j]);
+                }
+            }
+            result = Math.max(dp[i], result);
+        }
+        return result;
+    }
+}
+
+
+# ============================================================================
+
+# 356. Line Reflection
+# Difficulty: Medium
+# link: https://leetcode.com/problems/line-reflection/
+# Companies: Amazon,Google
+# Categories: Hash Table,Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isReflected(self, points):
+        if not points: return True
+        l, r = min(x for x, y in points), max(x for x, y in points)
+        seen = set(map(tuple, points))
+        for p in points:
+            if (l + r - p[0], p[1]) not in seen: return False
+        return True
+
+
+# ============================================================================
+
+# 366. Find Leaves of Binary Tree
+# Difficulty: Medium
+# link: https://leetcode.com/problems/find-leaves-of-binary-tree/
+# Companies: LinkedIn
+# Categories: Tree,Depth-first Search
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def findLeaves(self, root):
+        def dfs(node):
+            if not node: return -1
+            l, r = dfs(node.left), dfs(node.right)
+            idx = max(l, r) + 1
+            if len(self.res) <= idx:
+                self.res.append([])
+            self.res[idx].append(node.val)
+            return idx
+        self.res = []
+        dfs(root)
+        return self.res
+
+
+# ============================================================================
+
+# 367. Valid Perfect Square
+# Difficulty: Easy
+# link: https://leetcode.com/problems/valid-perfect-square/
+# Companies: Microsoft,LinkedIn
+# Categories: Math,Binary Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isPerfectSquare(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        diff = 3
+        sq = 1
+        while sq < num:
+            sq += diff
+            diff += 2
+        return sq == num
+
+
+# ============================================================================
+
+# 373. Find K Pairs with Smallest Sums
+# Difficulty: Medium
+# link: https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
+# Companies: LinkedIn
+# Categories: Heap
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def kSmallestPairs(self, nums1, nums2, k):
+        import heapq
+        if not nums1 or not nums2: return []
+        heap = [(nums1[0] + nums2[0], 0, 0)]
+        res = []
+        visited = set()
+        for _ in range(k):
+            if not heap: break
+            _, i, j = heapq.heappop(heap)
+            if i + 1 < len(nums1) and ((i + 1, j) not in visited):
+                heapq.heappush(heap, (nums1[i + 1] + nums2[j], i + 1, j))
+                visited.add((i + 1, j))
+            if j + 1 < len(nums2) and ((i, j + 1) not in visited):
+                heapq.heappush(heap, (nums1[i] + nums2[j + 1], i, j + 1))
+                visited.add((i, j + 1))
+            res.append([nums1[i], nums2[j]])
+        return res
+
+
+# ============================================================================
+
+# 374. Guess Number Higher or Lower
+# Difficulty: Easy
+# link: https://leetcode.com/problems/guess-number-higher-or-lower/
+# Companies: Google
+# Categories: Binary Search
+
+# ----------------------------------------------------------------------------
+
+# The guess API is already defined for you.
+# @param num, your guess
+# @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
+# def guess(num):
+
+class Solution(object):
+    def guessNumber(self, n):
+        low, high = 1, n
+        while low <= high:
+            mid = (low + high) / 2
+            if guess(mid) == 0: return mid
+            elif guess(mid) > 0: low = mid + 1
+            else: high = mid - 1
+
+
+# ============================================================================
+
+# 376. Wiggle Subsequence
+# Difficulty: Medium
+# link: https://leetcode.com/problems/wiggle-subsequence/
+# Companies: Amazon
+# Categories: Dynamic Programming,Greedy
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def wiggleMaxLength(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        # count the up_down seq,
+        # if the first seq is down_up,
+        # then we add one to the result
+        if not nums: return 0
+        count = 1
+        dir_tog = None
+        for i in range(1, len(nums)):
+            if dir_tog is None and nums[i-1] != nums[i]:
+                dir_tog = nums[i-1] < nums[i]
+            if (dir_tog is not None) and \
+             (nums[i-1] < nums[i] and dir_tog or \
+              nums[i-1] > nums[i] and not dir_tog):
+                count, dir_tog = count + 1, not dir_tog
+        return count
+
+
+# ============================================================================
+
+# 377. Combination Sum IV
+# Difficulty: Medium
+# link: https://leetcode.com/problems/combination-sum-iv/
+# Companies: Amazon
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def combinationSum4(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        dp = {0: 1}
+        def _combinationSum4(target):
+            if target in dp: return dp[target]
+            res = 0
+            for num in nums:
+                if target - num >= 0:
+                    res += _combinationSum4(target - num)
+            dp[target] = res
+            return res
+        return _combinationSum4(target)
+
+
+# ============================================================================
+
+# 378. Kth Smallest Element in a Sorted Matrix
+# Difficulty: Medium
+# link: https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+# Companies: Walmart Labs,Amazon,Facebook,Microsoft,Apple
+# Categories: Binary Search,Heap
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def kthSmallest(self, matrix, k):
+        """
+        :type matrix: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
+        return sorted(i for row in matrix for i in row)[k-1]
+
+
+# ============================================================================
+
+# 380. Insert Delete GetRandom O(1)
+# Difficulty: Medium
+# link: https://leetcode.com/problems/insert-delete-getrandom-o1/
+# Companies: Uber,Google,Apple,Affirm,Quora,Databricks,LinkedIn,Goldman Sachs,Amazon,Facebook,Yandex,Bloomberg,Microsoft
+# Categories: Array,Hash Table,Design
+
+# ----------------------------------------------------------------------------
+
+import random
+
+class RandomizedSet(object):
+
+    def __init__(self):
+        self.nums, self.pos = [], {}
+
+    def insert(self, val):
+        if val not in self.pos:
+            self.nums.append(val)
+            self.pos[val] = len(self.nums) - 1
+            return True
+        return False
+
+
+    def remove(self, val):
+        if val in self.pos:
+            idx, last = self.pos[val], self.nums[-1]
+            self.nums[idx], self.pos[last] = last, idx
+            self.nums.pop()
+            del self.pos[val]
+            return True
+        return False
+
+    def getRandom(self):
+        return self.nums[random.randint(0, len(self.nums) - 1)]
+
+
+# ============================================================================
+
+# 382. Linked List Random Node
+# Difficulty: Medium
+# link: https://leetcode.com/problems/linked-list-random-node/
+# Companies: Google
+# Categories: Reservoir Sampling
+
+# ----------------------------------------------------------------------------
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+import random
+class Solution(object):
+
+    def __init__(self, head):
+        """
+        @param head The linked list's head.
+        Note that the head is guaranteed to be not null, so it contains at least one node.
+        :type head: ListNode
+        """
+        self.num_elem = 0
+        self.head = cur = head
+        while cur:
+            self.num_elem += 1
+            cur = cur.next
+
+    def getRandom(self):
+        """
+        Returns a random node's value.
+        :rtype: int
+        """
+        idx = random.randint(0, self.num_elem - 1)
+        cur = self.head
+        while cur:
+            if idx == 0:
+                return cur.val
+            idx -= 1
+            cur = cur.next
+
+
+
+
+# Your Solution object will be instantiated and called as such:
+# obj = Solution(head)
+# param_1 = obj.getRandom()
+
+
+# ============================================================================
+
+# 383. Ransom Note
+# Difficulty: Easy
+# link: https://leetcode.com/problems/ransom-note/
+# Companies: Microsoft
+# Categories: String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        """
+        :type ransomNote: str
+        :type magazine: str
+        :rtype: bool
+        """
+        counts = [0] * 26
+        for char in magazine: counts[ord(char) % len(counts)] += 1
+        for char in ransomNote: counts[ord(char) % len(counts)] -= 1
+        return all(count >= 0 for count in counts)
+
+
+# ============================================================================
+
+# 384. Shuffle an Array
+# Difficulty: Medium
+# link: https://leetcode.com/problems/shuffle-an-array/
+# Companies: Yahoo,Amazon,Microsoft,Apple
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+from random import randint
+class Solution(object):
+    def __init__(self, nums):
+        self.nums = nums
+    def reset(self):
+        return self.nums
+    def shuffle(self):
+        self.rand_nums = self.nums[:]
+        for i in range(len(self.rand_nums)):
+            swap_idx = randint(0, len(self.rand_nums) - 1)
+            self.rand_nums[i], self.rand_nums[swap_idx] = self.rand_nums[swap_idx], self.rand_nums[i]
+        return self.rand_nums
+
+
+
+
+
+# Your Solution object will be instantiated and called as such:
+# obj = Solution(nums)
+# param_1 = obj.reset()
+# param_2 = obj.shuffle()
+
+
+# ============================================================================
+
+# 385. Mini Parser
+# Difficulty: Medium
+# link: https://leetcode.com/problems/mini-parser/
+# Companies: Google
+# Categories: String,Stack
+
+# ----------------------------------------------------------------------------
+
+# """
+# This is the interface that allows for creating nested lists.
+# You should not implement it, or speculate about its implementation
+# """
+#class NestedInteger(object):
+#    def __init__(self, value=None):
+#        """
+#        If value is not specified, initializes an empty list.
+#        Otherwise initializes a single integer equal to value.
+#        """
+#
+#    def isInteger(self):
+#        """
+#        @return True if this NestedInteger holds a single integer, rather than a nested list.
+#        :rtype bool
+#        """
+#
+#    def add(self, elem):
+#        """
+#        Set this NestedInteger to hold a nested list and adds a nested integer elem to it.
+#        :rtype void
+#        """
+#
+#    def setInteger(self, value):
+#        """
+#        Set this NestedInteger to hold a single integer equal to value.
+#        :rtype void
+#        """
+#
+#    def getInteger(self):
+#        """
+#        @return the single integer that this NestedInteger holds, if it holds a single integer
+#        Return None if this NestedInteger holds a nested list
+#        :rtype int
+#        """
+#
+#    def getList(self):
+#        """
+#        @return the nested list that this NestedInteger holds, if it holds a nested list
+#        Return None if this NestedInteger holds a single integer
+#        :rtype List[NestedInteger]
+#        """
+
+class Solution(object):
+    def deserialize(self, s):
+        """
+        :type s: str
+        :rtype: NestedInteger
+        """
+        i = 0
+        stack = [NestedInteger()]
+        while i < len(s):
+            char = s[i]
+            if char == '[':
+                ni = NestedInteger()
+                stack[-1].add(ni)
+                stack.append(ni)
+            elif char.isdigit() or char == '-':
+                j = i
+                while j < len(s) and (s[j] not in ',]'): j += 1
+                ni = NestedInteger(int(s[i:j]))
+                stack[-1].add(ni)
+                i = j - 1
+            elif char == ']':
+                stack.pop()
+            i += 1
+
+        return  stack[0].getList()[0]
+
+
+# ============================================================================
+
+# 387. First Unique Character in a String
+# Difficulty: Easy
+# link: https://leetcode.com/problems/first-unique-character-in-a-string/
+# Companies: Google,Apple,Goldman Sachs,Amazon,Facebook,Bloomberg,Microsoft,Zillow
+# Categories: Hash Table,String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        from collections import Counter
+        counts = Counter(s)
+        for i, char in enumerate(s):
+            if counts[char] == 1:
+                return i
+        return -1
+
+
+# ============================================================================
+
+# 389. Find the Difference
+# Difficulty: Easy
+# link: https://leetcode.com/problems/find-the-difference/
+# Companies: Google
+# Categories: Hash Table,Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        return chr(reduce(operator.xor, [ord(char) for char in s + t], 0))
+
+
+# ============================================================================
+
+# 391. Perfect Rectangle
+# Difficulty: Hard
+# link: https://leetcode.com/problems/perfect-rectangle/
+# Companies: Apple
+# Categories: Line Sweep
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isRectangleCover(self, rectangles):
+        """
+        :type rectangles: List[List[int]]
+        :rtype: bool
+        """
+        x1 = y1 = float('inf')
+        x2 = y2 = float('-inf')
+        area = 0
+        pnt_cnt = {}
+
+        for rect in rectangles:
+            a1, b1, a2, b2 = rect
+            x1, y1 = min(x1, a1), min(y1, b1)
+            x2, y2 = max(x2, a2), max(y2, b2)
+            for x, y in [(a1, b1), (a2, b2), (a1, b2), (a2, b1)]: pnt_cnt[(x, y)] = pnt_cnt.get((x, y), 0) + 1
+            area += (b2 - b1) * (a2 - a1)
+
+        if area != (y2 - y1) * (x2 - x1): return False
+
+        for pnt, cnt in pnt_cnt.items():
+            if pnt in [(x1, y1), (x2, y2), (x1, y2), (x2, y1)]:
+                if pnt_cnt.get(pnt, 0) != 1: return False
+            elif cnt % 2 != 0: return False
+        return True
+
+
+# ============================================================================
+
+# 392. Is Subsequence
+# Difficulty: Easy
+# link: https://leetcode.com/problems/is-subsequence/
+# Companies: Google,Pinterest
+# Categories: Binary Search,Dynamic Programming,Greedy
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def isSubsequence(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        i = 0
+        for char in s:
+            while i < len(t) and t[i] != char:
+                i += 1
+            i += 1
+            if i > len(t):
+                return False
+        return True
+
+
+# ============================================================================
+
+# 394. Decode String
+# Difficulty: Medium
+# link: https://leetcode.com/problems/decode-string/
+# Companies: Google,Apple,Atlassian,Amazon,Salesforce,Facebook,Bloomberg,Oracle,Tencent,VMware
+# Categories: Stack,Depth-first Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def decodeString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        stack = []
+        str_queue = []
+        def add_to_queue(str_queue, stack):
+            stack.append(''.join(str_queue))
+            del str_queue[:]
+            last = []
+            while stack and not stack[-1].isdigit(): last.append(stack.pop())
+            if last: stack.append(''.join(list(reversed(last))))
+
+        for char in s:
+            if '[' == char:
+                add_to_queue(str_queue, stack)
+            elif ']' == char:
+                add_to_queue(str_queue, stack)
+                substr, num = stack.pop(), int(stack.pop())
+                stack.append(substr * num)
+            elif str_queue and str_queue[-1].isdigit() != char.isdigit():
+                add_to_queue(str_queue, stack)
+                str_queue.append(char)
+            else: str_queue.append(char)
+        stack.append(''.join(str_queue))
+        return ''.join(stack)
+
+
+# ============================================================================
+
+# 395. Longest Substring with At Least K Repeating Characters
+# Difficulty: Medium
+# link: https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
+# Companies: Uber,Amazon,Google
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def longestSubstring(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+        for char in set(s):
+            if s.count(char) < k: return max(self.longestSubstring(t, k) for t in s.split(char))
+        return len(s)
+
+
+# ============================================================================
+
+# 398. Random Pick Index
+# Difficulty: Medium
+# link: https://leetcode.com/problems/random-pick-index/
+# Companies: Facebook
+# Categories: Reservoir Sampling
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+
+    def __init__(self, nums):
+        self.num_to_idx = {}
+        for i, num in enumerate(nums): self.num_to_idx.setdefault(num, []).append(i)
+
+    def pick(self, target):
+        import random
+        return random.choice(self.num_to_idx[target])
+
+
+# Your Solution object will be instantiated and called as such:
+# obj = Solution(nums)
+# param_1 = obj.pick(target)
+
+
+# ============================================================================
+
+# 399. Evaluate Division
+# Difficulty: Medium
+# link: https://leetcode.com/problems/evaluate-division/
+# Companies: Amazon,Google,Bloomberg
+# Categories: Union Find,Graph
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def calcEquation(self, equations, values, queries):
+        """
+        :type equations: List[List[str]]
+        :type values: List[float]
+        :type queries: List[List[str]]
+        :rtype: List[float]
+        """
+        graph = {}
+        for i, (start, end) in enumerate(equations):
+            graph.setdefault(start, {})[end] = float(values[i])
+            graph.setdefault(end, {})[start] = 1 / float(values[i])
+
+        def dist(start, end):
+            if start not in graph: return -1
+            bfs = [(start, 1)]
+            visited = set()
+            while bfs:
+                end_node = next((val for node, val in bfs if node == end), None)
+                if end_node is not None: return end_node
+                bfs = [ (to_node, cur_val * graph[cur_node][to_node])
+                            for cur_node, cur_val in bfs
+                                for to_node in graph[cur_node]
+                                    if to_node not in visited and (visited.add(to_node) is None)]
+            return -1
+        return [dist(start, end) for start, end in queries]
+
+
+# ============================================================================
+
+# 401. Binary Watch
+# Difficulty: Easy
+# link: https://leetcode.com/problems/binary-watch/
+# Companies: Apple
+# Categories: Backtracking,Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def readBinaryWatch(self, num):
+        """
+        :type num: int
+        :rtype: List[str]
+        """
+        def count_ones(num):
+            count = 0
+            while num != 0:
+                count += num % 2
+                num /= 2
+            return count
+        return [
+            "%d:%02d" %(hr, m)
+            for hr in range(12)
+            for m in range(60)
+            if count_ones(hr) + count_ones(m) == num
+        ]
+
+
+# ============================================================================
+
+# 403. Frog Jump
+# Difficulty: Hard
+# link: https://leetcode.com/problems/frog-jump/
+# Companies: Oracle,Amazon,Google,Nutanix
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def canCross(self, stones):
+        """
+        :type stones: List[int]
+        :rtype: bool
+        """
+        from collections import defaultdict
+        stone_to_steps = defaultdict(set)
+        if (stones[1] - stones[0]) != 1: return False
+        stone_to_steps[stones[1]].add(1)
+        for pos in stones:
+            for step in stone_to_steps[pos]:
+                for new_pos in [pos + step + i for i in [-1, 0, 1]]:
+                    if new_pos == stones[-1]: return True
+                    elif new_pos != pos:
+                        stone_to_steps[new_pos].add(new_pos - pos)
+        return False
+
+
+# ============================================================================
+
+# 404. Sum of Left Leaves
+# Difficulty: Easy
+# link: https://leetcode.com/problems/sum-of-left-leaves/
+# Companies: Mathworks,Amazon,Google,Expedia
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def sumOfLeftLeaves(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root: return 0
+        left_leave_sum = 0
+        bfs = [root]
+        while bfs:
+            left_leave_sum += sum(node.left.val for node in bfs if node.left and not node.left.right and not node.left.left)
+            bfs = [kid for node in bfs for kid in [node.left, node.right] if kid]
+        return left_leave_sum
+
+
+# ============================================================================
+
+# 405. Convert a Number to Hexadecimal
+# Difficulty: Easy
+# link: https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+# Companies: Facebook
+# Categories: Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def toHex(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
+        if not num: return '0'
+        res = ''
+        mask = reduce(lambda x,y: x | (1 << y), range(4), 0)
+        mapping = '0123456789abcdef'
+        for _ in range(8):
+            res = mapping[(num & mask) % len(mapping)] + res
+            num >>= 4
+        return res.lstrip('0')
+
+
+# ============================================================================
+
+# 406. Queue Reconstruction by Height
+# Difficulty: Medium
+# link: https://leetcode.com/problems/queue-reconstruction-by-height/
+# Companies: Google,Microsoft
+# Categories: Greedy
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def reconstructQueue(self, people):
+        """
+        :type people: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        people.sort(key=lambda(h, k): (-h, k))
+        res = []
+        for p in people:
+            res.insert(p[1], p)
+        return res
+
+
+# ============================================================================
+
+# 409. Longest Palindrome
+# Difficulty: Easy
+# link: https://leetcode.com/problems/longest-palindrome/
+# Companies: Amazon
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        from collections import Counter
+        odds_len = sum(count & 1 for count in Counter(s).values())
+        return len(s) - odds_len + bool(odds_len)
+
+
+# ============================================================================
+
+# 412. Fizz Buzz
+# Difficulty: Easy
+# link: https://leetcode.com/problems/fizz-buzz/
+# Companies: Amazon,Capital One,Apple,LinkedIn,Microsoft
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def fizzBuzz(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        return [('Fizz' * (not i % 3) + 'Buzz' * (not i % 5)) or str(i) for i in xrange(1, n + 1)]
+
+
+# ============================================================================
+
+# 413. Arithmetic Slices
+# Difficulty: Medium
+# link: https://leetcode.com/problems/arithmetic-slices/
+# Companies: Baidu,Amazon,Facebook,Aetion,Bloomberg
+# Categories: Math,Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def numberOfArithmeticSlices(self, A):
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        diffs = []
+        prev = None
+        for i in xrange(1, len(A)):
+            diff = A[i] - A[i - 1]
+            if not diffs or prev != diff:
+                diffs.append(1)
+            else: diffs[-1] += 1
+            prev = diff
+        return sum((n * (n - 1) / 2) for n in diffs)
+
+
+# ============================================================================
+
+# 414. Third Maximum Number
+# Difficulty: Easy
+# link: https://leetcode.com/problems/third-maximum-number/
+# Companies: Facebook
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def thirdMax(self, nums):
+        import heapq
+        if not nums: return []
+        else:
+            nums = list(set(nums))
+            if len(nums) < 3: return max(nums)
+            for _ in range(2):
+                nums[nums.index(max(nums))] = float('-inf')
+            return max(nums)
+
+
+# ============================================================================
+
+# 415. Add Strings
+# Difficulty: Easy
+# link: https://leetcode.com/problems/add-strings/
+# Companies: Adobe,Facebook,Microsoft,Snapchat
+# Categories: String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def addStrings(self, num1, num2):
+        """
+        :type num1: str
+        :type num2: str
+        :rtype: str
+        """
+        def convert_to_int(num):
+            res = 0
+            for digit in num:
+                res *= 10
+                res += ord(digit) - ord('0')
+            return res
+        return str(convert_to_int(num1) + convert_to_int(num2))
+
+
+# ============================================================================
+
+# 416. Partition Equal Subset Sum
+# Difficulty: Medium
+# link: https://leetcode.com/problems/partition-equal-subset-sum/
+# Companies: Amazon,Google,Facebook
+# Categories: Dynamic Programming
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def canPartition(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        target = sum(nums) / 2.
+        all_sum = {0}
+        for num in nums: all_sum |= {num + i for i in all_sum}
+        return target in all_sum
+
+
+# ============================================================================
+
+# 419. Battleships in a Board
+# Difficulty: Medium
+# link: https://leetcode.com/problems/battleships-in-a-board/
+# Companies: Microsoft,Apple
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def countBattleships(self, board):
+        """
+        :type board: List[List[str]]
+        :rtype: int
+        """
+        m, n = len(board), len(board[0])
+        for i in range(m):
+            for j in range(n):
+                if i + 1 < m and 'X' == board[i + 1][j] or \
+                    j + 1 < n and 'X' == board[i][j + 1]:
+                    board[i][j] = '.'
+        return sum(1 for row in board for el in row if el == 'X')
+
+
+# ============================================================================
+
+# 421. Maximum XOR of Two Numbers in an Array
+# Difficulty: Medium
+# link: https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
+# Companies: Google
+# Categories: Bit Manipulation,Trie
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findMaximumXOR(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        res = 0
+        for i in reversed(range(32)):
+            prefixes = set(x >> i for x in nums)
+            res <<= 1
+            res += any((res+1) ^ p in prefixes for p in prefixes)
+        return res
+
+
+# ============================================================================
+
+# 423. Reconstruct Original Digits from English
+# Difficulty: Medium
+# link: https://leetcode.com/problems/reconstruct-original-digits-from-english/
+# Companies:
+# Categories: Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def originalDigits(self, s):
+        '''
+        zero: Only digit with z
+        two: Only digit with w
+        four: Only digit with u
+        six: Only digit with x
+        eight: Only digit with g
+        '''
+        from collections import Counter
+        s = Counter(s)
+        idx_to_word = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+        def get_count(char, num, counts):
+            counts[num] = s.get(char, 0) - sum(counts[i] for i, word in enumerate(idx_to_word) if char in word and i != num)
+
+        counts = [
+            s.get('z', 0), None,
+            s.get('w', 0), None,
+            s.get('u', 0), None,
+            s.get('x', 0), None,
+            s.get('g', 0), None,
+        ]
+        get_count('o', 1, counts)
+        get_count('t', 3, counts)
+        get_count('f', 5, counts)
+        get_count('s', 7, counts)
+        get_count('i', 9, counts)
+        return ''.join(str(i) * occ for i, occ in enumerate(counts))
+
+
+# ============================================================================
+
+# 424. Longest Repeating Character Replacement
+# Difficulty: Medium
+# link: https://leetcode.com/problems/longest-repeating-character-replacement/
+# Companies: Google,Pocket Gems
+# Categories: Two Pointers,Sliding Window
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def characterReplacement(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+        counts = {}
+        max_len = start_i = 0
+        for end_i, end in enumerate(s):
+            counts[end] = counts.get(end, 0) + 1
+            max_len = max(max_len, counts[end])
+            while ((end_i - start_i + 1) - max_len) > k:
+                counts[s[start_i]] -= 1
+                start_i += 1
+        return max_len + min(k, len(s) - max_len)
+
+
+# ============================================================================
+
+# 434. Number of Segments in a String
+# Difficulty: Easy
+# link: https://leetcode.com/problems/number-of-segments-in-a-string/
+# Companies:
+# Categories: String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def countSegments(self, s):
+        if not s: return 0
+        return sum(s[i - 1] == " " and s[i] != " " for i in range(1, len(s))) + (s[0] != " ")
+
+
+# ============================================================================
+
+# 435. Non-overlapping Intervals
+# Difficulty: Medium
+# link: https://leetcode.com/problems/non-overlapping-intervals/
+# Companies: Amazon
+# Categories: Greedy
+
+# ----------------------------------------------------------------------------
+
+# Definition for an interval.
+# class Interval(object):
+#     def __init__(self, s=0, e=0):
+#         self.start = s
+#         self.end = e
+
+class Solution(object):
+    def eraseOverlapIntervals(self, intervals):
+        """
+        :type intervals: List[Interval]
+        :rtype: int
+        """
+        def not_overlap(int1, int2):
+            return min(int1.end, int2.end) <= max(int1.start, int2.start)
+        def eft_cmp(x, y):
+            if x.end < y.end or x.start < y.start:
+                return -1
+            elif x.end > y.end or x.start > y.start:
+                return 1
+            else:
+                return 0
+        intervals.sort(eft_cmp)
+        count = 0
+        prev = None
+        for interval in intervals:
+            if (prev and not_overlap(prev, interval)) or not prev :
+                count += 1
+                prev = interval
+        return len(intervals) - count
+
+
+# ============================================================================
+
+# 436. Find Right Interval
+# Difficulty: Medium
+# link: https://leetcode.com/problems/find-right-interval/
+# Companies:
+# Categories: Binary Search
+
+# ----------------------------------------------------------------------------
+
+# Definition for an interval.
+# class Interval(object):
+#     def __init__(self, s=0, e=0):
+#         self.start = s
+#         self.end = e
+
+class Solution(object):
+    def findRightInterval(self, intervals):
+        """
+        :type intervals: List[Interval]
+        :rtype: List[int]
+        """
+        from bisect import bisect_left
+        start_idx = sorted([i.start, idx] for idx, i in enumerate(intervals)) + [[float('inf'), -1]]
+        return [start_idx[bisect_left(start_idx, [i.end])][1] for i in intervals]
+
+
+# ============================================================================
+
+# 437. Path Sum III
+# Difficulty: Easy
+# link: https://leetcode.com/problems/path-sum-iii/
+# Companies: Amazon,Quora
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def pathSum(self, root, sum):
+        """
+        :type root: TreeNode
+        :type sum: int
+        :rtype: int
+        """
+        def _pathSum(node, target, sums_count={0: 1}, so_far=0):
+            if not node: return 0
+            so_far += node.val
+            count = sums_count.get(so_far - target, 0)
+            sums_count.setdefault(so_far, 0)
+            sums_count[so_far] += 1
+            count += _pathSum(node.left, target, sums_count, so_far)
+            count += _pathSum(node.right, target, sums_count, so_far)
+            sums_count[so_far] -= 1
+            if so_far in sums_count and not sums_count[so_far]: del sums_count[so_far]
+            return count
+        return _pathSum(root, sum)
+
+
+# ============================================================================
+
+# 438. Find All Anagrams in a String
+# Difficulty: Medium
+# link: https://leetcode.com/problems/find-all-anagrams-in-a-string/
+# Companies: Amazon,Facebook
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findAnagrams(self, s, p):
+
+        if len(s) < len(p): return []
+
+        from collections import Counter
+        p_cnt = Counter(p)
+        self.cnt = 0
+        res = []
+
+        def update_val(idx, val):
+            if s[idx] in p_cnt:
+                prev = p_cnt[s[idx]]
+                p_cnt[s[idx]] += val
+                if prev == 0: self.cnt -= 1
+                elif prev != 0 and p_cnt[s[idx]] == 0: self.cnt += 1
+
+        for i in range(len(s)):
+            if i < len(p): update_val(i, -1)
+            else:
+                update_val(i - len(p), 1)
+                update_val(i, -1)
+            if self.cnt == len(p_cnt): res.append(i - len(p) + 1)
+        return res
+
+
+# ============================================================================
+
+# 442. Find All Duplicates in an Array
+# Difficulty: Medium
+# link: https://leetcode.com/problems/find-all-duplicates-in-an-array/
+# Companies: Amazon,Lyft
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        res = []
+        for i in xrange(len(nums)):
+            idx = abs(nums[i]) - 1
+            if nums[idx] < 0: res.append(idx + 1)
+            else: nums[idx] = -nums[idx]
+        return res
+
+
+# ============================================================================
+
+# 443. String Compression
+# Difficulty: Easy
+# link: https://leetcode.com/problems/string-compression/
+# Companies: Expedia,Apple,Wayfair,Amazon,Google,Microsoft
+# Categories: String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def compress(self, chars):
+        i = j = cnt = 0
+        chars.append('blah')
+        while j < len(chars):
+            if j == 0 or chars[j] == chars[j - 1]:
+                cnt, j = cnt + 1, j + 1
+            elif chars[j] != chars[j - 1]:
+                chars[i] = str(chars[j - 1])
+                if cnt > 1:
+                    for char in str(cnt):
+                        i += 1
+                        chars[i] = char
+                i += 1
+                j += 1
+                cnt = 1
+        # while len(chars) != i: chars.pop()
+        return i
+
+
+# ============================================================================
+
+# 444. Sequence Reconstruction
+# Difficulty: Medium
+# link: https://leetcode.com/problems/sequence-reconstruction/
+# Companies: Google
+# Categories: Graph,Topological Sort
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def sequenceReconstruction(self, org, seqs):
+
+        from collections import defaultdict
+        G = defaultdict(set)
+        for seq in seqs:
+            if len(seq): G[seq[0]]
+            for i in range(1, len(seq)):
+                G[seq[i - 1]].add(seq[i])
+
+        def dfs(node, res = [], visited = set()):
+            while G[node]:
+                adj = G[node].pop()
+                if adj not in visited:
+                    dfs(adj, res)
+                    visited.add(adj)
+            res.append(node)
+            return res
+
+        return org[0] in G and dfs(org[0])[::-1] == org and len(set(G.keys()))==len(org)
+
+
+# ============================================================================
+
+# 445. Add Two Numbers II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/add-two-numbers-ii/
+# Companies: Amazon,Microsoft,Bloomberg
+# Categories: Linked List
+
+# ----------------------------------------------------------------------------
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+
+        def _get_stack(node):
+            stack = []
+            while node:
+                stack.append(node.val)
+                node = node.next
+            return stack
+        s1 = _get_stack(l1)
+        s2 = _get_stack(l2)
+
+        carry = 0
+        dummy = ListNode('dummy')
+        while s1 or s2 or carry:
+            cur_val = carry
+            if s1:
+                cur_val += s1.pop()
+            if s2:
+                cur_val += s2.pop()
+            carry, cur_val = cur_val/10, cur_val%10
+            cur_node = ListNode(cur_val)
+            cur_node.next, dummy.next = dummy.next, cur_node
+        return dummy.next
+
+
+# ============================================================================
+
+# 447. Number of Boomerangs
+# Difficulty: Easy
+# link: https://leetcode.com/problems/number-of-boomerangs/
+# Companies: Google
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def numberOfBoomerangs(self, points):
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
+        res = 0
+        for i, [x, y] in enumerate(points):
+            dist_to_point = {}
+            for j, [adj_x, adj_y] in enumerate(points):
+                if i != j:
+                    key = (x - adj_x) ** 2 + (y - adj_y) ** 2
+                    dist_to_point[key] = dist_to_point.setdefault(key, 0) + 1
+            res += sum([val * (val - 1) for val in dist_to_point.values()])
+        return res
+
+
+# ============================================================================
+
+# 448. Find All Numbers Disappeared in an Array
+# Difficulty: Easy
+# link: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+# Companies: Google,Apple
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findDisappearedNumbers(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        for num in nums: nums[abs(num) - 1] = -1 * abs(nums[abs(num) - 1])
+        return [i + 1 for i, num in enumerate(nums) if num > 0]
+
+
+# ============================================================================
+
+# 449. Serialize and Deserialize BST
+# Difficulty: Medium
+# link: https://leetcode.com/problems/serialize-and-deserialize-bst/
+# Companies: Uber,Amazon,Facebook
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Codec:
+
+    def serialize(self, root):
+        """Encodes a tree to a single string.
+
+        :type root: TreeNode
+        :rtype: str
+        """
+        def _serialize(node):
+            if not node: return
+            return (node.val, _serialize(node.left), _serialize(node.right))
+        return str(_serialize(root))
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+
+        :type data: str
+        :rtype: TreeNode
+        """
+        def _deserialize(input_tuple):
+            if not input_tuple: return
+            node = TreeNode(input_tuple[0])
+            node.left = _deserialize(input_tuple[1])
+            node.right = _deserialize(input_tuple[2])
+            return node
+
+        return  _deserialize(eval(data))
+
+
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.deserialize(codec.serialize(root))
+
+
+# ============================================================================
+
+# 450. Delete Node in a BST
+# Difficulty: Medium
+# link: https://leetcode.com/problems/delete-node-in-a-bst/
+# Companies: Microsoft
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def deleteNode(self, root, key):
+        """
+        :type root: TreeNode
+        :type key: int
+        :rtype: TreeNode
+        """
+        def _findMinNode(node):
+            node = node.right
+            while node.left:
+                node = node.left
+            return node
+
+        def _deleteNode(root, key):
+            if not root:
+                return
+            if root.val > key:
+                root.left = _deleteNode(root.left, key)
+            elif root.val < key:
+                root.right = _deleteNode(root.right, key)
+            else:
+                if not (root.left and root.right):
+                    if root.left:
+                        return root.left
+                    elif root.right:
+                        return root.right
+                    else:
+                        return
+                else:
+                    min_node = _findMinNode(root)
+                    root.val = min_node.val
+                    root.right = _deleteNode(root.right, min_node.val)
+            return root
+        return _deleteNode(root, key)
+
+
+# ============================================================================
+
+# 451. Sort Characters By Frequency
+# Difficulty: Medium
+# link: https://leetcode.com/problems/sort-characters-by-frequency/
+# Companies: Google,Bloomberg
+# Categories: Hash Table,Heap
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def frequencySort(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        from collections import Counter
+        counts = Counter(s)
+        counts = [(freq, char) for char, freq in counts.iteritems()]
+        counts.sort(reverse=True)
+        for i in range(len(counts)): counts[i] = counts[i][1] * counts[i][0]
+        return ''.join(counts)
+
+
+# ============================================================================
+
+# 452. Minimum Number of Arrows to Burst Balloons
+# Difficulty: Medium
+# link: https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
+# Companies: Amazon,Facebook
+# Categories: Greedy
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findMinArrowShots(self, points):
+        points.sort()
+        last_start = None
+        cnt = 0
+        for i in range(len(points) - 1, -1, -1):
+            if last_start is None or points[i][1] < last_start:
+                cnt += 1
+                last_start = points[i][0]
+        return cnt
+
+
+# ============================================================================
+
+# 453. Minimum Moves to Equal Array Elements
+# Difficulty: Easy
+# link: https://leetcode.com/problems/minimum-moves-to-equal-array-elements/
+# Companies: Drawbridge
+# Categories: Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def minMoves(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return sum(nums) - len(nums) * min(nums)
+
+
+# ============================================================================
+
+# 454. 4Sum II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/4sum-ii/
+# Companies: Amazon
+# Categories: Hash Table,Binary Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def fourSumCount(self, A, B, C, D):
+        from collections import Counter, defaultdict
+        sum_count = defaultdict(int, Counter([a + b for a in A for b in B]))
+        return sum(sum_count[-d-c] for c in C for d in D)
+
+
+# ============================================================================
+
+# 455. Assign Cookies
+# Difficulty: Easy
+# link: https://leetcode.com/problems/assign-cookies/
+# Companies:
+# Categories: Greedy
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findContentChildren(self, g, s):
+        """
+        :type g: List[int]
+        :type s: List[int]
+        :rtype: int
+        """
+        g.sort(reverse=True)
+        s.sort(reverse=True)
+        count = 0
+        while s and g:
+            cookie = s.pop()
+            if cookie >= g[-1]:
+                g.pop()
+                count += 1
+        return count
+
+
+# ============================================================================
+
+# 456. 132 Pattern
+# Difficulty: Medium
+# link: https://leetcode.com/problems/132-pattern/
+# Companies: Amazon
+# Categories: Stack
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def find132pattern(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        s3 = float('-inf')
+        stack = []
+        for num in reversed(nums):
+            if num < s3: return True
+            else:
+                while stack and stack[-1] < num: s3 = stack.pop()
+                stack.append(num)
+        return False
+
+
+# ============================================================================
+
+# 459. Repeated Substring Pattern
+# Difficulty: Easy
+# link: https://leetcode.com/problems/repeated-substring-pattern/
+# Companies: Google,Microsoft
+# Categories: String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def repeatedSubstringPattern(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        return s in (s + s)[1:-1]
+
+
+# ============================================================================
+
+# 461. Hamming Distance
+# Difficulty: Easy
+# link: https://leetcode.com/problems/hamming-distance/
+# Companies: Facebook,Adobe
+# Categories: Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def hammingDistance(self, x, y):
+        count = 0
+        while x or y:
+            if (x & 1) != (y & 1): count += 1
+            x >>= 1
+            y >>= 1
+        return count
+
+
+# ============================================================================
+
+# 462. Minimum Moves to Equal Array Elements II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/
+# Companies:
+# Categories: Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def minMoves2(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums.sort()
+        mid_val = nums[len(nums) / 2]
+        return sum(abs(x - mid_val) for x in nums)
+
+
+# ============================================================================
+
+# 463. Island Perimeter
+# Difficulty: Easy
+# link: https://leetcode.com/problems/island-perimeter/
+# Companies: Amazon,Facebook
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def islandPerimeter(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        queue = []
+        count = 0
+        for i in xrange(len(grid)):
+            for j in xrange(len(grid[0])):
+                if grid[i][j]:
+                    adjs = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
+                    for adj in adjs:
+                        if not (0 <= adj[0] < len(grid) and 0 <= adj[1] < len(grid[0])) or \
+                            not grid[adj[0]][adj[1]]:
+                            count += 1
+        return count
+
+
+# ============================================================================
+
+# 468. Validate IP Address
+# Difficulty: Medium
+# link: https://leetcode.com/problems/validate-ip-address/
+# Companies: Amazon,Facebook
+# Categories: String
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def validIPAddress(self, IP):
+        """
+        :type IP: str
+        :rtype: str
+        """
+        def is_hex(s):
+            hex_digits = set("0123456789abcdefABCDEF")
+            for char in s:
+                if not (char in hex_digits):
+                    return False
+            return True
+        if '.' in IP:
+            IP = IP.split('.')
+            if len(IP) != 4:
+                return "Neither"
+            for ip in IP:
+                try:
+                    ip_int = int(ip)
+                    if ip_int > 255 or ip_int < 0 or str(ip_int) != ip:
+                        return "Neither"
+                except:
+                    return "Neither"
+            return 'IPv4'
+        elif ':' in IP:
+            IP = IP.split(':')
+            if len(IP) != 8:
+                return "Neither"
+            for ip in IP:
+                if len(ip) > 4 or len(ip) == 0 or not is_hex(ip):
+                    return 'Neither'
+            return 'IPv6'
+        return "Neither"
+
+
+# ============================================================================
+
+# 473. Matchsticks to Square
+# Difficulty: Medium
+# link: https://leetcode.com/problems/matchsticks-to-square/
+# Companies: Rackspace
+# Categories: Depth-first Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+
+    def makesquare(self, nums):
+        sum_of_elems = sum(nums)
+        if len(nums) < 4 or sum_of_elems % 4: return False
+        nums.sort(reverse=True)
+        def _makesquare(pos, sums):
+            if pos >= len(nums): return not any(sums)
+            next_elem = nums[pos]
+            visited = set()
+            for i in range(len(sums)):
+                if sums[i] - next_elem >= 0 and sums[i] not in visited:
+                    sums[i] -= next_elem
+                    if _makesquare(pos + 1, sums): return True
+                    sums[i] += next_elem
+                    visited.add(sums[i])
+            return False
+        return _makesquare(0, [sum_of_elems / 4 for _ in range(4)])
+
+
+# ============================================================================
+
+# 475. Heaters
+# Difficulty: Easy
+# link: https://leetcode.com/problems/heaters/
+# Companies: Google
+# Categories: Binary Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findRadius(self, houses, heaters):
+        """
+        :type houses: List[int]
+        :type heaters: List[int]
+        :rtype: int
+        """
+        heaters.sort()
+        heaters.append(float('inf'))
+        cur = diff = 0
+        for house in sorted(houses):
+            while cur + 1 < len(heaters) and heaters[cur + 1] < house: cur += 1
+            diff = max(diff, min(abs(heaters[cur] - house), abs(heaters[cur + 1] - house)))
+        return diff
+
+
+# ============================================================================
+
+# 476. Number Complement
+# Difficulty: Easy
+# link: https://leetcode.com/problems/number-complement/
+# Companies: Cloudera
+# Categories: Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findComplement(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        shift, x = 0, num
+        while x:
+            shift += 1
+            x >>= 1
+
+        mask = (1 << (shift)) - 1
+        return (num ^ mask)
+
+
+# ============================================================================
+
+# 477. Total Hamming Distance
+# Difficulty: Medium
+# link: https://leetcode.com/problems/total-hamming-distance/
+# Companies: Facebook
+# Categories: Bit Manipulation
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def totalHammingDistance(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums = [[int(bool(num & (1 << i))) for i in range(31, -1, -1)] for num in nums]
+        counts = [sum([num[i] for num in nums]) for i in range(31, -1, -1)]
+        return sum([count * (len(nums) - count) for count in counts])
+
+
+# ============================================================================
+
+# 482. License Key Formatting
+# Difficulty: Easy
+# link: https://leetcode.com/problems/license-key-formatting/
+# Companies: Google
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def licenseKeyFormatting(self, S, K):
+        """
+        :type S: str
+        :type K: int
+        :rtype: str
+        """
+        S = S.replace('-', '').upper()
+        return '-'.join([ S[max(len(S) - i, 0) : len(S) - i + K]
+                         for i in range(K, len(S) + K, K)][::-1])
+
+
+# ============================================================================
+
+# 485. Max Consecutive Ones
+# Difficulty: Easy
+# link: https://leetcode.com/problems/max-consecutive-ones/
+# Companies: Amazon
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findMaxConsecutiveOnes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        max_len = 0
+        for j, val in enumerate(nums):
+            if val:
+                if j - 1 < 0 or not (nums[j - 1]): i = j
+                max_len = max(max_len, j - i + 1)
+        return max_len
+
+
+# ============================================================================
+
+# 486. Predict the Winner
+# Difficulty: Medium
+# link: https://leetcode.com/problems/predict-the-winner/
+# Companies: Google
+# Categories: Dynamic Programming,Minimax
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def PredictTheWinner(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        dp = [[None] * (len(nums) + 1) for _ in range(len(nums) + 1)]
+        def _PredictTheWinner(i, j):
+            if dp[i][j] is not None:
+                return dp[i][j]
+            if i == j:
+                dp[i][j] = nums[i], 0
+            else:
+                o_r, s_r = _PredictTheWinner(i, j - 1)
+                o_l, s_l = _PredictTheWinner(i + 1, j)
+                s_r += nums[j]
+                s_l += nums[i]
+                if s_r - o_r > s_l - o_l:
+                    dp[i][j] =  s_r, o_r
+                else:
+                    dp[i][j] = s_l, o_l
+            return dp[i][j]
+        p1, p2 = _PredictTheWinner(0, len(nums) - 1)
+        return p1 >= p2
+
+
+# ============================================================================
+
+# 491. Increasing Subsequences
+# Difficulty: Medium
+# link: https://leetcode.com/problems/increasing-subsequences/
+# Companies: Facebook,Yahoo
+# Categories: Depth-first Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findSubsequences(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        res = {()}
+        for num in nums:
+            res |= { ary + (num, ) for ary in res if not ary or ary[-1] <= num }
+        return [x for x in res if len(x) >= 2]
+
+
+# ============================================================================
+
+# 492. Construct the Rectangle
+# Difficulty: Easy
+# link: https://leetcode.com/problems/construct-the-rectangle/
+# Companies:
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def constructRectangle(self, area):
+        """
+        :type area: int
+        :rtype: List[int]
+        """
+        i = j = int(area ** 0.5)
+        while (i * j) != area:
+            if i * j > area: i -= 1
+            else: j += 1
+        return j, i
+
+
+# ============================================================================
+
+# 494. Target Sum
+# Difficulty: Medium
+# link: https://leetcode.com/problems/target-sum/
+# Companies: Facebook
+# Categories: Dynamic Programming,Depth-first Search
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findTargetSumWays(self, nums, S):
+        """
+        :type nums: List[int]
+        :type S: int
+        :rtype: int
+        """
+        dp = {0:1}
+        for num in nums:
+            new_dp = {}
+            for key, val in dp.iteritems():
+                for new_key in [key + num, key - num]:
+                    new_dp.setdefault(new_key, 0)
+                    new_dp[new_key] += val
+            dp = new_dp
+        return dp.get(S, 0)
+
+
+# ============================================================================
+
+# 495. Teemo Attacking
+# Difficulty: Medium
+# link: https://leetcode.com/problems/teemo-attacking/
+# Companies: Riot Games
+# Categories: Array
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findPoisonedDuration(self, timeSeries, duration):
+        """
+        :type timeSeries: List[int]
+        :type duration: int
+        :rtype: int
+        """
+        total_time = 0
+        for i, time in enumerate(timeSeries):
+            total_time += duration
+            time_diff = timeSeries[i] - timeSeries[i-1]
+            if i > 0 and time_diff < duration:
+                total_time -= duration - time_diff
+        return total_time
+
+
+# ============================================================================
+
+# 496. Next Greater Element I
+# Difficulty: Easy
+# link: https://leetcode.com/problems/next-greater-element-i/
+# Companies: Amazon,Facebook,Twitter
+# Categories: Stack
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def nextGreaterElement(self, findNums, nums):
+        """
+        :type findNums: List[int]
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return [next((num for num in nums[nums.index(num_f):] if num > num_f), -1) for num_f in findNums]
+
+
+# ============================================================================
+
+# 498. Diagonal Traverse
+# Difficulty: Medium
+# link: https://leetcode.com/problems/diagonal-traverse/
+# Companies: Facebook,Amazon,Google,Walmart Labs,eBay
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findDiagonalOrder(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: List[int]
+        """
+        if not matrix or not all(matrix): return []
+        res = []
+        def get_diag(i, j):
+            new_diag = []
+            while i >= 0 and j < len(matrix[0]):
+                new_diag.append(matrix[i][j])
+                i -= 1
+                j += 1
+            res.append(new_diag)
+        for i in range(len(matrix)): get_diag(i, 0)
+        for j in range(1, len(matrix[0])): get_diag(len(matrix) - 1, j)
+        for i in range(1, len(res), 2): res[i] = list((reversed(res[i])))
+        return [item for lst in res for item in lst]
+
+
+# ============================================================================
+
+# 500. Keyboard Row
+# Difficulty: Easy
+# link: https://leetcode.com/problems/keyboard-row/
+# Companies: Mathworks
+# Categories: Hash Table
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findWords(self, words):
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
+        keyboard = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
+        res = []
+        for word in words:
+            char = word[0].lower()
+            for row in keyboard:
+                if char in row:
+                    if all(char.lower() in row for char in word):
+                        res.append(word)
+                        break
+        return res
+
+
+# ============================================================================
+
+# 501. Find Mode in Binary Search Tree
+# Difficulty: Easy
+# link: https://leetcode.com/problems/find-mode-in-binary-search-tree/
+# Companies: Google
+# Categories: Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def findMode(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        counts = {}
+        if not root: return []
+        bfs = [root]
+        while bfs:
+            for node in bfs:
+                counts[node.val] = counts.get(node.val, 0) + 1
+            bfs = [kid for node in bfs for kid in [node.left, node.right] if kid]
+        max_freq = max(counts.values())
+        return [key for key, freq in counts.iteritems() if freq == max_freq]
+
+
+# ============================================================================
+
+# 503. Next Greater Element II
+# Difficulty: Medium
+# link: https://leetcode.com/problems/next-greater-element-ii/
+# Companies: Amazon,Bloomberg
+# Categories: Stack
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def nextGreaterElements(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        stack, res = [], [-1] * len(nums)
+        for i in range(len(nums)) * 2:
+            while stack and nums[stack[-1]] < nums[i]:
+                res[stack.pop()] = nums[i]
+            stack.append(i)
+        return res
+
+
+# ============================================================================
+
+# 504. Base 7
+# Difficulty: Easy
+# link: https://leetcode.com/problems/base-7/
+# Companies: Google
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def convertToBase7(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
+        base = 7
+        res = ""
+        neg_prefix = '-' if num < 0 else ''
+        num = abs(num)
+        while num != 0:
+            num, mod = divmod(num, base)
+            res = str(mod) + res
+        return (neg_prefix + res) or '0'
+
+
+# ============================================================================
+
+# 506. Relative Ranks
+# Difficulty: Easy
+# link: https://leetcode.com/problems/relative-ranks/
+# Companies: Google
+# Categories:
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def findRelativeRanks(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[str]
+        """
+        sorted_scores = sorted(nums, reverse=True)
+        str_scores = ["Gold Medal", "Silver Medal", "Bronze Medal"]
+        str_scores = (str_scores + [str(i) for i in xrange(4, len(nums) + 1)])[:len(nums)]
+        score_to_str = dict(zip(sorted_scores, str_scores))
+        return [score_to_str[score] for score in nums]
+
+
+# ============================================================================
+
+# 507. Perfect Number
+# Difficulty: Easy
+# link: https://leetcode.com/problems/perfect-number/
+# Companies: Amazon
+# Categories: Math
+
+# ----------------------------------------------------------------------------
+
+class Solution(object):
+    def checkPerfectNumber(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        if num <= 0: return False
+        sqrt = num ** 0.5
+        div_sum = sum(j for i in xrange(2, int(sqrt) + 1) if num % i == 0 for j in [i, num / i]) + 1
+        if int(sqrt) == sqrt: div_sum -= sqrt
+        return div_sum == num
+
+
+# ============================================================================
+
+# 508. Most Frequent Subtree Sum
+# Difficulty: Medium
+# link: https://leetcode.com/problems/most-frequent-subtree-sum/
+# Companies: Amazon
+# Categories: Hash Table,Tree
+
+# ----------------------------------------------------------------------------
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def findFrequentTreeSum(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root: return []
+        from collections import defaultdict
+        val_to_freq = defaultdict(lambda:0)
+        def _findFrequentTreeSum(node):
+            if not node: return 0
+            tree_sum = node.val + _findFrequentTreeSum(node.left) + _findFrequentTreeSum(node.right)
+            val_to_freq[tree_sum] += 1
+            return tree_sum
+        _findFrequentTreeSum(root)
+        max_freq = max(val_to_freq.values())
+        return [val for val, freq in val_to_freq.iteritems() if max_freq == freq]
 
 
 ```
