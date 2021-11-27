@@ -100,6 +100,7 @@
         <div class="col-md-6 offset-md-3 search">
             <div class="input-group">
                 <button class="btn btn-outline-secondary" onclick="copyAll()" type="button">Copy tickers</button>
+                <button class="btn btn-outline-secondary" onclick="copyLink()" type="button">Link</button>
                 <input class="form-control shadow-none search-box" type="text" onkeypress="onEnterSearch()">
                 <button class="btn btn-outline-secondary" onclick="search()" type="button">Search</button>
             </div>
@@ -159,7 +160,7 @@
             document.body.removeChild(el);
         }
 
-        function copyAll() {
+        function getTickers() {
             tickers = []
             $('.select-ticker:odd').each(function (_, el) {
                 tickers.push($(el).attr('ticker'))
@@ -170,7 +171,15 @@
                     tickers.push($(el).attr('ticker'))
                 })
             }
-            copyToClipboard(tickers.join(','))
+            return tickers.join(',');
+        }
+
+        function copyLink() {
+            copyToClipboard(`${window.location.href}/charts?t=${getTickers()}`)
+        }
+
+        function copyAll() {
+            copyToClipboard(getTickers())
         }
 
         function deleteTicker(ticker) {
