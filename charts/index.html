@@ -100,7 +100,7 @@
         <div class="col-md-6 offset-md-3 search">
             <div class="input-group">
                 <button class="btn btn-outline-secondary" onclick="copyAll()" type="button">Copy tickers</button>
-                <button class="btn btn-outline-secondary" onclick="copyLink()" type="button">Link</button>
+                <button class="btn btn-outline-secondary" onclick="copyLink()" type="button">Copy Link</button>
                 <input class="form-control shadow-none search-box" type="text" onkeypress="onEnterSearch()">
                 <button class="btn btn-outline-secondary" onclick="search()" type="button">Search</button>
             </div>
@@ -175,7 +175,9 @@
         }
 
         function copyLink() {
-            copyToClipboard(`${window.location.host}/charts?t=${getTickers()}`)
+            url = `${window.location.origin + window.location.pathname}?t=${getTickers()}`;
+            copyToClipboard(url);
+            window.location.href = url
         }
 
         function copyAll() {
