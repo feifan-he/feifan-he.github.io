@@ -26,6 +26,8 @@
         .ticker-chart {
             display: inline-block;
             max-width: 50%;
+            position: relative;
+            right: 20px;
         }
 
         @media screen and (max-width: 1400px) {
@@ -55,7 +57,7 @@
 
         hr {
             margin-top: 0 !important;
-            margin-bottom: 30;
+            margin-bottom: 30px;
         }
 
         .chart-wrapper {
@@ -76,6 +78,20 @@
             box-shadow: none;
         }
 
+        .del-btn {
+            font-weight: bolder;
+            position: absolute;
+            color: darkgrey;
+            right: 35px;
+            top: 60px;
+            cursor: pointer;
+            transition-duration: .5s;
+        }
+
+        .del-btn:hover {
+            color: red;
+        }
+
     </style>
 </head>
 <body>
@@ -93,10 +109,8 @@
     <div class="container-fluid" id="charts">
     </div>
     <script>
-
-
         urlParams = new URLSearchParams(window.location.search);
-        tickers = urlParams.get('t').toUpperCase().split(',');
+        tickers = urlParams.get('t') ? urlParams.get('t').toUpperCase().split(',') : [];
 
         ticker_to_urls = {}
 
@@ -159,17 +173,26 @@
             copyToClipboard(tickers.join(','))
         }
 
+        function deleteTicker(ticker) {
+            $(`.ticker-${ticker}-container`).remove();
+            delete ticker_to_urls[ticker]
+        }
+
         first = true;
         charts = $('#charts');
 
         function addTicker(ticker) {
             row = $('<div>')
             charts.append(row)
-            row.addClass('row ticker-charts')
+            row.addClass(`row ticker-charts ticker-${ticker}-container`)
+            first = true;
             for (let img in ticker_to_urls[ticker]) {
                 container = $(`<div>`).addClass('ticker-chart')
+                if (first)
+                    container.append(`<div class="del-btn" onclick="deleteTicker('${ticker}')">X</div>`)
                 container.append(`<img draggable="false" class="chart-wrapper" ticker="${ticker.toUpperCase()}" onclick="tog('${ticker}')" src="${ticker_to_urls[ticker][img]}">`)
                 row.append(container)
+                first = false
             }
             row.append('<hr>')
         }
