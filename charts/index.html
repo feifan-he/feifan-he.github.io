@@ -79,6 +79,7 @@
         }
 
         .del-btn {
+            font-size: large;
             font-weight: bolder;
             position: absolute;
             color: darkgrey;
@@ -213,10 +214,13 @@
 
         function search() {
             searchBox = $('.search-box')
-            ticker = searchBox.val().toUpperCase();
+            tickers = searchBox.val().toUpperCase().trim().split(',');
             searchBox.val('')
-            if (getCharts(ticker)) {
-                addTicker(ticker)
+            for (var i in tickers) {
+                ticker = tickers[i]
+                if (getCharts(ticker)) {
+                    addTicker(ticker)
+                }
             }
             setTimeout(()=>$('html, body').animate({scrollTop: $(`[ticker=${ticker}]`).first().offset().top - 80 }, 500), 500)
         }
