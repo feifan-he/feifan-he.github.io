@@ -1,0 +1,70 @@
+.board .block {
+    background-color: rgb(229, 236, 236);
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: x-large;
+    user-select: none;
+    /*transition-duration: 0.2s;*/
+}
+
+.board .block.highlight {
+    background-color: rgb(211, 217, 217);
+}
+.board .block.highlight.main {
+    background-color: rgb(195, 199, 199);
+}
+
+.board .block:nth-child(1) {
+    border-left: None;
+}
+
+.board .row:nth-child(1) .block {
+    border-top: None;
+}
+
+.board .row {
+    display: flex;
+    width: 500px;
+    height: calc(500px / 9);
+}
+
+.board {
+    display: inline-block;
+    border: 3px solid grey;
+}
+
+.board .row:nth-child(3n):not(:last-child){
+    border-bottom: 1px solid grey;
+}
+
+.board .block:nth-child(3n):not(:last-child) {
+    border-right: 1px solid grey;
+}
+
+.board .block .try{
+    color: grey;
+}
+
+.board .block.error {
+    background-color: rgba(255, 0, 0, 0.2) !important;
+}
+
+.container {
+    text-align: center;
+}
+
+
+#slider {
+    left: calc(50% - 150px);
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.ui-slider-handle {
+    outline: none;
+}
