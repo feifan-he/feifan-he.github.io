@@ -2,7 +2,7 @@
 angular.module('sudokuApp', [])
 .controller('ctl', function($scope) {
     self.difficulty = 2;
-
+    self.keys = ['123456789X'];
     let initializeBoard = () => {
         let solution, board, coveredCount;
         [solution, board, coveredCount] = generateBoard(self.difficulty);
@@ -71,7 +71,8 @@ angular.module('sudokuApp', [])
     }
     updateErrors.bind(this);
 
-    document.addEventListener('keyup', (event) => {
+    document.addEventListener('keydown', (event) => {
+        console.log(event.key);
         if (event.key === 'Escape') {
             clear()
             return;
@@ -117,7 +118,7 @@ angular.module('sudokuApp', [])
                     }
                 }, 10);
             }
-        } else if (event.key === 'Backspace' || event.key === 'Delete'){
+        } else if (event.key === 'Backspace' || event.key === 'Delete' || event.key === 'X') {
             if (this.actions.hasOwnProperty(pos))
                 delete this.actions[pos];
             updateErrors();
@@ -138,7 +139,6 @@ angular.module('sudokuApp', [])
     });
     initializeBoard(2);
 
-
     this.highlight = function (pos) {
         let x, y;
         [x, y] = pos
@@ -154,5 +154,14 @@ angular.module('sudokuApp', [])
         // add highlight
         $(`.board [data-x-pos=${x}], .board [data-y-pos=${y}]`).addClass('highlight');
         cur.addClass('main');
+    }
+
+    this.clear = function (pos) {
+        [x, y] = pos;
+        $(`.num-input[data-x-pos=${x}][data-y-pos=${y}]`).val('');
+    }
+
+    this.fill = function (num) {
+        document.dispatchEvent(new KeyboardEvent("keydown", {key: num}));
     }
 });

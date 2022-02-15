@@ -27,8 +27,8 @@
 
 .board .row {
     display: flex;
-    width: 500px;
-    height: calc(500px / 9);
+    width: 750px;
+    height: calc(750px / 9);
 }
 
 .board {
@@ -67,4 +67,23 @@
 
 .ui-slider-handle {
     outline: none;
+}
+
+.num-container-wrapper {
+    text-align: center;
+}
+
+.nums-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.num-input {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: xx-large;
+    border: 2px solid grey;
+    margin: 7px;
+    border-radius: 10px;
+    cursor: default;
 }
