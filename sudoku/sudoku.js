@@ -1,15 +1,20 @@
 
 angular.module('sudokuApp', [])
 .controller('ctl', function($scope) {
+    self.difficulty = 2;
 
-    let initializeBoard = (difficulty) => {
+    let initializeBoard = () => {
         let solution, board, coveredCount;
-        [solution, board, coveredCount] = generateBoard(difficulty);
+        [solution, board, coveredCount] = generateBoard(self.difficulty);
+        // board = JSON.parse(JSON.stringify(solution));
+        // board[0][0] = ' ';
+        // coveredCount = 1;
         this.board = board;
         this.solution = solution;
         this.coveredCount = coveredCount;
         this.positions = generatePositions();
         this.actions = {};
+        clear();
         updateErrors();
     }
     initializeBoard.bind(this);
@@ -100,18 +105,24 @@ angular.module('sudokuApp', [])
         if ('123456789'.includes(event.key)) {
             if (this.board[x][y] !== ' ')
                 return
+
             this.actions[[x, y]] = parseInt(event.key);
-            let success = updateErrors() === 0;
+            success = updateErrors() === 0;
+            $scope.$apply();
             if (Object.keys(this.actions).length === this.coveredCount && success) {
-                if(window.confirm('Congrats, you win! Start a new game?'))
-                    initializeBoard();
+                setTimeout(() => {
+                    if(confirm('Congrats, you win! Start a new game?')) {
+                        initializeBoard();
+                        $scope.$apply();
+                    }
+                }, 10);
             }
         } else if (event.key === 'Backspace' || event.key === 'Delete'){
             if (this.actions.hasOwnProperty(pos))
                 delete this.actions[pos];
             updateErrors();
+            $scope.$apply();
         }
-        $scope.$apply();
     });
 
 
@@ -120,8 +131,8 @@ angular.module('sudokuApp', [])
         max:4,
         value: 2,
         change: function( event, ui ) {
-            initializeBoard(4 - ui.value);
-            clear();
+            self.difficulty = 4 - ui.value;
+            initializeBoard();
             $scope.$apply();
         }.bind(this)
     });

@@ -1,5 +1,4 @@
 .board .block {
-    background-color: rgb(229, 236, 236);
     border-left: 1px solid grey;
     border-top: 1px solid grey;
     display: flex;
@@ -35,6 +34,7 @@
 .board {
     display: inline-block;
     border: 3px solid grey;
+    background-color: rgb(229, 236, 236);
 }
 
 .board .row:nth-child(3n):not(:last-child){
