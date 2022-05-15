@@ -68,11 +68,11 @@ function go_prev_page() {
 
 $(function () {
     $('select.companies').append("Apple|Facebook|Google|Amazon|Microsoft|Netflix|Airbnb|Uber|Lyft|LinkedIn|DoorDash|instacart|Snapchat|Twitter|ByteDance|tiktok|Dropbox|Robinhood|Paypal|Goldman Sachs|Citadel|Two Sigma|Databricks|Accenture|Accolite|Activision|Adobe|Affirm|Alation|American Express|Arcesium|Arista Networks|Asana|Athenahealth|Atlassian|Audible|Barclays|BlackRock|Bloomberg|Bolt|Booking.com|Box|C3 IoT|Capital One|Cisco|Cloudera|Cohesity|Coursera|Cruise Automation|Dataminr|DE Shaw|Dell|Docusign|Dunzo|eBay|Epic Systems|Expedia|FactSet|Flipkart|GoDaddy|Grab|Groupon|HBO|Hotstar|HRT|Huawei|IBM|Indeed|Infosys|Intel|Intuit|IXL|JPMorgan|Juspay|Karat|LiveRamp|MakeMyTrip|Mathworks|MindTickle|Morgan Stanley|Myntra|Nagarro|National Instruments|Nutanix|Nvidia|Opendoor|Oracle|Palantir Technologies|PayTM|payu|PhonePe|Pinterest|Pure Storage|Qualcomm|Qualtrics|Quora|Reddit|Redfin|Roblox|Rubrik|Salesforce|Samsung|SAP|Sapient|ServiceNow|Shopee|Snapdeal|Splunk|Spotify|Sprinklr|Square|Sumologic|Swiggy|tcs|Tesla|TuSimple|Twilio|Twitch|Visa|VMware|Walmart Global Tech|Wayfair|Yahoo|Yandex|Yelp|Zillow|Zoho|Zomato|Zoom"
-        .split('|').map(x => $('<option>').html(x))).selectpicker({title: "Companies", actionsBox: true});
+        .split('|').map(x => $('<option>').html(x))).selectpicker({actionsBox: true});
 
     $('select.tags').append(
         "Array|Hash Table|Linked List|Math|Recursion|String|Sliding Window|Binary Search|Divide and Conquer|Dynamic Programming|Two Pointers|Greedy|Sorting|Backtracking|Stack|Heap (Priority Queue)|Merge Sort|String Matching|Bit Manipulation|Matrix|Monotonic Stack|Simulation|Combinatorics|Memoization|Tree|Depth-First Search|Binary Tree|Binary Search Tree|Breadth-First Search|Union Find|Graph|Trie|Design|Doubly-Linked List|Geometry|Interactive|Bucket Sort|Radix Sort|Counting|Data Stream|Iterator|Database|Rolling Hash|Hash Function|Shell|Enumeration|Number Theory|Topological Sort|Prefix Sum|Quickselect|Binary Indexed Tree|Segment Tree|Line Sweep|Ordered Set|Queue|Monotonic Queue|Counting Sort|Brainteaser|Game Theory|Eulerian Circuit|Randomized|Reservoir Sampling|Shortest Path|Bitmask|Rejection Sampling|Probability and Statistics|Suffix Array|Concurrency|Minimum Spanning Tree|Biconnected Component|Strongly Connected Component"
-            .split('|').map(x => $('<option>').html(x))).selectpicker({title: "Tags", actionsBox: true});
+            .split('|').map(x => $('<option>').html(x))).selectpicker({actionsBox: true});
 
     $('select.difficulty').selectpicker();
 
