@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+
+</head>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pwd-wrapper {
+        padding: 50px;
+        width: 300px;
+        margin-top: 100px;
+        background-color: rgba(0, 0, 0, .85);
+
+    }
+
+    .pwd-wrapper button {
+        width: 100%;
+    }
+
+    .pwd-wrapper div {
+        text-align: center;
+        color: white;
+        font-size: x-large;
+    }
+
+</style>
+<body>
+
+<div class="form-group pwd-wrapper">
+    <div>Sign in</div>
+    <br>
+    <input class="form-control" id="pwd" placeholder="Password" type="email">
+    <br>
+    <button class="btn btn-outline-info" onclick="login()" type="button">Login</button>
+</div>
+
+<script>
+    let encrypted;
+    $(function () {
+        if (localStorage.getItem("password") !== null) {
+            window.location.href = "/lc";
+        }
+        $.get('/lc/hello.txt', function (data) {
+            encrypted = data
+        }.bind(this));
+    });
+
+    function login() {
+        let pwd = document.getElementById('pwd').value;
+        if (CryptoJS.AES.decrypt(encrypted, pwd).toString(CryptoJS.enc.Utf8) === 'hello') {
+            localStorage.setItem('password', pwd)
+            window.location.href = "/lc";
+        }
+    }
+
+    $('input').keyup(function (event) {
+        if (event.originalEvent.key === 'Enter') {
+            login();
+        }
+    })
+
+</script>
+</body>
+</html>
+

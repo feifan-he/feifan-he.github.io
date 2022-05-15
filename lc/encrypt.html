@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+</head>
+<body>
+
+<script>
+
+    let pwd = ""
+
+    function download(text, filename) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
+
+    $(function () {
+        $.get('questions.json', function (data) {
+            var encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), pwd).toString();
+            console.log(CryptoJS.AES.decrypt(encrypted, pwd).toString(CryptoJS.enc.Utf8))
+            download(encrypted, 'questions.txt')
+        }.bind(this));
+    })
+    ;
+</script>
+
+
+</body>
+</html>
