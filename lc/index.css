@@ -76,3 +76,11 @@ body {
     float:right;
     margin-bottom: 300px;
 }
+
+.container-fluid {
+    max-width:1170px;
+}
+
+#content img {
+    max-width: 100%;
+}
