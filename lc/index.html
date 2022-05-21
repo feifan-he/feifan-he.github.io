@@ -15,7 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <script crossorigin="anonymous"
-            integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+            integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" src="aes.js"></script>
 
 
     <script src="index.js"></script>
@@ -35,22 +35,23 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="mr-4 my-2"><select class="companies nav-item" data-live-search="true" title="Companies" multiple> </select></li>
-                <li class="mr-4 my-2"><select class="tags" data-live-search="true" title="Tags" multiple>
+                <li class="mr-3 my-2"><select class="companies nav-item" data-live-search="true" title="Companies" multiple> </select></li>
+                <li class="mr-3 my-2"><select class="tags" data-live-search="true" title="Tags" multiple>
                 </select></li>
-                <li class="mr-4 my-2"><select class="difficulty" multiple title="Difficulty">
+                <li class="mr-3 my-2"><select class="difficulty" multiple title="Difficulty">
                         <option>Easy</option>
                         <option>Medium</option>
                         <option>Hard</option>
                     </select></li>
-                <li class="mr-4 my-2"><button class="btn btn-outline-info" onclick="filter_questions(); set_page()" type="button">Search</button></li>
+                <li class="mr-3 my-2"><button class="btn btn-outline-info search-btn" onclick="filter_questions(); set_page()" type="button">Search</button></li>
+                <li class="mr-3 my-2"><button class="btn btn-outline-info search-btn" type="button" data-toggle="modal" data-target="#ids-modal">ID's</button></li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
+            <div class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-info prev-page" type="button"><</button>
                 <input class="form-control mr-2 ml-2 page" onblur="go_to_page(this)">
                 <button class="btn btn-outline-info next-page" type="button">></button>
-            </form>
+            </div>
         </div>
     </nav>
 
@@ -65,6 +66,45 @@
     </form>
 </div>
 
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="ids-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Search by Question Numbers</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="filter-ids">Enter question numbers to filter</label>
+                    <textarea class="form-control" rows="3" id="filter-ids"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="search_by_ids($('#filter-ids').val())" data-dismiss="modal">Search</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

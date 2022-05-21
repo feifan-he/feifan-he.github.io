@@ -27,14 +27,16 @@
         document.body.removeChild(element);
     }
 
+
+    name='solutions'
+
     $(function () {
-        $.get('questions.json', function (data) {
-            var encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), pwd).toString();
-            console.log(CryptoJS.AES.decrypt(encrypted, pwd).toString(CryptoJS.enc.Utf8))
-            download(encrypted, 'questions.txt')
-        }.bind(this));
-    })
-    ;
+            $.get(name + '.json', function (data) {
+                var encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), pwd).toString();
+                console.log(CryptoJS.AES.decrypt(encrypted, pwd).toString(CryptoJS.enc.Utf8))
+                download(encrypted, name + '.txt')
+            }.bind(this));
+    });
 </script>
 
 
