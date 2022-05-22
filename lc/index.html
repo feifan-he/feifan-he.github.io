@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"
           rel="stylesheet"/>
@@ -17,61 +16,65 @@
     <script crossorigin="anonymous"
             integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" src="aes.js"></script>
 
-
     <script src="index.js"></script>
     <link href="index.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Leetcode</a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Leetcode</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="mr-3 my-2"><select class="companies nav-item" data-live-search="true" multiple
+                                          title="Companies"> </select></li>
+            <li class="mr-3 my-2"><select class="tags" data-live-search="true" multiple title="Tags">
+            </select></li>
+            <li class="mr-3 my-2"><select class="difficulty" multiple title="Difficulty">
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+            </select></li>
+            <li class="mr-3 my-2">
+                <button class="btn btn-outline-info search-btn" onclick="filter_questions(); set_page()" type="button">
+                    Search
+                </button>
+            </li>
+            <li class="mr-3 my-2">
+                <button class="btn btn-outline-info search-btn" data-target="#ids-modal" data-toggle="modal"
+                        type="button">ID's
+                </button>
+            </li>
+        </ul>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="mr-3 my-2"><select class="companies nav-item" data-live-search="true" title="Companies" multiple> </select></li>
-                <li class="mr-3 my-2"><select class="tags" data-live-search="true" title="Tags" multiple>
-                </select></li>
-                <li class="mr-3 my-2"><select class="difficulty" multiple title="Difficulty">
-                        <option>Easy</option>
-                        <option>Medium</option>
-                        <option>Hard</option>
-                    </select></li>
-                <li class="mr-3 my-2"><button class="btn btn-outline-info search-btn" onclick="filter_questions(); set_page()" type="button">Search</button></li>
-                <li class="mr-3 my-2"><button class="btn btn-outline-info search-btn" type="button" data-toggle="modal" data-target="#ids-modal">ID's</button></li>
-            </ul>
-
-            <div class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-info prev-page" type="button"><</button>
-                <input class="form-control mr-2 ml-2 page" onblur="go_to_page(this)">
-                <button class="btn btn-outline-info next-page" type="button">></button>
-            </div>
+        <div class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-info prev-page" type="button"><</button>
+            <input class="form-control mr-2 ml-2 page" onblur="go_to_page(this)">
+            <button class="btn btn-outline-info next-page" type="button">></button>
         </div>
-    </nav>
-
-
+    </div>
+</nav>
 
 <div class="container-fluid">
     <div id="content"></div>
-    <form class="form-inline my-5 float-right">
+    <div class="form-inline my-5 float-right">
         <button class="btn btn-outline-info prev-page" type="button"><</button>
         <input class="form-control mr-2 ml-2 page" onblur="go_to_page(this)">
         <button class="btn btn-outline-info next-page" type="button">></button>
-    </form>
+    </div>
 </div>
 
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div aria-labelledby="exampleModalLabel" class="modal fade" id="modal" role="dialog" tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                     <span>&times;</span>
                 </button>
             </div>
@@ -83,24 +86,26 @@
 </div>
 
 
-<div class="modal" id="ids-modal" tabindex="-1" role="dialog">
+<div class="modal" id="ids-modal" role="dialog" tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Search by Question Numbers</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
                     <label for="filter-ids">Enter question numbers to filter</label>
-                    <textarea class="form-control" rows="3" id="filter-ids"></textarea>
+                    <textarea class="form-control" id="filter-ids" rows="3"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="search_by_ids($('#filter-ids').val())" data-dismiss="modal">Search</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" data-dismiss="modal" onclick="search_by_ids($('#filter-ids').val())"
+                        type="button">Search
+                </button>
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
             </div>
         </div>
     </div>

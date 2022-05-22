@@ -1,6 +1,4 @@
-let questions;
-let solutions
-let filtered_questions;
+let questions, solutions, filtered_questions;
 let page_count = 20;
 let page_num = 1;
 
@@ -49,7 +47,7 @@ function set_page() {
 ## ${q.id}. ${q.title}<span class="${q.difficulty.toLowerCase()}"></span></div>\n
 <a class="btn btn-outline-dark btn-sm mr-2" href="https://leetcode.com/problems/${q.url}" target="_blank">Leetcode</a>
 <button class="btn btn-outline-warning btn-sm mr-2" data-toggle="modal" data-target="#modal" onclick="openCategories('${q.id}')">Categories</button>
-<button class="btn btn-outline-info btn-sm" style="${!q.hasSolution ? 'display:none': ''}" onclick="copySolutions('${q.id}')">Solution</button>
+<button class="btn btn-outline-info btn-sm" style="${!q.hasSolution ? 'display:none' : ''}" onclick="copySolutions('${q.id}')">Solution</button>
 <hr>\n${q.question}`)
 
     let parsed = marked.parse(output.map(q => `<div class="question-wrapper"> ${q} </div>`).join(''));
@@ -130,7 +128,7 @@ function copySolutions(id) {
                             height: 'auto'
                         };
             
-                        app = $('#app')
+                        let app = $('#app');
                         app.css({
                             width: 1000,
                             margin: '50px auto',
@@ -144,30 +142,29 @@ function copySolutions(id) {
             
                         console.log(question.documents[0].replace(/:.*/, ''));
             
-                      function load_images(container, w, h) {
+                      function load_images(container) {
                         return (data) => {
                           console.log(data)
                           for (img of data.timeline)
                             container.append($('<img>').attr('src', img.image).css(
                               {
                                 margin: '20px auto',
-                                 border: '1px solid grey',
-                                 display: 'block',
+                                border: '1px solid grey',
+                                display: 'block',
                                 'max-width': 700,
-                                width:w,
                                 height: 'auto'
                               }
                             ))
                         }
                       }
             
-                      containers = $('.dia-container__jsK9')
-                      for (i in question.documents) {
+                      let containers = $('.dia-container__jsK9')
+                      for (let i in question.documents) {
                         let url = question.documents[i];
-                        let container = $(containers[i]).html('');
+                        let container = $(containers[i]).html('').css({height: 'inherit', width: 'inherit'});
                         [w, h] = url.split(':')[1].split(',')
                         container.append((container = $('<div>').css({margin: 'auto 0'}))).append($('<hr>'))
-                        $.getJSON(url.replace(/:.*/, ''), load_images(container, w, h));
+                        $.getJSON(url.replace(/:.*/, ''), load_images(container));
                       }
                     });
                     document.head.appendChild(script);
@@ -177,7 +174,8 @@ function copySolutions(id) {
             let question = ${question}
             main();
 `.replace(/\n {12}/g, '\n'));
-        navigator.clipboard.writeText(to_be_copied).then(() => {});
+        navigator.clipboard.writeText(to_be_copied).then(() => {
+        });
     }.bind(this));
 }
 
@@ -198,6 +196,4 @@ $(function () {
     });
     init_selection_picker();
     set_event_listeners();
-
-
 })
