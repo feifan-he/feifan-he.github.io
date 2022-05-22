@@ -110,6 +110,15 @@ function openCategories(id) {
     modal.find('.modal-body').html(questions[id].tags.map(tag => `<div class="badge badge-info tag">${tag}</div>`));
 }
 
+function copyToClipboard(str) {
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+}
+
 function copySolutions(id) {
     $.get(`questions/${id}.txt`, function (data) {
         let question = JSON.stringify(JSON.parse(CryptoJS.AES.decrypt(data, localStorage.getItem('password')).toString(CryptoJS.enc.Utf8)), null, '  ');
@@ -174,8 +183,7 @@ function copySolutions(id) {
             let question = ${question}
             main();
 `.replace(/\n {12}/g, '\n'));
-        navigator.clipboard.writeText(to_be_copied).then(() => {
-        });
+        copyToClipboard(to_be_copied);
     }.bind(this));
 }
 
