@@ -26,6 +26,7 @@ function filter_questions() {
         return this.value
     }).get();
 
+    page_num = 0
     filtered_questions = questions.filter(function (question) {
         if (question === null) return;
         return question.categoryTitle === 'Algorithms' &&
