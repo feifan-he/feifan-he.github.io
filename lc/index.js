@@ -161,6 +161,7 @@ function copySolutions(id) {
                                 border: '1px solid grey',
                                 display: 'block',
                                 'max-width': 700,
+                                'max-height': 350,
                                 height: 'auto'
                               }
                             ))
