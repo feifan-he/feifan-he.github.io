@@ -190,7 +190,7 @@ function copySolutions(id) {
 
 function search_by_ids(ids) {
     filtered_questions = [];
-    for (let id of ids.split(/[,\n; ]/).filter(x => x.trim() !== '')) {
+    for (let id of ids.split(/[,\n; \-*#]/).filter(x => x.trim() !== '')) {
         filtered_questions.push(questions[parseInt(id)]);
     }
     if (filtered_questions.length === 0)
