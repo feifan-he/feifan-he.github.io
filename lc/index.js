@@ -48,6 +48,7 @@ function set_page() {
 ## ${q.id}. ${q.title}<span class="${q.difficulty.toLowerCase()}"></span></div>\n
 <a class="btn btn-outline-dark btn-sm mr-2" href="https://leetcode.com/problems/${q.url}" target="_blank">Leetcode</a>
 <button class="btn btn-outline-warning btn-sm mr-2" data-toggle="modal" data-target="#modal" onclick="openCategories('${q.id}')">Categories</button>
+<button class="btn btn-outline-success btn-sm mr-2" data-toggle="modal" data-target="#modal" onclick="openCompanies('${q.id}')">Companies</button>
 <button class="btn btn-outline-info btn-sm" style="${!q.hasSolution ? 'display:none' : ''}" onclick="copySolutions('${q.id}')">Solution</button>
 <hr>\n${q.question}`)
 
@@ -109,6 +110,12 @@ function openCategories(id) {
     let modal = $('#modal')
     modal.find('.modal-title').html('Categories');
     modal.find('.modal-body').html(questions[id].tags.map(tag => `<div class="badge badge-info tag">${tag}</div>`));
+}
+
+function openCompanies(id) {
+    let modal = $('#modal')
+    modal.find('.modal-title').html('Categories');
+    modal.find('.modal-body').html(questions[id].companies.map(company => `<div class="badge badge-info tag">${company}</div>`));
 }
 
 function copyToClipboard(str) {
