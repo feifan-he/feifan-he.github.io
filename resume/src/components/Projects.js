@@ -18,7 +18,7 @@ function Project(props) {
                     <ol className="carousel-indicators">
                         {
                             props.project.imgs.map((link, id) =>
-                                (<li data-target={'#project-' + props.id} data-slide-to={id} className={id === 0 ? 'active' : ''}></li>))
+                                (<li key={id} data-target={'#project-' + props.id} data-slide-to={id} className={id === 0 ? 'active' : ''}></li>))
                         }
                     </ol>
                     <div className="carousel-inner">

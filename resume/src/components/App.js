@@ -1,11 +1,13 @@
 import '../index.scss'
 import {projects} from '../resumeData'
 import {Projects} from './Projects'
+import {FrontPage} from './FrontPage'
 
 function App() {
   return (
       <div className="container">
-        <Projects projects={projects}></Projects>
+          <FrontPage></FrontPage>
+          <Projects projects={projects}></Projects>
       </div>
   );
 }
