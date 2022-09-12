@@ -4,12 +4,12 @@ import {Projects} from './Projects'
 import {FrontPage} from './FrontPage'
 
 function App() {
-  return (
-      <div className="container">
-          <FrontPage></FrontPage>
-          <Projects projects={projects}></Projects>
-      </div>
-  );
+    return (
+        <div className="fluid-container">
+            <FrontPage></FrontPage>
+            <Projects projects={projects}></Projects>
+        </div>
+    );
 }
 
 export default App;
