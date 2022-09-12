@@ -1,6 +1,19 @@
 export const projects = [
     {
         'imgs': [
+            'imgs/umleditor/general.png',
+            'imgs/umleditor/build.png',
+            'imgs/umleditor/download.png',
+            'imgs/umleditor/move.png',
+            'imgs/umleditor/relationship.png',
+            'imgs/umleditor/zoom.png',
+        ],
+        'title': 'UML Class Diagram Editor',
+        'description': 'Implemented a UML editor that can create, edit, and share UML Class diagrams.',
+        'link': 'https://umleditor.herokuapp.com/'
+    },
+    {
+        'imgs': [
             'imgs/sort-algo/quick.png',
             'imgs/sort-algo/heap.png',
             'imgs/sort-algo/shell.png',
@@ -11,6 +24,7 @@ export const projects = [
     },
     {
         'imgs': [
+            'imgs/traversal-algo/general.png',
             'imgs/traversal-algo/tree-preorder.png',
             'imgs/traversal-algo/graph-dfs.png',
             'imgs/traversal-algo/grid-bfs.png',
@@ -21,6 +35,7 @@ export const projects = [
     },
     {
         'imgs': [
+            'imgs/sudoku/general.png',
             'imgs/sudoku/validate.png',
             'imgs/sudoku/win.png',
             'imgs/sudoku/set-easy.png',
@@ -32,6 +47,7 @@ export const projects = [
     },
     {
         'imgs': [
+            'imgs/trade-algo/general.png',
             'imgs/trade-algo/impl1.png',
             'imgs/trade-algo/impl2.png',
             'imgs/trade-algo/design1.png',
@@ -43,6 +59,7 @@ export const projects = [
     },
     {
         'imgs': [
+            'imgs/watchlist/general.png',
             'imgs/watchlist/search.png',
             'imgs/watchlist/select.png',
         ],
