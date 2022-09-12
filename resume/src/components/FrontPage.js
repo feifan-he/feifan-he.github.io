@@ -1,7 +1,7 @@
 export function FrontPage() {
     return (
         <div className={"front-page"}>
-            <div className="title">I'm Feifan</div>
+            <div className="title">Hello,<br/>I'm Feifan</div>
             <div className="text-center">
                 {
                     [['resume.png', 'Resume'], ['linkedin.png', 'LinkedIn'], ['email.png', 'Email']].map((icon) => {

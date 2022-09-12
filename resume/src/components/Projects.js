@@ -10,7 +10,7 @@ function ProjectDisplay(props) {
 
 function Project(props) {
     return (
-        <div className="col-md-6 col-lg-4 project">
+        <div className="col-xl-6  project">
             <div className="card">
                 <div id={'project-' + props.id} className="carousel slide" data-bs-interval="false">
                     <ol className="carousel-indicators">

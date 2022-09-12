@@ -3,10 +3,10 @@ export const projects = [
         'imgs': [
             'imgs/umleditor/general.png',
             'imgs/umleditor/build.png',
-            'imgs/umleditor/download.png',
-            'imgs/umleditor/move.png',
             'imgs/umleditor/relationship.png',
+            'imgs/umleditor/move.png',
             'imgs/umleditor/zoom.png',
+            'imgs/umleditor/download.png',
         ],
         'title': 'UML Class Diagram Editor',
         'description': 'Implemented a UML editor that can create, edit, and share UML Class diagrams.',
@@ -36,10 +36,10 @@ export const projects = [
     {
         'imgs': [
             'imgs/sudoku/general.png',
-            'imgs/sudoku/validate.png',
-            'imgs/sudoku/win.png',
             'imgs/sudoku/set-easy.png',
             'imgs/sudoku/set-hard.png',
+            'imgs/sudoku/validate.png',
+            'imgs/sudoku/win.png',
         ],
         'title': 'Sudoku Game',
         'description': 'Implemented a Sudoku puzzle generator with keyboard shortcuts, and difficulty that can be chosen by the player.',
