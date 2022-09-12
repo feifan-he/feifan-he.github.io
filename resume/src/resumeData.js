@@ -40,5 +40,14 @@ export const projects = [
         'title': 'Automated Trading via Telegram',
         'description': 'Designed, implemented and deployed several live trading algorithms with Telegram integration on Google Compute Engine.',
         'link': 'http://feifanhe.com/algo-trading'
+    },
+    {
+        'imgs': [
+            'imgs/watchlist/search.png',
+            'imgs/watchlist/select.png',
+        ],
+        'title': 'Watchlist Builder',
+        'description': 'Created a website to view stock charts(weekly and daily) by searching comma separated ticker symbols and reducing the time for the stock selection process by combining all charts in one page.',
+        'link': 'http://feifanhe.com/charts'
     }
 ]
