@@ -4,6 +4,7 @@ export const projects = [
             'imgs/umleditor/general.png',
             'imgs/umleditor/build.png',
             'imgs/umleditor/relationship.png',
+            'imgs/umleditor/save.png',
             'imgs/umleditor/move.png',
             'imgs/umleditor/zoom.png',
             'imgs/umleditor/download.png',
