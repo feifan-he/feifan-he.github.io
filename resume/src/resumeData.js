@@ -9,8 +9,22 @@ export const projects = [
             'imgs/umleditor/download.png',
         ],
         'title': 'UML Class Diagram Editor',
-        'description': 'Implemented a UML editor that can create, edit, and share UML Class diagrams.',
-        'link': 'https://umleditor.herokuapp.com/'
+        'description': 'Implemented a UML class diagram editor with the ability to create, edit, and delete classes and various relationships.',
+        'tags': 'Mongoose/MongoDB, Heroku Hosting, NodeJS, Express framework, JavaScript, React, CSS, Bootstrap, HTML',
+        'link': 'https://umleditor.herokuapp.com'
+    },
+    {
+        'imgs': [
+            'imgs/sudoku/general.png',
+            'imgs/sudoku/set-easy.png',
+            'imgs/sudoku/set-hard.png',
+            'imgs/sudoku/validate.png',
+            'imgs/sudoku/win.png',
+        ],
+        'title': 'Sudoku Game',
+        'description': 'Created a Sudoku puzzle generator with keyboard shortcuts, and difficulty that can be chosen by the player.',
+        'tags': 'JavaScript, AngularJS, CSS, HTML',
+        'link': 'http://feifanhe.com/sudoku'
     },
     {
         'imgs': [
@@ -19,7 +33,8 @@ export const projects = [
             'imgs/sort-algo/shell.png',
         ],
         'title': 'In-place Sort Visualization',
-        'description': 'Studied various in-place sort algorithms (Selection, Bubble, Insertion, Quick, Heap, Shell, Comb) and visualized the sort process using front-end web technologies without the usage of external visualization libraries.',
+        'description': 'Studied various in-place sort algorithms (Selection, Bubble, Insertion, Quick, Heap, Shell, Comb) and visualized the sorting process using front-end web technologies without the usage of external visualization libraries.',
+        'tags': 'JavaScript, CSS, HTML',
         'link': 'http://feifanhe.com/sort-algo'
     },
     {
@@ -31,19 +46,8 @@ export const projects = [
         ],
         'title': 'Tree, Graph, and Grid Traversal Visualization',
         'description': 'Studied tree traversal algorithms (Pre-order, Post-order, In-order, Level order), graph traversal algorithms (BFS, DFS), grid traversal algorithms (BFS, DFS), and visualized the traversal process using front-end web technologies without the usage of external visualization libraries.',
+        'tags': 'JavaScript, CSS, HTML',
         'link': 'http://feifanhe.com/traversal-algo'
-    },
-    {
-        'imgs': [
-            'imgs/sudoku/general.png',
-            'imgs/sudoku/set-easy.png',
-            'imgs/sudoku/set-hard.png',
-            'imgs/sudoku/validate.png',
-            'imgs/sudoku/win.png',
-        ],
-        'title': 'Sudoku Game',
-        'description': 'Implemented a Sudoku puzzle generator with keyboard shortcuts, and difficulty that can be chosen by the player.',
-        'link': 'http://feifanhe.com/sudoku'
     },
     {
         'imgs': [
@@ -54,17 +58,72 @@ export const projects = [
             'imgs/trade-algo/design2.png',
         ],
         'title': 'Automated Trading via Telegram',
-        'description': 'Designed, implemented and deployed several live trading algorithms with Telegram integration on Google Compute Engine.',
+        'description': 'Designed, implemented, and deployed several live trading algorithms with Telegram integration running on Google Compute Engine.',
+        'tags': 'Python, Robinhood Unofficial library, Python Telegram Bot library',
         'link': 'http://feifanhe.com/algo-trading'
     },
     {
         'imgs': [
-            'imgs/watchlist/general.png',
-            'imgs/watchlist/search.png',
-            'imgs/watchlist/select.png',
+            'imgs/stock-filter/output.png',
+            'imgs/stock-filter/criteria.png',
         ],
-        'title': 'Watchlist Builder',
-        'description': 'Created a website to view stock charts(weekly and daily) by searching comma separated ticker symbols and reducing the time for the stock selection process by combining all charts in one page.',
-        'link': 'http://feifanhe.com/charts'
+        'title': 'Stock Filter',
+        'description': 'Created a stock filter that retrieves stock data using the Yahoo Finance endpoints, and implemented filters based on Mark Minervini’s Pivot Volatility Contraction Pattern to identify momentum stocks with potential breakouts.',
+        'tags': 'Python, Yahoo Finance Web Endpoint',
+        'link': 'https://github.com/FEIFAN-HE/stock-filter'
     }
 ]
+
+export const educationMarkdown = `
+#### Brandeis University
+Master of Science in Computer Science (2022-2024)
+
+#### CFA Institute
+CFA® charterholder
+
+#### University of Toronto
+Bachelor of Commerce (2013  - 2017), Graduated with Distinction
+`
+
+export const certificationsMarkdown = `
+*Obtained certificate of completion for the following Coursera courses*
+
+- Data Analysis with Python([Certificate](https://www.coursera.org/account/accomplishments/verify/3L9FYRXCAUHR))
+- Introduction to Java and Object-Oriented Programming([Certificate](https://www.coursera.org/account/accomplishments/verify/NXWFX42UECU8))
+- Operating Systems and You: Becoming a Power User([Certificate](https://www.coursera.org/account/accomplishments/verify/FARNCUGG5SGQ))
+- *Specialization*: Python for Everybody([Certificate](https://www.coursera.org/account/accomplishments/specialization/5BBZPWJ5E7TW))
+  - Programming for Everybody([Certificate](https://www.coursera.org/account/accomplishments/verify/WGVV57QWW59Q))
+  - Python Data Structures([Certificate](https://www.coursera.org/account/accomplishments/verify/LF8TYPK555SP))
+  - Capstone: Retrieving, Processing, and Visualizing Data with Python([Certificate](https://www.coursera.org/account/accomplishments/verify/TRR29375QSCB))
+  - Using Python to Access Web Data([Certificate](https://www.coursera.org/account/accomplishments/verify/FWK3SJXWZJF3))
+  - Using Databases with Python([Certificate](https://www.coursera.org/account/accomplishments/verify/VFLSL4AMSM8T))
+- *Specialization*: Google IT Automation with Python(In progress)
+  - Introduction to Git and GitHub([Certificate](https://www.coursera.org/account/accomplishments/verify/RS8SMJSA6D42))
+  - Using Python to Interact with the Operating System([Certificate](https://coursera.org/share/75abe17e34ffdf039a2dac2a7735114a))
+- *Specialization*: Introduction to Discrete Mathematics for Computer Science Specialization(In progress)
+    - Mathematical Thinking in Computer Science([Certificate](https://coursera.org/share/7ed90e2c730a94b34d04da3c461c17a7))
+    - Combinatorics and Probability([Certificate](https://www.coursera.org/account/accomplishments/verify/RUKLMV7FF3PA))
+    - Introduction to Graph Theory([Certificate](https://www.coursera.org/account/accomplishments/verify/5URLX94LHZLZ))
+- Introduction to Structured Query Language (SQL)([Certificate](https://www.coursera.org/account/accomplishments/verify/LMJ477ZV98JC))
+`
+
+export const languagesMarkdown = `
+#### Programming Languages
+- Python
+- Java
+- Bash
+    
+#### Web Development Languages
+- HTML
+- CSS
+    - Bootstrap
+- JavaScript
+    - NodeJS, Express
+    - React, AngularJS
+
+#### Databases
+- SQL
+- NoSQL
+    - Mongoose/MongoDB
+
+`

@@ -1,53 +1,91 @@
 
-.card {
-    margin-top: 20px;
-    padding: 20px;
+
+@media (min-width: 2000px) {
+    .col-xxl-4 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .d-xxl-none {
+        display: none !important;
+    }
 }
 
-.project {
-    .img-container {
-        position: relative;
-    }
+.projects {
+    margin: 50px 0 20px 0;
 
-    .img-container::after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-        background-color: rgba(240, 128, 128, 0.29);
-        border-radius: 10px;
-    }
+    .project {
+        .card {
+            margin-top: 20px;
+            padding: 20px;
 
-    img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: scale-down;
-        border: 2px solid rgba(240, 128, 128, 0.29);
-        border-radius: 10px;
-    }
-
-
-    .carousel {
-        .carousel-indicators [data-slide-to]{
-            background-color: grey;
-            height: 7px;
-            border-radius: 10px;
-
-            &:hover, &.active {
-                background-color: lightblue;
+            .tag {
+                font-weight: bold;
+                padding: 5px 10px;
+                color: white;
+                background-color: lightcoral;
+                display: inline-block;
+                margin: 0 10px 10px 0;
+                font-size: small;
             }
 
+            .link-btn {
+                background-color: #6abeda;
+                color: white;
+                border-radius: 5px;
+                padding: 10px;
+                margin-top: 30px !important;
+                &:hover {
+                    background-color: #3dadd2;
+                }
+            }
         }
-        .carousel-control-prev-icon, .carousel-control-next-icon {
-            background-color: grey;
-            border-radius: 5px;
-            border: 7px solid grey;
-            width: 40px;
-            height: 40px;
 
-            &:hover {
-                transform: scale(1.3);
-                transition-duration: .3s;
+        .img-container {
+            position: relative;
+        }
+
+        .img-container::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            background-color: rgba(240, 128, 128, 0.29);
+            border-radius: 10px;
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: 2px solid rgba(240, 128, 128, 0.29);
+            border-radius: 10px;
+        }
+
+
+        .carousel {
+            .carousel-indicators [data-slide-to] {
+                background-color: grey;
+                height: 7px;
+                border-radius: 10px;
+
+                &:hover, &.active {
+                    background-color: lightblue;
+                }
+            }
+
+            .carousel-control-prev-icon, .carousel-control-next-icon {
+                background-color: grey;
+                border-radius: 5px;
+                border: 7px solid grey;
+                width: 40px;
+                height: 40px;
+
+                &:hover {
+                    transform: scale(1.3);
+                    transition-duration: .3s;
+                }
             }
         }
     }
@@ -60,7 +98,6 @@
         text-align: center;
         margin: 100px 0 70px 0;
     }
-
     .icon {
         width: 50px;
         margin: 0 10px 0 30px;
@@ -68,11 +105,11 @@
 
     .icon-container, .icon-desc {
         display: inline-block;
+        color: #212529 !important;
     }
 
     .icon-container {
         cursor: pointer;
-        margin-bottom: 40px;
 
         &:hover {
             transform: scale(1.2);
@@ -86,3 +123,46 @@
     }
 }
 
+.education-and-skills {
+    .title-icon {
+        width: 60px;
+        margin: -8px 15px 0 0;
+    }
+
+    .category-container {
+        margin: 20px 0;
+    }
+
+    .category-container h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 50px;
+    }
+
+    .education {
+        text-align: center;
+    }
+
+    .skills, .certifications {
+        text-align: center;
+
+        h4:not(:first-child) {
+            margin-top: 20px;
+        }
+
+        >ul {
+            text-align: left;
+            width: fit-content;
+            margin: auto;
+        }
+    }
+
+    .ending {
+        margin: 120px 0;
+        font-size: x-large;
+        img {
+            width: 80px;
+            margin-top: 10px;
+        }
+    }
+}

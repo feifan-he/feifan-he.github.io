@@ -10,9 +10,9 @@ function ProjectDisplay(props) {
 
 function Project(props) {
     return (
-        <div className="col-xl-6  project">
+        <div className="col-xl-6 col-xxl-4  project">
             <div className="card">
-                <div id={'project-' + props.id} className="carousel slide" data-bs-interval="false">
+                <div id={'project-' + props.id} className="carousel slide" data-interval="false">
                     <ol className="carousel-indicators">
                         {
                             props.project.imgs.map((link, id) =>
@@ -37,9 +37,15 @@ function Project(props) {
                     </a>
                 </div>
                 <div className="card-body">
+                    <hr/>
                     <h5 className="card-title">{props.project.title}</h5>
+                    {
+                        props.project.tags.split(/,\s+/).map(
+                            tag => (<div className="tag">{tag}</div>)
+                        )
+                    }
                     <p className="card-text">{props.project.description}</p>
-                    <a href="src/components/App#" className="btn btn-info">{props.project.link}</a>
+                    <a target="_blank" href={props.project.link} className="link-btn">{props.project.link}</a>
                 </div>
             </div>
         </div>)
@@ -47,7 +53,7 @@ function Project(props) {
 
 export function Projects(props) {
     return (
-        <div className="row">
+        <div className="row projects">
             {props.projects.map((project, id) => (<Project project={project} id={id} key={id}></Project>))}
         </div>)
 }
