@@ -10,9 +10,19 @@ export const projects = [
             'imgs/umleditor/download.png',
         ],
         'title': 'UML Class Diagram Editor',
-        'description': 'Implemented a UML class diagram editor with the ability to create, edit, and delete classes and various relationships.',
-        'tags': 'Mongoose/MongoDB, Heroku Hosting, NodeJS, Express framework, JavaScript, React, CSS, Bootstrap, HTML',
+        'description': 'An interactive web-based UML class diagram editor that enables users to create, edit, and delete classes and relationships.',
+        'tags': 'Mongoose/MongoDB, NodeJS, ExpressJS, JavaScript, React, CSS, Bootstrap, HTML',
         'link': 'https://umleditor.herokuapp.com'
+    },
+    {
+        'imgs': [
+            'imgs/keeper/keeper1.png',
+            'imgs/keeper/keeper2.png',
+        ],
+        'title': 'Note Keeper',
+        'description': 'A web-based app for storing sticky notes that allows users to create, delete and manage their notes with automatic saving.',
+        'tags': 'JavaScript, React, CSS, Bootstrap, HTML',
+        'link': 'http://feifanhe.com/keeper'
     },
     {
         'imgs': [
@@ -23,7 +33,7 @@ export const projects = [
             'imgs/sudoku/win.png',
         ],
         'title': 'Sudoku Game',
-        'description': 'Created a Sudoku puzzle generator with keyboard shortcuts, and difficulty that can be chosen by the player.',
+        'description': 'An online game that generates Sudoku puzzles and allows players to choose their desired difficulty level.',
         'tags': 'JavaScript, AngularJS, CSS, HTML',
         'link': 'http://feifanhe.com/sudoku'
     },
@@ -34,7 +44,7 @@ export const projects = [
             'imgs/sort-algo/shell.png',
         ],
         'title': 'In-place Sort Visualization',
-        'description': 'Studied various in-place sort algorithms (Selection, Bubble, Insertion, Quick, Heap, Shell, Comb) and visualized the sorting process using front-end web technologies without the usage of external visualization libraries.',
+        'description': 'A web-based visualization of various in-place sort algorithms. ',
         'tags': 'JavaScript, CSS, HTML',
         'link': 'http://feifanhe.com/sort-algo'
     },
@@ -46,7 +56,7 @@ export const projects = [
             'imgs/traversal-algo/grid-bfs.png',
         ],
         'title': 'Tree, Graph, and Grid Traversal Visualization',
-        'description': 'Studied tree traversal algorithms (Pre-order, Post-order, In-order, Level order), graph traversal algorithms (BFS, DFS), grid traversal algorithms (BFS, DFS), and visualized the traversal process using front-end web technologies without the usage of external visualization libraries.',
+        'description': 'A web-based visualization of tree, graph, and grid traversal algorithms.',
         'tags': 'JavaScript, CSS, HTML',
         'link': 'http://feifanhe.com/traversal-algo'
     },
@@ -59,7 +69,7 @@ export const projects = [
             'imgs/trade-algo/design2.png',
         ],
         'title': 'Automated Trading via Telegram',
-        'description': 'Designed, implemented, and deployed several live trading algorithms with Telegram integration running on Google Compute Engine.',
+        'description': 'A live trading algorithm platform with Telegram integration that runs on GCP.',
         'tags': 'Python, Robinhood Unofficial library, Python Telegram Bot library',
         'link': 'http://feifanhe.com/algo-trading'
     },
@@ -69,7 +79,7 @@ export const projects = [
             'imgs/stock-filter/criteria.png',
         ],
         'title': 'Stock Filter',
-        'description': 'Created a stock filter that retrieves stock data using the Yahoo Finance endpoints, and implemented filters based on Mark Minervini’s Pivot Volatility Contraction Pattern to identify momentum stocks with potential breakouts.',
+        'description': 'A Python-based stock filter that retrieves data from the Yahoo Finance endpoint and filters stocks using the criterias from Mark Minervini’s Pivot Volatility Contraction Pattern.',
         'tags': 'Python, Yahoo Finance Web Endpoint',
         'link': 'https://github.com/FEIFAN-HE/stock-filter'
     }
