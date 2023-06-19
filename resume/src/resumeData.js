@@ -25,7 +25,7 @@ export const projects = [
         ],
         'title': 'UML Class Diagram Editor',
         'description': 'An interactive web-based UML class diagram editor that enables users to create, edit, and delete classes and relationships.',
-        'tags': 'Mongoose/MongoDB, NodeJS, ExpressJS, JavaScript, React, CSS, Bootstrap, HTML',
+        'tags': 'Mongoose/MongoDB, JavaScript, React, CSS, Bootstrap, HTML',
         'link': 'http://feifanhe.com/umleditor/'
     },
     {
