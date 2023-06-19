@@ -2,6 +2,7 @@
   "name": "resume",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "html-react-parser": "^3.0.4",
     "jquery": "^3.6.1",

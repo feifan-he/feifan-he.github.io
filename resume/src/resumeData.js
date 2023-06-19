@@ -1,6 +1,20 @@
 export const projects = [
     {
         'imgs': [
+            'imgs/employment_website/1.jpg',
+            'imgs/employment_website/2.jpg',
+            'imgs/employment_website/3.jpg',
+            'imgs/employment_website/4.jpg',
+            'imgs/employment_website/5.jpg',
+            'imgs/employment_website/6.jpg',
+            'imgs/employment_website/7.jpg',
+        ],
+        'title': 'Student Employment Website',
+        'description': 'a course-wide project designed to foster a strong community among students and potential employers. This platform enables user sign-ups and allows authenticated users to create, edit, and delete job postings and job events. Additionally, the website includes features such as a RESTful API, responsive design, and WebSocket integration for real-time chat.',
+        'tags': 'Mongoose/MongoDB, NodeJS, ExpressJS, JavaScript, React, CSS, Bootstrap, HTML, SocketIO',
+    },
+    {
+        'imgs': [
             'imgs/umleditor/general.png',
             'imgs/umleditor/build.png',
             'imgs/umleditor/relationship.png',
@@ -12,7 +26,7 @@ export const projects = [
         'title': 'UML Class Diagram Editor',
         'description': 'An interactive web-based UML class diagram editor that enables users to create, edit, and delete classes and relationships.',
         'tags': 'Mongoose/MongoDB, NodeJS, ExpressJS, JavaScript, React, CSS, Bootstrap, HTML',
-        'link': 'https://umleditor.herokuapp.com'
+        'link': 'http://feifanhe.com/umleditor/'
     },
     {
         'imgs': [
@@ -87,13 +101,13 @@ export const projects = [
 
 export const educationMarkdown = `
 #### Brandeis University
-Master of Science in Computer Science (2022-2024)
-
-#### CFA Institute
-CFA® charterholder
+Msc. in Computer Science - GPA:3.89 (2022-2024)
 
 #### University of Toronto
 Bachelor of Commerce (2013  - 2017), Graduated with Distinction
+
+#### CFA Institute
+CFA® charterholder
 `
 
 export const certificationsMarkdown = `
@@ -119,22 +133,26 @@ export const certificationsMarkdown = `
 `
 
 export const languagesMarkdown = `
+
 #### Programming Languages
+- JavaScript/CSS/HTML
 - Python
 - Java
 - Bash
-    
-#### Web Development Languages
+- NodeJS
+---
+#### Frameworks
 - HTML
 - CSS
     - Bootstrap
 - JavaScript
     - NodeJS, Express
-    - React, AngularJS
-
+    - React, Next.js
+    - Socket.io
+- Docker
+---
 #### Databases
-- SQL
-- NoSQL
-    - Mongoose/MongoDB
-
+- MySQL
+- Mongoose/MongoDB
+- InfluxDB
 `

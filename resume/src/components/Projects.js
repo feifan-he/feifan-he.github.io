@@ -45,7 +45,7 @@ function Project(props) {
                         )
                     }
                     <p className="card-text">{props.project.description}</p>
-                    <a target="_blank" href={props.project.link} className="link-btn">{props.project.link}</a>
+                    {props.project.link && (<a target="_blank" href={props.project.link} className="link-btn" rel="noreferrer">{props.project.link}</a>)}
                 </div>
             </div>
         </div>)
