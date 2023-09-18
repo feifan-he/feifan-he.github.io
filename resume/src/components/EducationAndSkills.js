@@ -9,7 +9,7 @@ export function EducationAndSkills(props) {
             {
                 [
                     ['education', './imgs/general/education.png', 'Education', educationMarkdown],
-                    ['certifications', './imgs/general/certificate.png', 'Courses and Certifications', certificationsMarkdown],
+                    // ['certifications', './imgs/general/certificate.png', 'Courses and Certifications', certificationsMarkdown],
                     ['skills', './imgs/general/programing.png', 'Skills', languagesMarkdown],
                 ].map((category) => {
                     const [className, icon, title, markdownContent] = category;
