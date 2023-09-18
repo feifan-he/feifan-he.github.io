@@ -11,7 +11,7 @@ export const projects = [
         ],
         title: "Student Employment Website",
         description:
-            "a course-wide project designed to foster a strong community among students and potential employers. This platform enables user sign-ups and allows authenticated users to create, edit, and delete job postings and job events. Additionally, the website includes features such as a RESTful API, responsive design, and WebSocket integration for real-time chat.",
+            "A full-stack project aimed at fostering a vibrant community among students and potential employers. This platform integrates user management and authentication, job postings, and event hosting. Notable features include a RESTful API, responsive design, and real-time chat through WebSocket integration.",
         tags: "Mongoose/MongoDB, NodeJS, ExpressJS, JavaScript, React, CSS, Bootstrap, HTML, SocketIO",
     },
     {
@@ -29,14 +29,6 @@ export const projects = [
             "An interactive web-based UML class diagram editor that enables users to create, edit, and delete classes and relationships.",
         tags: "Mongoose/MongoDB, JavaScript, React, CSS, Bootstrap, HTML",
         link: "http://feifanhe.com/umleditor/",
-    },
-    {
-        imgs: ["imgs/keeper/keeper1.png", "imgs/keeper/keeper2.png"],
-        title: "Note Keeper",
-        description:
-            "A web-based app for storing sticky notes that allows users to create, delete and manage their notes with automatic saving.",
-        tags: "JavaScript, React, CSS, Bootstrap, HTML",
-        link: "http://feifanhe.com/keeper",
     },
     {
         imgs: [
@@ -91,16 +83,24 @@ export const projects = [
         tags: "Python, Robinhood Unofficial library, Python Telegram Bot library",
         link: "http://feifanhe.com/algo-trading",
     },
+    // {
+    //     imgs: [
+    //         "imgs/stock-filter/output.png",
+    //         "imgs/stock-filter/criteria.png",
+    //     ],
+    //     title: "Stock Filter",
+    //     description:
+    //         "A Python-based stock filter that retrieves data from the Yahoo Finance endpoint and filters stocks using the criterias from Mark Minervini’s Pivot Volatility Contraction Pattern.",
+    //     tags: "Python, Yahoo Finance Web Endpoint",
+    //     link: "https://github.com/FEIFAN-HE/stock-filter",
+    // },
     {
-        imgs: [
-            "imgs/stock-filter/output.png",
-            "imgs/stock-filter/criteria.png",
-        ],
-        title: "Stock Filter",
+        imgs: ["imgs/keeper/keeper1.png", "imgs/keeper/keeper2.png"],
+        title: "Note Keeper",
         description:
-            "A Python-based stock filter that retrieves data from the Yahoo Finance endpoint and filters stocks using the criterias from Mark Minervini’s Pivot Volatility Contraction Pattern.",
-        tags: "Python, Yahoo Finance Web Endpoint",
-        link: "https://github.com/FEIFAN-HE/stock-filter",
+            "A web-based app for storing sticky notes that allows users to create, delete and manage their notes with automatic saving.",
+        tags: "JavaScript, React, CSS, Bootstrap, HTML",
+        link: "http://feifanhe.com/keeper",
     },
 ];
 
@@ -144,10 +144,8 @@ export const languagesMarkdown = `
 - Python
 - Java
 - Bash
-- NodeJS
 ---
 #### Frameworks
-- HTML
 - CSS
     - Bootstrap
 - JavaScript
@@ -155,8 +153,14 @@ export const languagesMarkdown = `
     - React, Next.js
     - Socket.io
 - Docker
+- Jenkins
 ---
 #### Databases
 - MySQL
 - Mongoose/MongoDB
+- InfluxDB
+---
+#### Cloud Services
+- AWS(certificate in progress)
+- GCP
 `;
