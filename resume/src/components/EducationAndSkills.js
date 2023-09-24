@@ -26,8 +26,7 @@ export function EducationAndSkills(props) {
                 })
             }
             <div className='col-12 text-center ending'>
-                I'm actively searching for 2024 full-time SDE opportunities, <br/>
-                please feel free to <a href='mailto:feifanhe@brandeis.edu'>contact me</a> if there's any opening positions.
+                I'm actively seeking job opportunities, please <a href='mailto:feifanhe@brandeis.edu'>contact me</a> if there's any opening positions.
                 <br/>
                 <img src='imgs/general/emoji.png'/>
             </div>
