@@ -1,6 +1,15 @@
 export const projects = [
     {
         imgs: [
+            "imgs/shell/shell.jpg",
+        ],
+        title: "Multi-threaded Shell Simulator",
+        description:
+            "An application that simulates a shell environment, capable of executing Linux commands with arguments, handling inputs, and producing output. Leveraging concurrency and piping, it can sequentially transform input and give results efficiently.",
+        tags: "Java",
+    },
+    {
+        imgs: [
             "imgs/employment_website/1.jpg",
             "imgs/employment_website/2.jpg",
             "imgs/employment_website/3.jpg",
@@ -13,6 +22,15 @@ export const projects = [
         description:
             "A full-stack project aimed at fostering a vibrant community among students and potential employers. This platform integrates user management and authentication, job postings, and event hosting. Notable features include a RESTful API, responsive design, and real-time chat through WebSocket integration.",
         tags: "Mongoose/MongoDB, NodeJS, ExpressJS, JavaScript, React, CSS, Bootstrap, HTML, SocketIO",
+    },
+    {
+        imgs: [
+            "imgs/sudoku_python/sudoku_python.jpg",
+        ],
+        title: "Sudoku Generator",
+        description:
+            "An application capable of generating empty Sudoku boards along with solutions of different difficulty levels.",
+        tags: "Python",
     },
     {
         imgs: [
@@ -29,6 +47,20 @@ export const projects = [
             "An interactive web-based UML class diagram editor that enables users to create, edit, and delete classes and relationships.",
         tags: "Mongoose/MongoDB, JavaScript, React, CSS, Bootstrap, HTML",
         link: "http://feifanhe.com/umleditor/",
+    },
+    {
+        imgs: [
+            "imgs/trade-algo/general.png",
+            "imgs/trade-algo/impl1.png",
+            "imgs/trade-algo/impl2.png",
+            "imgs/trade-algo/design1.png",
+            "imgs/trade-algo/design2.png",
+        ],
+        title: "Automated Trading via Telegram",
+        description:
+            "A live trading algorithm platform with Telegram integration that runs on GCP.",
+        tags: "Python, Robinhood Unofficial library, Python Telegram Bot library",
+        link: "http://feifanhe.com/algo-trading",
     },
     {
         imgs: [
@@ -68,20 +100,6 @@ export const projects = [
             "A web-based visualization of tree, graph, and grid traversal algorithms.",
         tags: "JavaScript, CSS, HTML",
         link: "http://feifanhe.com/traversal-algo",
-    },
-    {
-        imgs: [
-            "imgs/trade-algo/general.png",
-            "imgs/trade-algo/impl1.png",
-            "imgs/trade-algo/impl2.png",
-            "imgs/trade-algo/design1.png",
-            "imgs/trade-algo/design2.png",
-        ],
-        title: "Automated Trading via Telegram",
-        description:
-            "A live trading algorithm platform with Telegram integration that runs on GCP.",
-        tags: "Python, Robinhood Unofficial library, Python Telegram Bot library",
-        link: "http://feifanhe.com/algo-trading",
     },
     // {
     //     imgs: [
